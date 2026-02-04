@@ -33,6 +33,17 @@ public class RegisterPage {
 		return Constant.WEBDRIVER.findElement(_btnRegister);
 	}
 	
+	public HomePage register(UserInfo userInfo) {
+		this.getTxtEmai().sendKeys(userInfo.getUserEmail());
+		this.getTxtPassword().sendKeys(userInfo.getUserPassword());
+		this.getTxtConfirmPassword().sendKeys(userInfo.getUserPassword());
+		this.getTxtPassportId().sendKeys(userInfo.getUserPassportId());
+		
+		this.getBtnRegister().click();
+		
+		return new HomePage();
+	}
+	
 	public HomePage regiter(String email, String pass, String confirmPass, String passportId) {
 		this.getTxtEmai().sendKeys(email);
 		this.getTxtPassword().sendKeys(pass);

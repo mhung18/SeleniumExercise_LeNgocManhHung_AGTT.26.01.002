@@ -25,5 +25,7 @@ public class Utilities {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,arguments[0])", pixel);
 	}
+	
+	
 }
 

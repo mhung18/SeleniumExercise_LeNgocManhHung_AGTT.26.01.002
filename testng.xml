@@ -3,9 +3,13 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-<!--      <class name="Railway.BookTicketTest"/>-->
-      <class name="Railway.LoginTest"/>
-<!--      <class name="Railway.RegisterTest"/>
--->    </classes>
+
+      <class name="Railway.LoginTest">
+
+<methods>
+<include name="TC01"></include>
+</methods>
+</class>
+   </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -6,11 +6,13 @@ import Constant.Constant;
 public class GeneralPage {
 	
 	// Locators
+	private final By tabFAQ = By.xpath("//div[@id=\"menu\"]//a[@href=\"/Page/FAQ.cshtml\"]");
 	private final By tabLogin = By.xpath("//div[@id=\"menu\"]//a[@href=\"/Account/Login.cshtml\"]");
 	private final By tabLogout = By.xpath("//div[@id=\"menu\"]//a[@href=\"/Account/Logout\"]");
 	private final By tabRegister = By.xpath("//div[@id=\"menu\"]//a[@href=\"/Account/Register.cshtml\"]");
 	private final By tabBookTicket = By.xpath("//div[@id=\"menu\"]//a[@href=\"/Page/BookTicketPage.cshtml\"]");
 	private final By lblWelcomeMessage = By.xpath("//div[@class='account']/strong");
+	private final By selectedTab = By.xpath("//li[@class=\"selected\"]");
 	
 	// Elements
 	protected WebElement getTabLogin() {
@@ -33,6 +35,13 @@ public class GeneralPage {
 		return Constant.WEBDRIVER.findElement(tabBookTicket);
 				
 	}
+	protected WebElement getTabFAQ() {
+		return Constant.WEBDRIVER.findElement(tabFAQ);			
+	}
+	
+	protected WebElement getSelectedTab() {
+		return Constant.WEBDRIVER.findElement(selectedTab);			
+	}
 	
 	
 	// Method
@@ -45,6 +54,11 @@ public class GeneralPage {
 		return new LoginPage();
 	}
 	
+	public HomePage goToLogoutPage() {
+		this.getTabLogout().click();
+		return new HomePage();
+	}
+	
 	public RegisterPage goToRegisterPage() {
 		this.getTabRegister().click();
 		return new RegisterPage();
@@ -53,5 +67,17 @@ public class GeneralPage {
 	public BookTicketPage goToBookTicketPage() {
 		this.getTabBookTicket().click();
 		return new BookTicketPage();
+	}
+	public FAQPage goToFAQPage() {
+		this.getTabFAQ().click();
+		return new FAQPage();
+	}
+	public String getSelectedTabName() {
+		return this.getSelectedTab().getText();
+	}
+	
+	public boolean isElementExist(String tabName) {
+		String xpathString = String.format("//a[span[text()='%s']]", tabName);
+		return Constant.WEBDRIVER.findElements(By.xpath(xpathString)).size() > 0;
 	}
 }
