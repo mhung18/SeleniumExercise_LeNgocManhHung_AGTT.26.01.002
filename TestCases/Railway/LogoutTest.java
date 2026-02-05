@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 public class LogoutTest extends BaseTest{
 	@Test
 	public void TC06() {
+	    String expectedTab = "Home";
+
 	    System.out.println("User is redirected to Home page after logging out");
 
 	    System.out.println("1. Navigate to QA Railway Website");
@@ -24,18 +26,16 @@ public class LogoutTest extends BaseTest{
 	    HomePage homePageAfterLogout = faqPage.goToLogoutPage();
 
 	    String currentSelectedTab = homePageAfterLogout.getSelectedTabName();
-	    String expectedTab = "Home";
 	    
-	    System.out.println("Verify that Home page displays");
+	    System.out.println("VP: Home page displays.\n"
+	    		+ "VP: \"Log out\" tab is disappeared.");
 	    Assert.assertEquals(
 	        currentSelectedTab,
 	        expectedTab,
 	        "Current selected tab is not Home after logout"
 	    );
 
-	    System.out.println("Verify that Logout tab is disappeared");
-	    boolean isLogoutTabExist = homePageAfterLogout.isElementExist("Logout");
+	    boolean isLogoutTabExist = homePageAfterLogout.isTabExist("Logout");
 	    Assert.assertFalse(isLogoutTabExist, "Logout tab should not be displayed after logout");
 	}
-
 }

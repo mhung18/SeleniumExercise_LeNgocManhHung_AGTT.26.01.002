@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class BookTicketTest extends BaseTest{
 	
 	@Test
-	public void TC03() throws InterruptedException {
+	public void TCXX() throws InterruptedException {
 		System.out.println("User can book a ticket");
 		
 		HomePage homePage = new HomePage();

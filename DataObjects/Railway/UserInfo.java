@@ -10,7 +10,7 @@ public class UserInfo {
 		this._password = password;
 		this._passportId = passportId;
 	}	
-	
+
 	public String getUserEmail() {
 		return this._email;
 	}

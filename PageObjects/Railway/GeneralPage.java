@@ -1,18 +1,27 @@
 package Railway;
 
 import org.openqa.selenium.*;
+
+import Common.Utilities;
 import Constant.Constant;
+import Guerrillamail.MainPage;
 
 public class GeneralPage {
 	
-	// Locators
+//	 Locators
 	private final By tabFAQ = By.xpath("//div[@id=\"menu\"]//a[@href=\"/Page/FAQ.cshtml\"]");
 	private final By tabLogin = By.xpath("//div[@id=\"menu\"]//a[@href=\"/Account/Login.cshtml\"]");
 	private final By tabLogout = By.xpath("//div[@id=\"menu\"]//a[@href=\"/Account/Logout\"]");
 	private final By tabRegister = By.xpath("//div[@id=\"menu\"]//a[@href=\"/Account/Register.cshtml\"]");
 	private final By tabBookTicket = By.xpath("//div[@id=\"menu\"]//a[@href=\"/Page/BookTicketPage.cshtml\"]");
 	private final By lblWelcomeMessage = By.xpath("//div[@class='account']/strong");
-	private final By selectedTab = By.xpath("//li[@class=\"selected\"]");
+	private final By tabSelected = By.xpath("//li[@class=\"selected\"]");
+	private final String dymTabXpath = "//div[@id=\"menu\"]//span[text()=\"%s\"]";
+	
+//	@SuppressWarnings("unchecked")
+//	protected T seft() {
+//		return (T) this;
+//	}
 	
 	// Elements
 	protected WebElement getTabLogin() {
@@ -40,7 +49,7 @@ public class GeneralPage {
 	}
 	
 	protected WebElement getSelectedTab() {
-		return Constant.WEBDRIVER.findElement(selectedTab);			
+		return Constant.WEBDRIVER.findElement(tabSelected);			
 	}
 	
 	
@@ -72,12 +81,39 @@ public class GeneralPage {
 		this.getTabFAQ().click();
 		return new FAQPage();
 	}
+	
+//	public <P extends GeneralPage<P>> P goToPage (String pageName) {
+//		String xpathString = String.format(dymTabXpath, pageName);
+//		Constant.WEBDRIVER.findElement(By.xpath(xpathString)).click();
+//		
+//		switch (pageName) {
+//		case "Login":
+//			return new LoginPage();
+//
+//		case "Logout":
+//			return new HomePage();
+//
+//		case "Register":
+//			return new RegisterPage();
+//
+//		case "Book ticket":
+//			return new BookTicketPage();
+//
+//		case "FAQ":
+//			return new FAQPage();
+//
+//		default:
+//			return new GeneralPage();
+//		}
+//	}
+	
+	
 	public String getSelectedTabName() {
 		return this.getSelectedTab().getText();
 	}
 	
-	public boolean isElementExist(String tabName) {
+	public boolean isTabExist(String tabName) {
 		String xpathString = String.format("//a[span[text()='%s']]", tabName);
-		return Constant.WEBDRIVER.findElements(By.xpath(xpathString)).size() > 0;
+		return Utilities.isDisplayed(xpathString);
 	}
 }

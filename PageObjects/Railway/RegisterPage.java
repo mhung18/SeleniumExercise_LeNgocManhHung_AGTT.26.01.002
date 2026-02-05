@@ -5,12 +5,17 @@ import org.openqa.selenium.WebElement;
 
 import Constant.Constant;
 
-public class RegisterPage {
+public class RegisterPage extends GeneralPage {
 	private final By _txtEmail = By.id("email");
 	private final By _txtPassword = By.id("password");
 	private final By _txtConfirmPassword = By.id("confirmPassword");
 	private final By _txtPassportId = By.id("pid");
 	private final By _btnRegister = By.xpath("//input[@value=\"Register\"]");
+	private final By _lblRegisterErrorMsg = By.xpath("//p[@class=\"message error\"]");
+	private final By _lblPasswordErrorMsg = By.xpath("//label[@for=\"password\" and @class=\"validation-error\"]");
+	private final By _lblPassportIdErrorMsg = By.xpath("//label[@for=\"pid\" and @class=\"validation-error\"]");
+	private final By _lblRegisterSuccessfully = By.xpath("//h1[text()=\"Thank you for registering your account\"]");
+	private final By _lblRegisterConfirmMsg = By.xpath("//div[@id=\"content\"]/p");
 
 	// Elements
 	public WebElement getTxtEmai() {
@@ -32,6 +37,27 @@ public class RegisterPage {
 	public WebElement getBtnRegister() {
 		return Constant.WEBDRIVER.findElement(_btnRegister);
 	}
+	
+	public WebElement getLblRegisterErrorMsg() {
+		return Constant.WEBDRIVER.findElement(_lblRegisterErrorMsg);
+	}
+	
+	public WebElement getLblPasswordErrorMsg() {
+		return Constant.WEBDRIVER.findElement(_lblPasswordErrorMsg);
+	}
+	
+	public WebElement getLblPassportIdErrorMsg() {
+		return Constant.WEBDRIVER.findElement(_lblPassportIdErrorMsg);
+	}
+	
+	public WebElement getLblRegisterSuccessfully() {
+		return Constant.WEBDRIVER.findElement(_lblRegisterSuccessfully);
+	}
+	
+	public String getRegisterConfirmMsg() {
+		return Constant.WEBDRIVER.findElement(_lblRegisterConfirmMsg).getText();
+	}
+	
 	
 	public HomePage register(UserInfo userInfo) {
 		this.getTxtEmai().sendKeys(userInfo.getUserEmail());
