@@ -22,14 +22,14 @@ public class LogoutTest extends BaseTest{
 	    homePage.open();
 	    
 	    System.out.println("2. Login with valid Email and Password");
-	    LoginPage loginPage = homePage.goToLoginPage();
+	    LoginPage loginPage = homePage.goToPage("Login", LoginPage.class);
 	    loginPage.login(userInfo);
 
 	    System.out.println("3. Enter username and password of account hasn't been activated.");
-	    FAQPage faqPage = loginPage.goToFAQPage();
+	    FAQPage faqPage = loginPage.goToPage("FAQ", FAQPage.class);
 
 	    System.out.println("4. Click on \"Log out\" tab");
-	    homePage = faqPage.goToLogoutPage();
+	    homePage = faqPage.goToPage("Log out", HomePage.class);
 
 	    String currentSelectedTab = homePage.getSelectedTabName();
 	    
@@ -41,7 +41,7 @@ public class LogoutTest extends BaseTest{
 	        "Current selected tab is not Home after logout"
 	    );
 
-	    boolean isLogoutTabExist = homePage.isTabExist("Logout");
+	    boolean isLogoutTabExist = homePage.isTabExist("Log out");
 	    Assert.assertFalse(isLogoutTabExist, "Logout tab should not be displayed after logout");
 	}
 }

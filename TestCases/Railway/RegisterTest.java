@@ -19,7 +19,7 @@ public class RegisterTest extends BaseTest{
 		homePage.open();
 		
 		RegisterPage registerPage = new RegisterPage();
-		homePage.goToRegisterPage();
+		homePage.goToPage("Register", RegisterPage.class);
 				
 		Utilities.scrollByPixel(300);
 		

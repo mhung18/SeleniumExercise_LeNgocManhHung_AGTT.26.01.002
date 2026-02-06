@@ -23,13 +23,13 @@ public class BookTicketTest extends BaseTest{
 		HomePage homePage = new HomePage();
 		homePage.open();
 		
-		LoginPage loginPage = homePage.goToLoginPage();
+		LoginPage loginPage = homePage.goToPage("Login", LoginPage.class);
 		loginPage.login(
 				userInfo.getUserEmail(), 
 				userInfo.getUserPassword()
 		);
 		
-		homePage.goToBookTicketPage();
+		homePage.goToPage("Book ticket", BookTicketPage.class);
 				
 		BookTicketPage bookTicketPage = new BookTicketPage();
 		bookTicketPage.bookNewTicket(

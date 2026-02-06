@@ -27,7 +27,7 @@ public abstract class BaseTest {
 		HomePage homePage = new HomePage();
 		homePage.open();
 		
-		RegisterPage registerPage = homePage.goToRegisterPage();
+		RegisterPage registerPage = homePage.goToPage("Register", RegisterPage.class);
 		
 		String randomEmail = Utilities.generateRandomEmail();
 		registerPage.regiter(
@@ -46,6 +46,5 @@ public abstract class BaseTest {
 				randomEmail, 
 				Constant.PASSWORD, 
 				Constant.PASSPORTID);
-	}
-	
+	}	
 }

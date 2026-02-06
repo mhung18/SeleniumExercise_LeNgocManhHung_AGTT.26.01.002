@@ -23,7 +23,7 @@ public class LoginTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = homePage.goToLoginPage();
+		LoginPage loginPage = homePage.goToPage("Login", LoginPage.class);
 		
 		System.out.println("3. Enter valid Email and Password");
 		System.out.println("4. Click on \"Login\" button");
@@ -44,7 +44,7 @@ public class LoginTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = homePage.goToLoginPage();
+		LoginPage loginPage = homePage.goToPage("Login", LoginPage.class);
 		
 		System.out.println("3. User doesn't type any words into \"Username\" textbox but enter valid information into \"Password\" textbox ");
 		System.out.println("4. Click on \"Login\" button");
@@ -68,7 +68,7 @@ public class LoginTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = homePage.goToLoginPage();
+		LoginPage loginPage = homePage.goToPage("Login", LoginPage.class);
 		
 		System.out.println("3. Enter valid Email and invalid Password");
 		System.out.println("4. Click on \"Login\" button");
@@ -90,7 +90,7 @@ public class LoginTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = homePage.goToLoginPage();
+		LoginPage loginPage = homePage.goToPage("Login", LoginPage.class);
 		
 		System.out.println("3. Enter valid information into \"Username\" textbox except \"Password\" textbox.");
 		System.out.println("4. Click on \"Login\" button");
@@ -117,7 +117,7 @@ public class LoginTest extends BaseTest{
 		HomePage homePage = new HomePage();
 		homePage.open();
 		
-		RegisterPage registerPage = homePage.goToRegisterPage();
+		RegisterPage registerPage = homePage.goToPage("Register", RegisterPage.class);
 				
 		String emailString = Utilities.generateRandomEmail();
 		registerPage.regiter(
@@ -128,7 +128,7 @@ public class LoginTest extends BaseTest{
 		);
 		System.out.println("1. Navigate to QA Railway Website");
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = homePage.goToLoginPage();
+		LoginPage loginPage = homePage.goToPage("Login", LoginPage.class);
 		
 		System.out.println("3. Enter username and password of account hasn't been activated.");
 		System.out.println("4. Click on \"Login\" button");
