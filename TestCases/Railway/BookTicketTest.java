@@ -1,8 +1,20 @@
 package Railway;
 
 import org.testng.annotations.Test;
+import Constant.Constant;
 
 public class BookTicketTest extends BaseTest{
+	UserInfo userInfo = new UserInfo(
+			Constant.USERNAME, 
+			Constant.PASSWORD, 
+			Constant.PASSPORTID);
+	
+	TicketInfo ticketInfo = new TicketInfo(
+			Constant.DEPARTDATE, 
+			Constant.DEPARTSTATION, 
+			Constant.ARRIVESTATION, 
+			Constant.SEATTYPE, 
+			Constant.TICKETAMOUNT);
 	
 	@Test
 	public void TCXX() throws InterruptedException {

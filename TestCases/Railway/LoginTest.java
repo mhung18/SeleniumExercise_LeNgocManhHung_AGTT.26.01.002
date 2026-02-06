@@ -7,6 +7,10 @@ import Common.Utilities;
 import Constant.Constant;
 
 public class LoginTest extends BaseTest{
+	UserInfo userInfo = new UserInfo(
+			Constant.USERNAME, 
+			Constant.PASSWORD, 
+			Constant.PASSPORTID);
 
 	@Test
 	public void TC01() {

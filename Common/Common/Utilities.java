@@ -12,11 +12,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import Constant.Constant;
 
 public class Utilities {
-	public static void waitForElementClickable (By locator, int timeout) {
+	public static By waitForElementClickable (By locator, int timeout) {
 		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(timeout));
 		wait.until(
 				ExpectedConditions.elementToBeClickable(locator)
-		).click();
+		);
+		return locator;
 	}
 	
 	public static By waitForElementVisible (By locator, int timeout) {

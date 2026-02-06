@@ -3,8 +3,14 @@ package Railway;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import Constant.Constant;
 
 public class LogoutTest extends BaseTest{
+	UserInfo userInfo = new UserInfo(
+			Constant.USERNAME, 
+			Constant.PASSWORD, 
+			Constant.PASSPORTID);
+	
 	@Test
 	public void TC06() {
 	    String expectedTab = "Home";
@@ -23,9 +29,9 @@ public class LogoutTest extends BaseTest{
 	    FAQPage faqPage = loginPage.goToFAQPage();
 
 	    System.out.println("4. Click on \"Log out\" tab");
-	    HomePage homePageAfterLogout = faqPage.goToLogoutPage();
+	    homePage = faqPage.goToLogoutPage();
 
-	    String currentSelectedTab = homePageAfterLogout.getSelectedTabName();
+	    String currentSelectedTab = homePage.getSelectedTabName();
 	    
 	    System.out.println("VP: Home page displays.\n"
 	    		+ "VP: \"Log out\" tab is disappeared.");
@@ -35,7 +41,7 @@ public class LogoutTest extends BaseTest{
 	        "Current selected tab is not Home after logout"
 	    );
 
-	    boolean isLogoutTabExist = homePageAfterLogout.isTabExist("Logout");
+	    boolean isLogoutTabExist = homePage.isTabExist("Logout");
 	    Assert.assertFalse(isLogoutTabExist, "Logout tab should not be displayed after logout");
 	}
 }

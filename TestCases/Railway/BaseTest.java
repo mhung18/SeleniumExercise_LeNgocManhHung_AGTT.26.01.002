@@ -1,6 +1,5 @@
 package Railway;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -11,18 +10,6 @@ import Constant.Constant;
 import Guerrillamail.MainPage;
 
 public abstract class BaseTest {
-	UserInfo userInfo = new UserInfo(
-			Constant.USERNAME, 
-			Constant.PASSWORD, 
-			Constant.PASSPORTID);
-	
-	TicketInfo ticketInfo = new TicketInfo(
-			Constant.DEPARTDATE, 
-			Constant.DEPARTSTATION, 
-			Constant.ARRIVESTATION, 
-			Constant.SEATTYPE, 
-			Constant.TICKETAMOUNT);
-	
 	@BeforeMethod
 	public void beforeMethod() {
 		System.out.println("Pre-condition");
@@ -36,7 +23,7 @@ public abstract class BaseTest {
 		Constant.WEBDRIVER.quit();
 	}
 	
-	public UserInfo createAndActiveAccount() throws InterruptedException {		
+	public UserInfo createAndActiveAccount() {		
 		HomePage homePage = new HomePage();
 		homePage.open();
 		
@@ -55,7 +42,6 @@ public abstract class BaseTest {
 		mainPageMailWeb.setEmailName(Utilities.getEmailPartName(randomEmail));
 		mainPageMailWeb.activeAccount();
 		
-		Thread.sleep(5000);
 		return new UserInfo(
 				randomEmail, 
 				Constant.PASSWORD, 
