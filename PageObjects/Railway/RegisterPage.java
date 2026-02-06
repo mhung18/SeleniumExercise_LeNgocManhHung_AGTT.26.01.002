@@ -3,6 +3,7 @@ package Railway;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import Common.Utilities;
 import Constant.Constant;
 
 public class RegisterPage extends GeneralPage {
@@ -59,7 +60,8 @@ public class RegisterPage extends GeneralPage {
 	}
 	
 	
-	public HomePage register(UserInfo userInfo) {
+	public RegisterPage register(UserInfo userInfo) {
+		Utilities.scrollToEndPage();
 		this.getTxtEmai().sendKeys(userInfo.getUserEmail());
 		this.getTxtPassword().sendKeys(userInfo.getUserPassword());
 		this.getTxtConfirmPassword().sendKeys(userInfo.getUserPassword());
@@ -67,10 +69,11 @@ public class RegisterPage extends GeneralPage {
 		
 		this.getBtnRegister().click();
 		
-		return new HomePage();
+		return this;
 	}
 	
-	public HomePage regiter(String email, String pass, String confirmPass, String passportId) {
+	public RegisterPage regiter(String email, String pass, String confirmPass, String passportId) {
+		Utilities.scrollToEndPage();
 		this.getTxtEmai().sendKeys(email);
 		this.getTxtPassword().sendKeys(pass);
 		this.getTxtConfirmPassword().sendKeys(confirmPass);
@@ -78,6 +81,6 @@ public class RegisterPage extends GeneralPage {
 		
 		this.getBtnRegister().click();
 		
-		return new HomePage();
+		return this;
 	}
 }

@@ -128,7 +128,7 @@ public class LoginTest extends BaseTest{
 		);
 		System.out.println("1. Navigate to QA Railway Website");
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = homePage.goToPage("Login", LoginPage.class);
+		LoginPage loginPage = registerPage.goToPage("Login", LoginPage.class);
 		
 		System.out.println("3. Enter username and password of account hasn't been activated.");
 		System.out.println("4. Click on \"Login\" button");

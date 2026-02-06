@@ -20,6 +20,7 @@ public class GeneralPage {
 	
 	public <T extends GeneralPage> T goToPage(String pageName, Class<T> pageClass) {
 	    String xpath = String.format(_dymTabXpath, pageName);
+	    Utilities.waitForElementVisible(By.xpath(xpath), 10);
 	    Constant.WEBDRIVER.findElement(By.xpath(xpath)).click();
 
 	    try {
