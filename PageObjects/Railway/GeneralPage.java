@@ -6,25 +6,11 @@ import Constant.Constant;
 import Constant.MenuPage;
 
 public class GeneralPage {
-	
-//	 Locators
 	private final By _lblWelcomeMessage = By.xpath("//div[@class='account']/strong");
 	private final By _tabSelected = By.xpath("//li[@class=\"selected\"]");
 	private final String _dymTabXpath = "//div[@id=\"menu\"]//span[text()=\"%s\"]";
 	
-	public <T extends GeneralPage> T goToPage(MenuPage page, Class<T> pageClass) {
-	    String xpath = String.format(_dymTabXpath, page.getPageName());
-	    Utilities.waitForElementVisible(By.xpath(xpath), 10);
-	    Constant.WEBDRIVER.findElement(By.xpath(xpath)).click();
-
-	    try {
-	        return pageClass.getDeclaredConstructor().newInstance();
-	    } catch (Exception e) {
-	        throw new RuntimeException(e);
-	    }
-	}
-
-	// Elements
+	
 	protected WebElement getLblWelcomeMessage() {
 		return Constant.WEBDRIVER.findElement(_lblWelcomeMessage);
 	}
@@ -49,5 +35,18 @@ public class GeneralPage {
 	
 	public String getTextOfElement (WebElement webElement) {
 		return webElement.getText();
+	}
+	
+	
+	public <T extends GeneralPage> T goToPage(MenuPage page, Class<T> pageClass) {
+	    String xpath = String.format(_dymTabXpath, page.getPageName());
+	    Utilities.waitForElementVisible(By.xpath(xpath), 10);
+	    Constant.WEBDRIVER.findElement(By.xpath(xpath)).click();
+
+	    try {
+	        return pageClass.getDeclaredConstructor().newInstance();
+	    } catch (Exception e) {
+	        throw new RuntimeException(e);
+	    }
 	}
 }

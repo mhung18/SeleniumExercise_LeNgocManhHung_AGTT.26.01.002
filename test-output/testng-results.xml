@@ -2,24 +2,24 @@
 <testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-07T19:09:20 GMT+07:00" name="Default suite" finished-at="2026-02-07T19:10:20 GMT+07:00" duration-ms="60046">
+  <suite started-at="2026-02-08T00:00:52 GMT+07:00" name="Default suite" finished-at="2026-02-08T00:01:22 GMT+07:00" duration-ms="29715">
     <groups>
     </groups>
-    <test started-at="2026-02-07T19:09:20 GMT+07:00" name="Default test" finished-at="2026-02-07T19:10:20 GMT+07:00" duration-ms="60046">
-      <class name="Railway.ResetPassword">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.ResetPassword@636be97c]" started-at="2026-02-07T19:09:20 GMT+07:00" name="beforeMethod" finished-at="2026-02-07T19:09:21 GMT+07:00" duration-ms="1622" status="PASS">
+    <test started-at="2026-02-08T00:00:52 GMT+07:00" name="Default test" finished-at="2026-02-08T00:01:22 GMT+07:00" duration-ms="29715">
+      <class name="Railway.BookTicketTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.BookTicketTest@636be97c]" started-at="2026-02-08T00:00:52 GMT+07:00" name="beforeMethod" finished-at="2026-02-08T00:00:53 GMT+07:00" duration-ms="1227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC11()[pri:0, instance:Railway.ResetPassword@636be97c]" started-at="2026-02-07T19:09:21 GMT+07:00" name="TC11" finished-at="2026-02-07T19:10:20 GMT+07:00" duration-ms="58301" status="PASS">
+        <test-method signature="TC13()[pri:0, instance:Railway.BookTicketTest@636be97c]" started-at="2026-02-08T00:00:53 GMT+07:00" name="TC13" finished-at="2026-02-08T00:01:22 GMT+07:00" duration-ms="28477" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC11 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.ResetPassword@636be97c]" started-at="2026-02-07T19:10:20 GMT+07:00" name="afterMethod" finished-at="2026-02-07T19:10:20 GMT+07:00" duration-ms="110" status="PASS">
+        </test-method> <!-- TC13 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@636be97c]" started-at="2026-02-08T00:01:22 GMT+07:00" name="afterMethod" finished-at="2026-02-08T00:01:22 GMT+07:00" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- Railway.ResetPassword -->
+      </class> <!-- Railway.BookTicketTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

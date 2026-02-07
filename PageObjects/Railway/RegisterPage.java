@@ -18,59 +18,39 @@ public class RegisterPage extends GeneralPage {
 	private final By _lblRegisterSuccessfully = By.xpath("//h1[text()=\"Thank you for registering your account\"]");
 	private final By _lblRegisterConfirmMsg = By.xpath("//div[@id=\"content\"]/p");
 
-	// Elements
+	
 	public WebElement getTxtEmai() {
 		return Constant.WEBDRIVER.findElement(_txtEmail);
 	}
-	
 	public WebElement getTxtPassword() {
 		return Constant.WEBDRIVER.findElement(_txtPassword);
 	}
-	
 	public WebElement getTxtConfirmPassword() {
 		return Constant.WEBDRIVER.findElement(_txtConfirmPassword);
 	}
-	
 	public WebElement getTxtPassportId() {
 		return Constant.WEBDRIVER.findElement(_txtPassportId);
 	}
-	
 	public WebElement getBtnRegister() {
 		return Constant.WEBDRIVER.findElement(_btnRegister);
 	}
-	
 	public WebElement getLblRegisterErrorMsg() {
 		return Constant.WEBDRIVER.findElement(_lblRegisterErrorMsg);
 	}
-	
 	public WebElement getLblPasswordErrorMsg() {
 		return Constant.WEBDRIVER.findElement(_lblPasswordErrorMsg);
 	}
-	
 	public WebElement getLblPassportIdErrorMsg() {
 		return Constant.WEBDRIVER.findElement(_lblPassportIdErrorMsg);
 	}
-	
 	public WebElement getLblRegisterSuccessfully() {
 		return Constant.WEBDRIVER.findElement(_lblRegisterSuccessfully);
 	}
 	
+	
 	public String getRegisterConfirmMsg() {
 		return Constant.WEBDRIVER.findElement(_lblRegisterConfirmMsg).getText();
 	}
-	
-	
-//	public RegisterPage register(UserInfo userInfo) {
-//		Utilities.scrollToElement(getBtnRegister());
-//		this.getTxtEmai().sendKeys(userInfo.getUserEmail());
-//		this.getTxtPassword().sendKeys(userInfo.getUserPassword());
-//		this.getTxtConfirmPassword().sendKeys(userInfo.getUserPassword());
-//		this.getTxtPassportId().sendKeys(userInfo.getUserPassportId());
-//		
-//		this.getBtnRegister().click();
-//		
-//		return this;
-//	}
 	
 	public RegisterPage regiter(String email, String pass, String confirmPass, String passportId) {
 		Utilities.scrollToElement(getBtnRegister());
@@ -78,9 +58,7 @@ public class RegisterPage extends GeneralPage {
 		this.getTxtPassword().sendKeys(pass);
 		this.getTxtConfirmPassword().sendKeys(confirmPass);
 		this.getTxtPassportId().sendKeys(passportId);
-		
 		this.getBtnRegister().click();
-		
 		return this;
 	}
 	

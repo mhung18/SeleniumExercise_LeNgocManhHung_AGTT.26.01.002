@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import Constant.Constant;
 
@@ -28,6 +29,15 @@ public class Utilities {
 		);
 		return locator;
 	}
+	
+	public static void waitForOptionPresent(By selectLocator, String optionText, int timeout) {
+	    WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(timeout));
+	   wait.until(driver -> {
+		   Select select = new Select(driver.findElement(selectLocator));
+		   return select.getOptions().stream().anyMatch(o -> o.getText().trim().equals(optionText));
+	   });
+	}
+
 	
 	public static void scrollToEndPage () {
 		JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
@@ -54,7 +64,6 @@ public class Utilities {
 		try {
 			return Constant.WEBDRIVER.findElement(By.xpath(element)).isDisplayed();
 		} catch (Exception e) {
-			// TODO: handle exception
 			return false;
 		}
 	}

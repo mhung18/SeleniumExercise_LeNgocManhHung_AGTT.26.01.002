@@ -13,14 +13,17 @@ public enum MenuPage {
 	MYTICKET("My ticket"),
 	CHANGEPASSWORD("Change password");
 
-    private final String pageName;
+	
+    private final String _pageName;
 
+    
     MenuPage(String pageName) {
-        this.pageName = pageName;
+        this._pageName = pageName;
     }
 
+    
     public String getPageName() {
-        return pageName;
+        return _pageName;
     }
 }
 

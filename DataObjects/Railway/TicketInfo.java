@@ -15,23 +15,37 @@ public class TicketInfo {
 		this._ticketAmount = ticketAmount;
 	}
 	
+	
 	public String getDepartDate() {
 		return this._departDate;
 	}
-	
 	public String getDepartStation() {
 		return this._departStation;
 	}
-	
 	public String getArriveStattion() {
 		return this._arriveStation;
 	}
-	
 	public String getSeatType() {
 		return this._seatType;
 	}
-	
 	public String getTicketAmount() {
 		return this._ticketAmount;
+	}
+
+	
+	public void setDepartStation(String _departStation) {
+		this._departStation = _departStation;
+	}
+	public void setDepartDate(String _departDate) {
+		this._departDate = _departDate;
+	}
+	public void setArriveStation(String _arriveStation) {
+		this._arriveStation = _arriveStation;
+	}
+	public void setSeatType(String _seatType) {
+		this._seatType = _seatType;
+	}
+	public void setTicketAmount(String _ticketAmount) {
+		this._ticketAmount = _ticketAmount;
 	}
 }

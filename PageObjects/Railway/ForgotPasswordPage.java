@@ -16,22 +16,19 @@ public class ForgotPasswordPage extends GeneralPage{
 	private final By _btnResetPassword = By.xpath("//input[@value=\"Reset Password\"]");
 	private final By _txtStateResetPassword = By.xpath("//div[@id=\"content\"]/p");
 	
+	
 	public WebElement getTxtEmailForgotPassword() {
 		return Constant.WEBDRIVER.findElement(_txtEmailForgotPassword);
 	}
-	
 	public WebElement getBtnSendInstruction() {
 		return Constant.WEBDRIVER.findElement(_btnSendInstruction);
 	}
-	
 	public WebElement getTxtForgotPasswordForm() {
 		return Constant.WEBDRIVER.findElement(_txtForgotPasswordForm);
 	}
-	
 	public WebElement getTxtToken() {
 		return Constant.WEBDRIVER.findElement(_txtToken);
 	}
-	
 	public WebElement getTxtNewPassword () {
 		return Constant.WEBDRIVER.findElement(_txtNewPassword);
 	}
@@ -44,6 +41,7 @@ public class ForgotPasswordPage extends GeneralPage{
 	public WebElement getTxtStateResetPassword () {
 		return Constant.WEBDRIVER.findElement(_txtStateResetPassword);
 	}
+	
 	
 	public ForgotPasswordPage enterEmailForgotPassword(String email) {
 		this.getTxtEmailForgotPassword().sendKeys(email);
