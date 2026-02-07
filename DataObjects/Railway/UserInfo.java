@@ -22,4 +22,16 @@ public class UserInfo {
 	public String getUserPassportId() {
 		return this._passportId;
 	}
+
+	public void setEmail(String _email) {
+		this._email = _email;
+	}
+
+	public void setPassword(String _password) {
+		this._password = _password;
+	}
+
+	public void setPassportId(String _passportId) {
+		this._passportId = _passportId;
+	}
 }

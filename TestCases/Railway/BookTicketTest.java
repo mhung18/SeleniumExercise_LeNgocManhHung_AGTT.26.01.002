@@ -17,7 +17,7 @@ public class BookTicketTest extends BaseTest{
 			Constant.TICKETAMOUNT);
 	
 	@Test
-	public void TCXX() throws InterruptedException {
+	public void TCXX() {
 		System.out.println("User can book a ticket");
 		
 		HomePage homePage = new HomePage();

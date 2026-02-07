@@ -23,6 +23,10 @@ public class RegisterTest extends BaseTest{
 				
 		Utilities.scrollByPixel(300);
 		
-		registerPage.register(userInfo);		
+		registerPage.regiter(
+				userInfo.getUserEmail(),
+				userInfo.getUserPassword(),
+				userInfo.getUserPassword(),
+				userInfo.getUserPassportId());		
 	}
 }

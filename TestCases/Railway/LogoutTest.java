@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 import Constant.Constant;
 
 public class LogoutTest extends BaseTest{
-	UserInfo userInfo = new UserInfo(
-			Constant.USERNAME, 
-			Constant.PASSWORD, 
-			Constant.PASSPORTID);
-	
 	@Test
 	public void TC06() {
+		UserInfo userInfo = new UserInfo(
+				Constant.USERNAME, 
+				Constant.PASSWORD, 
+				Constant.PASSPORTID);
+		
 	    String expectedTab = "Home";
 
 	    System.out.println("User is redirected to Home page after logging out");
@@ -40,7 +40,7 @@ public class LogoutTest extends BaseTest{
 	        expectedTab,
 	        "Current selected tab is not Home after logout"
 	    );
-
+	    
 	    boolean isLogoutTabExist = homePage.isTabExist("Log out");
 	    Assert.assertFalse(isLogoutTabExist, "Logout tab should not be displayed after logout");
 	}

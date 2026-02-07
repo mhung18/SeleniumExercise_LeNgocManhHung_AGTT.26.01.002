@@ -60,20 +60,20 @@ public class RegisterPage extends GeneralPage {
 	}
 	
 	
-	public RegisterPage register(UserInfo userInfo) {
-		Utilities.scrollToEndPage();
-		this.getTxtEmai().sendKeys(userInfo.getUserEmail());
-		this.getTxtPassword().sendKeys(userInfo.getUserPassword());
-		this.getTxtConfirmPassword().sendKeys(userInfo.getUserPassword());
-		this.getTxtPassportId().sendKeys(userInfo.getUserPassportId());
-		
-		this.getBtnRegister().click();
-		
-		return this;
-	}
+//	public RegisterPage register(UserInfo userInfo) {
+//		Utilities.scrollToElement(getBtnRegister());
+//		this.getTxtEmai().sendKeys(userInfo.getUserEmail());
+//		this.getTxtPassword().sendKeys(userInfo.getUserPassword());
+//		this.getTxtConfirmPassword().sendKeys(userInfo.getUserPassword());
+//		this.getTxtPassportId().sendKeys(userInfo.getUserPassportId());
+//		
+//		this.getBtnRegister().click();
+//		
+//		return this;
+//	}
 	
 	public RegisterPage regiter(String email, String pass, String confirmPass, String passportId) {
-		Utilities.scrollToEndPage();
+		Utilities.scrollToElement(getBtnRegister());
 		this.getTxtEmai().sendKeys(email);
 		this.getTxtPassword().sendKeys(pass);
 		this.getTxtConfirmPassword().sendKeys(confirmPass);
@@ -83,4 +83,6 @@ public class RegisterPage extends GeneralPage {
 		
 		return this;
 	}
+	
+	
 }
