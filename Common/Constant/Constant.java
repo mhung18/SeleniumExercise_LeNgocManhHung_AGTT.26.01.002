@@ -12,6 +12,7 @@ public class Constant {
 	public static final String USERNAME = "lengocmanhhung0108@gmail.com";
 	public static final String PASSWORD = "123456789";
 	public static final String INVALID_PASSWORD ="invalid-password";
+	public static final String NEWPASSWORD = "thisisanewpassword";
 	public static final String PASSPORTID = "H00002412";
 	public static final String BLANKFIELD = "";
 	

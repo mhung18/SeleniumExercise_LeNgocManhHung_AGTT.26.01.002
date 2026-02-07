@@ -8,7 +8,7 @@ import Constant.Constant;
 import Constant.MenuPage;
 import Guerrillamail.MainPage;
 
-public class CreateAccount extends BaseTest{
+public class CreateAccountTest extends BaseTest{
 	@Test
 	public void TC07() {
 		UserInfo userInfo = new UserInfo(
@@ -131,7 +131,6 @@ public class CreateAccount extends BaseTest{
 		
 		System.out.println("5. Get email information (webmail address, mailbox and password) and navigate to that webmail");
 		System.out.println("6. Login to the mailbox");
-//		Constant.WEBDRIVER.switchTo().newWindow(WindowType.TAB).get(Constant.GURERRILLAMAIL_URL);
 		MainPage mainPageMailWeb = new MainPage();
 		mainPageMailWeb.open();
 		mainPageMailWeb.setEmailName(Utilities.getEmailPartName(userInfo.getUserEmail()));

@@ -69,7 +69,7 @@ public class MainPage {
 	public MainPage resetPassword() {
 		Utilities.waitForElementClickable(_emailResetPassword, 20);
 		this.getEmailResetPassword().click();
-		String contentString = this.getEmailContent().getText();
+		Utilities.scrollByPixel(200);
 		Utilities.waitForElementClickable(_linkConfirm, 10);
 		this.getLinkConfirm().click();
 		return this;

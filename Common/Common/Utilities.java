@@ -40,6 +40,7 @@ public class Utilities {
 	}
 	
 	public static void scrollToElement(By locator) {
+		waitForElementVisible(locator, 10);
 		WebElement webElement = Constant.WEBDRIVER.findElement(locator);
 		scrollToElement(webElement);
 	}

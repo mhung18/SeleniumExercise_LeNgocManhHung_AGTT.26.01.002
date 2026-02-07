@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-07T07:40:04 GMT+07:00" name="Default suite" finished-at="2026-02-07T07:40:39 GMT+07:00" duration-ms="34741">
+  <suite started-at="2026-02-07T19:09:20 GMT+07:00" name="Default suite" finished-at="2026-02-07T19:10:20 GMT+07:00" duration-ms="60046">
     <groups>
     </groups>
-    <test started-at="2026-02-07T07:40:04 GMT+07:00" name="Default test" finished-at="2026-02-07T07:40:39 GMT+07:00" duration-ms="34741">
-      <class name="Railway.CreateAccount">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.CreateAccount@7a69b07]" started-at="2026-02-07T07:40:04 GMT+07:00" name="beforeMethod" finished-at="2026-02-07T07:40:06 GMT+07:00" duration-ms="1746" status="PASS">
+    <test started-at="2026-02-07T19:09:20 GMT+07:00" name="Default test" finished-at="2026-02-07T19:10:20 GMT+07:00" duration-ms="60046">
+      <class name="Railway.ResetPassword">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.ResetPassword@636be97c]" started-at="2026-02-07T19:09:20 GMT+07:00" name="beforeMethod" finished-at="2026-02-07T19:09:21 GMT+07:00" duration-ms="1622" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC07()[pri:0, instance:Railway.CreateAccount@7a69b07]" started-at="2026-02-07T07:40:06 GMT+07:00" name="TC07" finished-at="2026-02-07T07:40:10 GMT+07:00" duration-ms="3918" status="PASS">
+        <test-method signature="TC11()[pri:0, instance:Railway.ResetPassword@636be97c]" started-at="2026-02-07T19:09:21 GMT+07:00" name="TC11" finished-at="2026-02-07T19:10:20 GMT+07:00" duration-ms="58301" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC07 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CreateAccount@7a69b07]" started-at="2026-02-07T07:40:10 GMT+07:00" name="afterMethod" finished-at="2026-02-07T07:40:10 GMT+07:00" duration-ms="87" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.CreateAccount@7a69b07]" started-at="2026-02-07T07:40:10 GMT+07:00" name="beforeMethod" finished-at="2026-02-07T07:40:11 GMT+07:00" duration-ms="1042" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC08()[pri:0, instance:Railway.CreateAccount@7a69b07]" started-at="2026-02-07T07:40:11 GMT+07:00" name="TC08" finished-at="2026-02-07T07:40:15 GMT+07:00" duration-ms="3903" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC08 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CreateAccount@7a69b07]" started-at="2026-02-07T07:40:15 GMT+07:00" name="afterMethod" finished-at="2026-02-07T07:40:15 GMT+07:00" duration-ms="84" status="PASS">
+        </test-method> <!-- TC11 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.ResetPassword@636be97c]" started-at="2026-02-07T19:10:20 GMT+07:00" name="afterMethod" finished-at="2026-02-07T19:10:20 GMT+07:00" duration-ms="110" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.CreateAccount@7a69b07]" started-at="2026-02-07T07:40:15 GMT+07:00" name="beforeMethod" finished-at="2026-02-07T07:40:16 GMT+07:00" duration-ms="998" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC09()[pri:0, instance:Railway.CreateAccount@7a69b07]" started-at="2026-02-07T07:40:16 GMT+07:00" name="TC09" finished-at="2026-02-07T07:40:39 GMT+07:00" duration-ms="22851" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC09 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CreateAccount@7a69b07]" started-at="2026-02-07T07:40:39 GMT+07:00" name="afterMethod" finished-at="2026-02-07T07:40:39 GMT+07:00" duration-ms="96" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- Railway.CreateAccount -->
+      </class> <!-- Railway.ResetPassword -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
