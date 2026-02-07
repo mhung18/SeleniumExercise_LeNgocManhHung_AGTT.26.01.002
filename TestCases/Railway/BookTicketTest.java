@@ -2,6 +2,7 @@ package Railway;
 
 import org.testng.annotations.Test;
 import Constant.Constant;
+import Constant.MenuPage;
 
 public class BookTicketTest extends BaseTest{
 	UserInfo userInfo = new UserInfo(
@@ -23,13 +24,13 @@ public class BookTicketTest extends BaseTest{
 		HomePage homePage = new HomePage();
 		homePage.open();
 		
-		LoginPage loginPage = homePage.goToPage("Login", LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
 		loginPage.login(
 				userInfo.getUserEmail(), 
 				userInfo.getUserPassword()
 		);
 		
-		homePage.goToPage("Book ticket", BookTicketPage.class);
+		homePage.goToPage(MenuPage.BOOKTICKET, BookTicketPage.class);
 				
 		BookTicketPage bookTicketPage = new BookTicketPage();
 		bookTicketPage.bookNewTicket(

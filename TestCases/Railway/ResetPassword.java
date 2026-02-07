@@ -3,6 +3,7 @@ package Railway;
 import org.testng.annotations.Test;
 
 import Common.Utilities;
+import Constant.MenuPage;
 import Guerrillamail.MainPage;
 
 public class ResetPassword extends BaseTest {
@@ -16,7 +17,7 @@ public class ResetPassword extends BaseTest {
 		System.out.println("1. Navigate to QA Railway Login page");
 		HomePage homePage = new HomePage();
 		homePage.open();
-		LoginPage loginPage = homePage.goToPage("Login", LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
 
 		System.out.println("2. Click on \"Forgot Password page\" link");
 		ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();

@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.MenuPage;
 
 public class RegisterTest extends BaseTest{
 	UserInfo userInfo = new UserInfo(
@@ -19,7 +20,7 @@ public class RegisterTest extends BaseTest{
 		homePage.open();
 		
 		RegisterPage registerPage = new RegisterPage();
-		homePage.goToPage("Register", RegisterPage.class);
+		homePage.goToPage(MenuPage.REGISTER, RegisterPage.class);
 				
 		Utilities.scrollByPixel(300);
 		

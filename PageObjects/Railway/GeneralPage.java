@@ -1,12 +1,9 @@
 package Railway;
 
 import org.openqa.selenium.*;
-
-import com.google.thirdparty.publicsuffix.PublicSuffixPatterns;
-
 import Common.Utilities;
 import Constant.Constant;
-import Guerrillamail.MainPage;
+import Constant.MenuPage;
 
 public class GeneralPage {
 	
@@ -15,8 +12,8 @@ public class GeneralPage {
 	private final By _tabSelected = By.xpath("//li[@class=\"selected\"]");
 	private final String _dymTabXpath = "//div[@id=\"menu\"]//span[text()=\"%s\"]";
 	
-	public <T extends GeneralPage> T goToPage(String pageName, Class<T> pageClass) {
-	    String xpath = String.format(_dymTabXpath, pageName);
+	public <T extends GeneralPage> T goToPage(MenuPage page, Class<T> pageClass) {
+	    String xpath = String.format(_dymTabXpath, page.getPageName());
 	    Utilities.waitForElementVisible(By.xpath(xpath), 10);
 	    Constant.WEBDRIVER.findElement(By.xpath(xpath)).click();
 

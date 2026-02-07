@@ -1,11 +1,11 @@
 package Railway;
 
-import org.openqa.selenium.WindowType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.MenuPage;
 import Guerrillamail.MainPage;
 
 public class CreateAccount extends BaseTest{
@@ -25,7 +25,7 @@ public class CreateAccount extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Click on \"Register\" tab");
-		RegisterPage registerPage = homePage.goToPage("Register", RegisterPage.class);
+		RegisterPage registerPage = homePage.goToPage(MenuPage.REGISTER, RegisterPage.class);
 		
 		System.out.println("3. Enter information of the created account in Pre-condition");
 		System.out.println("4. Click on \"Register\" button");
@@ -56,7 +56,7 @@ public class CreateAccount extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Click on \"Register\" tab");
-		RegisterPage registerPage = homePage.goToPage("Register", RegisterPage.class);
+		RegisterPage registerPage = homePage.goToPage(MenuPage.REGISTER, RegisterPage.class);
 		
 		System.out.println("3. Enter valid email address and leave other fields empty");
 		System.out.println("4. Click on \"Register\" button");

@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeMethod;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.MenuPage;
 import Guerrillamail.MainPage;
 
 public abstract class BaseTest {
@@ -27,7 +28,7 @@ public abstract class BaseTest {
 		HomePage homePage = new HomePage();
 		homePage.open();
 		
-		RegisterPage registerPage = homePage.goToPage("Register", RegisterPage.class);
+		RegisterPage registerPage = homePage.goToPage(MenuPage.REGISTER, RegisterPage.class);
 		
 		String randomEmail = Utilities.generateRandomEmail();
 		registerPage.regiter(
