@@ -1,25 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-08T00:00:52 GMT+07:00" name="Default suite" finished-at="2026-02-08T00:01:22 GMT+07:00" duration-ms="29715">
+  <suite started-at="2026-02-08T11:40:08 GMT+07:00" name="Default suite" finished-at="2026-02-08T11:40:37 GMT+07:00" duration-ms="29004">
     <groups>
     </groups>
-    <test started-at="2026-02-08T00:00:52 GMT+07:00" name="Default test" finished-at="2026-02-08T00:01:22 GMT+07:00" duration-ms="29715">
-      <class name="Railway.BookTicketTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.BookTicketTest@636be97c]" started-at="2026-02-08T00:00:52 GMT+07:00" name="beforeMethod" finished-at="2026-02-08T00:00:53 GMT+07:00" duration-ms="1227" status="PASS">
+    <test started-at="2026-02-08T11:40:08 GMT+07:00" name="Default test" finished-at="2026-02-08T11:40:37 GMT+07:00" duration-ms="29004">
+      <class name="Railway.CancelBookingTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.CancelBookingTest@50a638b5]" started-at="2026-02-08T11:40:08 GMT+07:00" name="beforeMethod" finished-at="2026-02-08T11:40:09 GMT+07:00" duration-ms="1372" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC13()[pri:0, instance:Railway.BookTicketTest@636be97c]" started-at="2026-02-08T00:00:53 GMT+07:00" name="TC13" finished-at="2026-02-08T00:01:22 GMT+07:00" duration-ms="28477" status="PASS">
+        <test-method signature="TC16()[pri:0, instance:Railway.CancelBookingTest@50a638b5]" started-at="2026-02-08T11:40:09 GMT+07:00" name="TC16" finished-at="2026-02-08T11:40:37 GMT+07:00" duration-ms="27619" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Ticket is not disappeared expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Ticket is not disappeared expected [false] but found [true]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertFalse(Assert.java:79)
+at Railway.CancelBookingTest.TC16(CancelBookingTest.java:42)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC13 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@636be97c]" started-at="2026-02-08T00:01:22 GMT+07:00" name="afterMethod" finished-at="2026-02-08T00:01:22 GMT+07:00" duration-ms="0" status="PASS">
+        </test-method> <!-- TC16 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CancelBookingTest@50a638b5]" started-at="2026-02-08T11:40:37 GMT+07:00" name="afterMethod" finished-at="2026-02-08T11:40:37 GMT+07:00" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- Railway.BookTicketTest -->
+      </class> <!-- Railway.CancelBookingTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

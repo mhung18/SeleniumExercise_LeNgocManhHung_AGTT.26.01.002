@@ -3,13 +3,11 @@ package Railway;
 import org.openqa.selenium.*;
 import Common.Utilities;
 import Constant.Constant;
-import Constant.MenuPage;
 
 public class GeneralPage {
 	private final By _lblWelcomeMessage = By.xpath("//div[@class='account']/strong");
 	private final By _tabSelected = By.xpath("//li[@class=\"selected\"]");
 	private final String _dymTabXpath = "//div[@id=\"menu\"]//span[text()=\"%s\"]";
-	
 	
 	protected WebElement getLblWelcomeMessage() {
 		return Constant.WEBDRIVER.findElement(_lblWelcomeMessage);

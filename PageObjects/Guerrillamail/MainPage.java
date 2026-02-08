@@ -57,6 +57,7 @@ public class MainPage {
 		Utilities.waitForElementClickable(_emailConfirm,20);
 		this.getEmailConfirm().click();
 		Utilities.waitForElementClickable(_linkConfirm,20);
+		Utilities.scrollByPixel(200);
 		this.getLinkConfirm().click();
 		Utilities.switchToLatestTab();
 		return new RegisterPage();

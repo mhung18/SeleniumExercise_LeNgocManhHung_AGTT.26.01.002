@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 import Common.Utilities;
 import Constant.Constant;
-import Constant.MenuPage;
 
 public class LoginTest extends BaseTest{
 	@Test

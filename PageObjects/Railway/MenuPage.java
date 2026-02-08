@@ -1,4 +1,4 @@
-package Constant;
+package Railway;
 
 public enum MenuPage {
     HOME("Home"),

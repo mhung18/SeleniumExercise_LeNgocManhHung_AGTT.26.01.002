@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeMethod;
 
 import Common.Utilities;
 import Constant.Constant;
-import Constant.MenuPage;
 import Guerrillamail.MainPage;
 
 public abstract class BaseTest {
@@ -21,7 +20,7 @@ public abstract class BaseTest {
 	@AfterMethod
 	public void afterMethod() {
 		System.out.println("Post-condition");
-		Constant.WEBDRIVER.quit();
+//		Constant.WEBDRIVER.quit();
 	}
 	
 	public UserInfo createAndActiveAccount() {		
@@ -47,5 +46,17 @@ public abstract class BaseTest {
 				randomEmail, 
 				Constant.PASSWORD, 
 				Constant.PASSPORTID);
-	}	
+	}
+	
+	public BookTicketPage bookTicket (TicketInfo ticketInfo) {
+		HomePage homePage = new HomePage();
+		BookTicketPage bookTicketPage = homePage.goToPage(MenuPage.BOOKTICKET, BookTicketPage.class);
+		bookTicketPage.bookNewTicket(
+				ticketInfo.getDepartDate(), 
+				ticketInfo.getDepartStation(), 
+				ticketInfo.getArriveStattion(), 
+				ticketInfo.getSeatType(), 
+				ticketInfo.getTicketAmount());
+		return new BookTicketPage();
+	}
 }

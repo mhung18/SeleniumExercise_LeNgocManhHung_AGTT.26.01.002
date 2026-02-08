@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Common.Utilities;
-import Constant.MenuPage;
 import Guerrillamail.MainPage;
 
 public class ResetPasswordTest extends BaseTest {

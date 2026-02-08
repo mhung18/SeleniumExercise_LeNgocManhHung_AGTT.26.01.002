@@ -17,7 +17,6 @@ public class BookTicketPage extends GeneralPage{
 	private final By _lblSuccessfulBooking = By.xpath("//div[@id=\"content\"]/h1[text()=\"Ticket booked successfully!\"]");
 	private final String _dymTableHeaderXpath = "//div[@class=\"DivTable\"]//th[text()=\"%s\"]";
 	private final String _dymTableDataXpath = "//div[@class=\"DivTable\"]//td[%s]";
-
 	
 	public WebElement getDepartDate () {
 		return Constant.WEBDRIVER.findElement(_departDate);
@@ -77,6 +76,14 @@ public class BookTicketPage extends GeneralPage{
 		this.selectDepartStation(departStation);
 		Utilities.waitForOptionPresent(_arriveStation, arriveStation, 10);
 		this.selectArriveStation(arriveStation);
+		this.selectSeatType(seatType);
+		this.selectTicketAmount(ticketAmount);
+		this.getBtnBookTicket().click();
+		return this;
+	}
+	
+	public BookTicketPage bookNewTicketWithCurrentRoute (String departDate, String seatType, String ticketAmount) {
+		this.selectDepartDate(departDate);
 		this.selectSeatType(seatType);
 		this.selectTicketAmount(ticketAmount);
 		this.getBtnBookTicket().click();

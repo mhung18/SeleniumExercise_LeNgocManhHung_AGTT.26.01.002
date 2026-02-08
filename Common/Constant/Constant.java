@@ -20,6 +20,6 @@ public class Constant {
 	public static final String DEPARTDATE = "2/12/2026";
 	public static final String DEPARTSTATION = "Sài Gòn";
 	public static final String ARRIVESTATION = "Nha Trang";
-	public static final String SEATTYPE = "Soft bed";
-	public static final String TICKETAMOUNT = "5";
+	public static final String SEATTYPE = "Hard seat";
+	public static final String TICKETAMOUNT = "1";
 }

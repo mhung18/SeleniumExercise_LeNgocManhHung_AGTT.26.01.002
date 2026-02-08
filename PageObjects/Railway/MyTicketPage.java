@@ -1,0 +1,39 @@
+package Railway;
+
+import org.openqa.selenium.By;
+
+import Common.Utilities;
+import Constant.Constant;
+
+public class MyTicketPage extends GeneralPage{
+	private final String _dymTicketInfo = "//div[@class='DivTable']//tr[td[normalize-space()='%s'] "
+			+ "and td[normalize-space()='%s'] "
+			+ "and td[normalize-space()='%s'] "
+			+ "and td[normalize-space()='%s'] "
+			+ "and td[normalize-space()='%s'] ]"
+			+ "//input[@value='Cancel']";
+	
+	public MyTicketPage cancelTicket (TicketInfo ticketInfo) {
+		String ticketXpath = String.format(
+				_dymTicketInfo, 
+				ticketInfo.getDepartStation(), 
+				ticketInfo.getArriveStattion(), 
+				ticketInfo.getDepartDate(),
+				ticketInfo.getSeatType(), 
+				ticketInfo.getTicketAmount());
+		Constant.WEBDRIVER.findElement(By.xpath(ticketXpath)).click();
+		Constant.WEBDRIVER.switchTo().alert().accept();
+		return this;
+	}
+	
+	public boolean checkIsTicketExist (TicketInfo ticketInfo) {
+		String ticketXpath = String.format(
+				_dymTicketInfo, 
+				ticketInfo.getDepartStation(), 
+				ticketInfo.getArriveStattion(), 
+				ticketInfo.getDepartDate(),
+				ticketInfo.getSeatType(), 
+				ticketInfo.getTicketAmount());
+		return Utilities.isDisplayed(ticketXpath);
+	}
+}

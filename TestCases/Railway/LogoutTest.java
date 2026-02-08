@@ -4,7 +4,6 @@ package Railway;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Constant.Constant;
-import Constant.MenuPage;
 
 public class LogoutTest extends BaseTest{
 	@Test
