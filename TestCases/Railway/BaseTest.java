@@ -20,7 +20,7 @@ public abstract class BaseTest {
 	@AfterMethod
 	public void afterMethod() {
 		System.out.println("Post-condition");
-//		Constant.WEBDRIVER.quit();
+		Constant.WEBDRIVER.quit();
 	}
 	
 	public UserInfo createAndActiveAccount() {		
