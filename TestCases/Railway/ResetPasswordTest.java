@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Common.Utilities;
+import Constant.MenuPage;
 import Guerrillamail.MainPage;
 
 public class ResetPasswordTest extends BaseTest {
@@ -11,6 +12,7 @@ public class ResetPasswordTest extends BaseTest {
 	public void TC10() {
 		String expectedFormName = "Password Change Form";
 		String expectedResetPasswordMsg = "The new password cannot be the same with the current password";
+		
 		System.out.println("Reset password shows error if the new password is same as current");
 
 		System.out.println("Pre-condition: an actived account is existing");
@@ -59,6 +61,7 @@ public class ResetPasswordTest extends BaseTest {
 	public void TC11() {
 		String expectedFormName = "Password Change Form";
 		String expectedResetPasswordMsg = "Could not reset password. Please correct the errors and try again.";
+		
 		System.out.println("Reset password shows error if the new password and confirm password doesn't match");
 
 		System.out.println("Pre-condition: an actived account is existing");

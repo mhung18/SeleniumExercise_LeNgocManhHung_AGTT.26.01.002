@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Constant.Constant;
+import Constant.MenuPage;
 
 public class CancelBookingTest extends BaseTest{
 	@Test
@@ -14,6 +15,7 @@ public class CancelBookingTest extends BaseTest{
 				Constant.ARRIVESTATION, 
 				Constant.SEATTYPE, 
 				Constant.TICKETAMOUNT);
+		
 		System.out.println("User can cancel a ticket");
 		
 		System.out.println("Pre-condition: an actived account is existing");
@@ -25,8 +27,10 @@ public class CancelBookingTest extends BaseTest{
 		
 		System.out.println("2. Login with a valid account");
 		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
-		homePage = loginPage.login(userInfo);
-		
+		homePage = loginPage.login(
+				userInfo.getUserEmail(),
+				userInfo.getUserPassword());
+
 		System.out.println("3. Book a ticket");
 		BookTicketPage bookTicketPage = bookTicket(ticketInfo);
 		

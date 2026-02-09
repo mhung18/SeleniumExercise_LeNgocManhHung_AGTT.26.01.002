@@ -29,18 +29,14 @@ public class LoginPage extends GeneralPage{
 	}
 	
 	
-	public HomePage login(UserInfo userInfo) {
-		this.getTxtUsername().sendKeys(userInfo.getUserEmail());
-		this.getTxtPassword().sendKeys(userInfo.getUserPassword());
-		this.getBtnLogin().click();
-		return new HomePage();
-	}
-	
-	public HomePage login(String username, String password) {
+	@SuppressWarnings("unchecked")
+	public <T extends GeneralPage> T login(String username, String password) {
 		this.getTxtUsername().sendKeys(username);
 		this.getTxtPassword().sendKeys(password);
 		this.getBtnLogin().click();
-		return new HomePage();
+		boolean isLoggedIn = isTabExist("Login");
+		if (!isLoggedIn) return (T) new HomePage();
+		return (T) this;
 	}
 	
 	public ForgotPasswordPage gotoForgotPasswordPage() {

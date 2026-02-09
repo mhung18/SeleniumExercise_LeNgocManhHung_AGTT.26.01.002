@@ -4,6 +4,7 @@ package Railway;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Constant.Constant;
+import Constant.MenuPage;
 
 public class LogoutTest extends BaseTest{
 	@Test
@@ -23,7 +24,9 @@ public class LogoutTest extends BaseTest{
 	    
 	    System.out.println("2. Login with valid Email and Password");
 	    LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
-	    loginPage.login(userInfo);
+	    loginPage.login(
+	    		userInfo.getUserEmail(),
+				userInfo.getUserPassword());
 
 	    System.out.println("3. Enter username and password of account hasn't been activated.");
 	    FAQPage faqPage = loginPage.goToPage(MenuPage.FAQ, FAQPage.class);

@@ -3,6 +3,7 @@ package Railway;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import Common.Utilities;
 import Constant.Constant;
@@ -103,5 +104,21 @@ public class BookTicketPage extends GeneralPage{
 	public String getDataOfTableColumn (String thName) {
 		int index = getCellIndexOfTableHeader(thName) + 1;
 		return Constant.WEBDRIVER.findElement(By.xpath(String.format(_dymTableDataXpath, index))).getText();
+	}
+	
+	public BookTicketPage checkInformationOfCreatedTicket (String expectedDepartDate, String expectedDepartStation, String expectedArriveStation, String expectedSeatType, String expectedTicketAmount) {
+		String actualDepartDate = this.getDataOfTableColumn("Depart Date");
+		String actualDepartStation = this.getDataOfTableColumn("Depart Station");
+		String actualArriveStation = this.getDataOfTableColumn("Arrive Station");
+		String actualSeatType = this.getDataOfTableColumn("Seat Type");
+		String actualTicketAmount = this.getDataOfTableColumn("Amount");
+		
+		Assert.assertEquals(actualDepartDate, expectedDepartDate, "Depart Date is not displayed as expected");
+		Assert.assertEquals(actualDepartStation, expectedDepartStation, "Depart Station is not displayed as expected");
+		Assert.assertEquals(actualArriveStation, expectedArriveStation, "Arrive Station is not displayed as expected");
+		Assert.assertEquals(actualSeatType, expectedSeatType, "Seat Type is not displayed as expected");
+		Assert.assertEquals(actualTicketAmount, expectedTicketAmount, "Ticket Amount is not displayed as expected");
+		
+		return this;
 	}
 }

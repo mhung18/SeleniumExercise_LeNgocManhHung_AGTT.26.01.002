@@ -32,10 +32,10 @@ public class Utilities {
 	
 	public static void waitForOptionPresent(By selectLocator, String optionText, int timeout) {
 	    WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(timeout));
-	   wait.until(driver -> {
-		   Select select = new Select(driver.findElement(selectLocator));
-		   return select.getOptions().stream().anyMatch(o -> o.getText().trim().equals(optionText));
-	   });
+	    wait.until(driver -> {
+	    	Select select = new Select(driver.findElement(selectLocator));
+	    	return select.getOptions().stream().anyMatch(o -> o.getText().trim().equals(optionText));
+	    });
 	}
 
 	

@@ -2,26 +2,26 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-08T11:40:08 GMT+07:00" name="Default suite" finished-at="2026-02-08T11:40:37 GMT+07:00" duration-ms="29004">
+  <suite started-at="2026-02-09T13:30:13 GMT+07:00" name="Default suite" finished-at="2026-02-09T13:30:23 GMT+07:00" duration-ms="9952">
     <groups>
     </groups>
-    <test started-at="2026-02-08T11:40:08 GMT+07:00" name="Default test" finished-at="2026-02-08T11:40:37 GMT+07:00" duration-ms="29004">
+    <test started-at="2026-02-09T13:30:13 GMT+07:00" name="Default test" finished-at="2026-02-09T13:30:23 GMT+07:00" duration-ms="9952">
       <class name="Railway.CancelBookingTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.CancelBookingTest@50a638b5]" started-at="2026-02-08T11:40:08 GMT+07:00" name="beforeMethod" finished-at="2026-02-08T11:40:09 GMT+07:00" duration-ms="1372" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.CancelBookingTest@6ca8564a]" started-at="2026-02-09T13:30:13 GMT+07:00" name="beforeMethod" finished-at="2026-02-09T13:30:14 GMT+07:00" duration-ms="1216" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC16()[pri:0, instance:Railway.CancelBookingTest@50a638b5]" started-at="2026-02-08T11:40:09 GMT+07:00" name="TC16" finished-at="2026-02-08T11:40:37 GMT+07:00" duration-ms="27619" status="FAIL">
+        <test-method signature="TC16()[pri:0, instance:Railway.CancelBookingTest@6ca8564a]" started-at="2026-02-09T13:30:14 GMT+07:00" name="TC16" finished-at="2026-02-09T13:30:23 GMT+07:00" duration-ms="8641" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Ticket is not disappeared expected [false] but found [true]]]>
+              <![CDATA[Ticket is not disappeared as expected expected [false] but found [true]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Ticket is not disappeared expected [false] but found [true]
+              <![CDATA[java.lang.AssertionError: Ticket is not disappeared as expected expected [false] but found [true]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1590)
 at org.testng.Assert.assertFalse(Assert.java:79)
-at Railway.CancelBookingTest.TC16(CancelBookingTest.java:42)
+at Railway.CancelBookingTest.TC16(CancelBookingTest.java:49)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -54,7 +54,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC16 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CancelBookingTest@50a638b5]" started-at="2026-02-08T11:40:37 GMT+07:00" name="afterMethod" finished-at="2026-02-08T11:40:37 GMT+07:00" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CancelBookingTest@6ca8564a]" started-at="2026-02-09T13:30:23 GMT+07:00" name="afterMethod" finished-at="2026-02-09T13:30:23 GMT+07:00" duration-ms="82" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

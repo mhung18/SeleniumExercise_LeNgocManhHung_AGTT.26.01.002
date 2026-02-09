@@ -10,7 +10,7 @@ public class Constant {
 	
 	// User Info
 	public static final String USERNAME = "lengocmanhhung0108@gmail.com";
-	public static final String PASSWORD = "123456789";
+	public static final String PASSWORD = "12345678";
 	public static final String INVALID_PASSWORD ="invalid-password";
 	public static final String NEWPASSWORD = "thisisanewpassword";
 	public static final String PASSPORTID = "H00002412";
@@ -22,4 +22,7 @@ public class Constant {
 	public static final String ARRIVESTATION = "Nha Trang";
 	public static final String SEATTYPE = "Hard seat";
 	public static final String TICKETAMOUNT = "1";
+	
+	// Date Format
+	public static final String DATE_FORMAT = "MM/dd/yyyy";
 }

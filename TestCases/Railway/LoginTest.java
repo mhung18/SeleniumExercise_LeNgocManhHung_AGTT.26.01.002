@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.MenuPage;
 
 public class LoginTest extends BaseTest{
 	@Test
@@ -27,7 +28,10 @@ public class LoginTest extends BaseTest{
 		
 		System.out.println("3. Enter valid Email and Password");
 		System.out.println("4. Click on \"Login\" button");
-		String actualMsg = loginPage.login(userInfo).getWelcomeMessage();
+		String actualMsg = loginPage.login(
+				userInfo.getUserEmail(),
+				userInfo.getUserPassword())
+				.getWelcomeMessage();
 		
 		System.out.println("VP: User is logged into Railway. Welcome user message is displayed.");
 		Assert.assertEquals(actualMsg, expectedMsg, "Welcome message is not displayed as expected");
@@ -68,6 +72,7 @@ public class LoginTest extends BaseTest{
 				Constant.USERNAME, 
 				Constant.INVALID_PASSWORD, 
 				Constant.PASSPORTID);
+		
 		String expectedErrorMsg = "There was a problem with your login and/or errors exist in your form.";
 
 		System.out.println("User cannot log into Railway with invalid password");

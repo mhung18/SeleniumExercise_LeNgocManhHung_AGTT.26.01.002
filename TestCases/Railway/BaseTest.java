@@ -1,12 +1,14 @@
 package Railway;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
 import Common.Utilities;
 import Constant.Constant;
+import Constant.MenuPage;
 import Guerrillamail.MainPage;
 
 public abstract class BaseTest {
@@ -59,4 +61,16 @@ public abstract class BaseTest {
 				ticketInfo.getTicketAmount());
 		return new BookTicketPage();
 	}
+	
+	public String getToday () {
+		String today = LocalDate.now().format(DateTimeFormatter.ofPattern(Constant.DATE_FORMAT));
+		return today;
+	}
+	
+	public static String getDatePlusDays(int days) {
+        return LocalDate.now()
+                .plusDays(days)
+                .format(DateTimeFormatter.ofPattern(Constant.DATE_FORMAT));
+    }
+
 }
