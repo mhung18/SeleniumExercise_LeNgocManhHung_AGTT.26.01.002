@@ -16,7 +16,7 @@ public class BookTicketPage extends GeneralPage{
 	private final By _ticketAmount = By.name("TicketAmount");
 	private final By _btnBookTicket = By.xpath("//input[@value=\"Book ticket\"]");
 	private final By _lblSuccessfulBooking = By.xpath("//div[@id=\"content\"]/h1[text()=\"Ticket booked successfully!\"]");
-	private final String _dymTicketBookedInfo = "(//tr[th[text()=\"%s\"]]//following-sibling::tr//td)[count(//tr/th[text()=\"%s\"]//preceding-sibling::th)+1]";
+	private final String _dymTicketBookedInfo = "(//tr/td)[count(//tr/th[text()=\"%s\"]/preceding-sibling::th)+1]";
 	
 	public WebElement getDepartDate () {
 		return Constant.WEBDRIVER.findElement(_departDate);
@@ -96,7 +96,7 @@ public class BookTicketPage extends GeneralPage{
 	}
 	
 	public String getDataOfTableColumn (String thName) {
-		return Constant.WEBDRIVER.findElement(By.xpath(String.format(_dymTicketBookedInfo, thName, thName))).getText();
+		return Constant.WEBDRIVER.findElement(By.xpath(String.format(_dymTicketBookedInfo, thName))).getText();
 	}
 	
 	public BookTicketPage checkInformationOfCreatedTicket (TicketInfo ticketInfo) {

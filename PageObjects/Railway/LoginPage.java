@@ -39,11 +39,11 @@ public class LoginPage extends GeneralPage{
 		Utilities.click(_btnLogin);
 		Utilities.waitForPageFullyLoad();
 		
-		boolean isLoggedIn = isTabExist("Login");
-		if (!isLoggedIn) return (T) new HomePage();
+		boolean isLoginTabExist = isTabExist("Login");
+		if (!isLoginTabExist) return (T) new HomePage();
 		return (T) this;
 	}
-		
+	
 	public ForgotPasswordPage gotoForgotPasswordPage() {
 		this.getLinkForgotPassword().click();
 		return new ForgotPasswordPage();

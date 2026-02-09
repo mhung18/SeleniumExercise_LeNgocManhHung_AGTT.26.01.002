@@ -122,9 +122,9 @@ public class LoginTest extends BaseTest{
 		System.out.println("5. Repeat step 3 and 4 three more times.");
 		int loginTimes = 3;
 		for (int i = 0;i < loginTimes;i++) {
-			loginPage = loginPage.login(
-					userInfo.getUserEmail(),
-					userInfo.getUserPassword());
+		loginPage = loginPage.login(
+				userInfo.getUserEmail(),
+				userInfo.getUserPassword());
 		}
 		
 		System.out.println("VP: User can't login and message \"You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.\" appears.");

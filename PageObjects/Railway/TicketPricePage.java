@@ -6,17 +6,11 @@ import org.testng.Assert;
 import Constant.Constant;
 
 public class TicketPricePage extends GeneralPage{
-	private final String _dymSeatType = "//div[@class=\"DivTable\"]//td[text()=\"%s\"]";
-	private final String _dymSeatPrice = "//div[@class='DivTable']//th[normalize-space()='Price (VND)']/following-sibling::td[%s]";
+	private final String _dymSeatPrice = "(//th[starts-with(text(),\"Price\")]/following-sibling::td)[count(//td[text()=\"%s\"]/preceding::td)+1]";
 	
-	public int getCellIndexOfSeatType(String seatType) {
-		String xpathString = String.format(_dymSeatType, seatType);
-		return Integer.parseInt(Constant.WEBDRIVER.findElement(By.xpath(xpathString)).getAttribute("cellIndex"));
-	}
 	
 	public String getPriceOfSeatType (String seatType) {
-		int index = getCellIndexOfSeatType(seatType);
-		return Constant.WEBDRIVER.findElement(By.xpath(String.format(_dymSeatPrice, index))).getText();
+		return Constant.WEBDRIVER.findElement(By.xpath(String.format(_dymSeatPrice, seatType))).getText();
 	}
 	
 	public TicketPricePage checkPriceOfEachSeatType (String expected_HS_Price, String expected_SS_Price, String expected_SSC_Price, String expected_HB_Price, String expected_SB_Price, String expected_SBC_Price) {
