@@ -24,5 +24,8 @@ public class Constant {
 	public static final String TICKETAMOUNT = "1";
 	
 	// Date Format
-	public static final String DATE_FORMAT = "MM/dd/yyyy";
+	public static final String DATE_FORMAT = "M/d/yyyy";
+	
+	// Time out
+	public static final int TIMEOUT_WAIT_SECOND = 30;
 }

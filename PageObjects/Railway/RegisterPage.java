@@ -34,31 +34,35 @@ public class RegisterPage extends GeneralPage {
 	public WebElement getBtnRegister() {
 		return Constant.WEBDRIVER.findElement(_btnRegister);
 	}
-	public WebElement getLblRegisterErrorMsg() {
-		return Constant.WEBDRIVER.findElement(_lblRegisterErrorMsg);
-	}
-	public WebElement getLblPasswordErrorMsg() {
-		return Constant.WEBDRIVER.findElement(_lblPasswordErrorMsg);
-	}
-	public WebElement getLblPassportIdErrorMsg() {
-		return Constant.WEBDRIVER.findElement(_lblPassportIdErrorMsg);
-	}
-	public WebElement getLblRegisterSuccessfully() {
-		return Constant.WEBDRIVER.findElement(_lblRegisterSuccessfully);
-	}
 	
 	
+	public String getLblRegisterErrorMsg() {
+		Utilities.waitForElementVisible(_lblRegisterErrorMsg, 10);
+		return Constant.WEBDRIVER.findElement(_lblRegisterErrorMsg).getText();
+	}
+	public String getLblPasswordErrorMsg() {
+		Utilities.waitForElementVisible(_lblPasswordErrorMsg, 10);
+		return Constant.WEBDRIVER.findElement(_lblPasswordErrorMsg).getText();
+	}
+	public String getLblPassportIdErrorMsg() {
+		Utilities.waitForElementVisible(_lblPassportIdErrorMsg, 10);
+		return Constant.WEBDRIVER.findElement(_lblPassportIdErrorMsg).getText();
+	}
+	public String getLblRegisterSuccessfully() {
+		Utilities.waitForElementVisible(_lblRegisterSuccessfully, 10);
+		return Constant.WEBDRIVER.findElement(_lblRegisterSuccessfully).getText();
+	}
 	public String getRegisterConfirmMsg() {
+		Utilities.waitForElementVisible(_lblRegisterConfirmMsg, 10);
 		return Constant.WEBDRIVER.findElement(_lblRegisterConfirmMsg).getText();
 	}
 	
 	public RegisterPage regiter(String email, String pass, String confirmPass, String passportId) {
-		Utilities.scrollToElement(getBtnRegister());
-		this.getTxtEmai().sendKeys(email);
-		this.getTxtPassword().sendKeys(pass);
-		this.getTxtConfirmPassword().sendKeys(confirmPass);
-		this.getTxtPassportId().sendKeys(passportId);
-		this.getBtnRegister().click();
+		Utilities.enter(_txtEmail, email);
+		Utilities.enter(_txtPassword, pass);
+		Utilities.enter(_txtConfirmPassword, confirmPass);
+		Utilities.enter(_txtPassportId, passportId);
+		Utilities.click(_btnRegister);
 		return this;
 	}
 	

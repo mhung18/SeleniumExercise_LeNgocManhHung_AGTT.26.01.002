@@ -16,8 +16,7 @@ public class BookTicketPage extends GeneralPage{
 	private final By _ticketAmount = By.name("TicketAmount");
 	private final By _btnBookTicket = By.xpath("//input[@value=\"Book ticket\"]");
 	private final By _lblSuccessfulBooking = By.xpath("//div[@id=\"content\"]/h1[text()=\"Ticket booked successfully!\"]");
-	private final String _dymTableHeaderXpath = "//div[@class=\"DivTable\"]//th[text()=\"%s\"]";
-	private final String _dymTableDataXpath = "//div[@class=\"DivTable\"]//td[%s]";
+	private final String _dymTicketBookedInfo = "(//tr[th[text()=\"%s\"]]//following-sibling::tr//td)[count(//tr/th[text()=\"%s\"]//preceding-sibling::th)+1]";
 	
 	public WebElement getDepartDate () {
 		return Constant.WEBDRIVER.findElement(_departDate);
@@ -79,7 +78,7 @@ public class BookTicketPage extends GeneralPage{
 		this.selectArriveStation(arriveStation);
 		this.selectSeatType(seatType);
 		this.selectTicketAmount(ticketAmount);
-		this.getBtnBookTicket().click();
+		Utilities.click(_btnBookTicket);
 		return this;
 	}
 	
@@ -87,7 +86,7 @@ public class BookTicketPage extends GeneralPage{
 		this.selectDepartDate(departDate);
 		this.selectSeatType(seatType);
 		this.selectTicketAmount(ticketAmount);
-		this.getBtnBookTicket().click();
+		Utilities.click(_btnBookTicket);
 		return this;
 	}
 	
@@ -96,28 +95,22 @@ public class BookTicketPage extends GeneralPage{
 		return this.getLblSuccessfulBooking().getText();
 	}
 	
-	public int getCellIndexOfTableHeader (String thName) {
-		String xpathString = String.format(_dymTableHeaderXpath, thName);
-		return Integer.parseInt(Constant.WEBDRIVER.findElement(By.xpath(xpathString)).getAttribute("cellIndex"));
-	}
-	
 	public String getDataOfTableColumn (String thName) {
-		int index = getCellIndexOfTableHeader(thName) + 1;
-		return Constant.WEBDRIVER.findElement(By.xpath(String.format(_dymTableDataXpath, index))).getText();
+		return Constant.WEBDRIVER.findElement(By.xpath(String.format(_dymTicketBookedInfo, thName, thName))).getText();
 	}
 	
-	public BookTicketPage checkInformationOfCreatedTicket (String expectedDepartDate, String expectedDepartStation, String expectedArriveStation, String expectedSeatType, String expectedTicketAmount) {
+	public BookTicketPage checkInformationOfCreatedTicket (TicketInfo ticketInfo) {
 		String actualDepartDate = this.getDataOfTableColumn("Depart Date");
 		String actualDepartStation = this.getDataOfTableColumn("Depart Station");
 		String actualArriveStation = this.getDataOfTableColumn("Arrive Station");
 		String actualSeatType = this.getDataOfTableColumn("Seat Type");
 		String actualTicketAmount = this.getDataOfTableColumn("Amount");
 		
-		Assert.assertEquals(actualDepartDate, expectedDepartDate, "Depart Date is not displayed as expected");
-		Assert.assertEquals(actualDepartStation, expectedDepartStation, "Depart Station is not displayed as expected");
-		Assert.assertEquals(actualArriveStation, expectedArriveStation, "Arrive Station is not displayed as expected");
-		Assert.assertEquals(actualSeatType, expectedSeatType, "Seat Type is not displayed as expected");
-		Assert.assertEquals(actualTicketAmount, expectedTicketAmount, "Ticket Amount is not displayed as expected");
+		Assert.assertEquals(actualDepartDate, ticketInfo.getDepartDate(), "Depart Date is not displayed as expected");
+		Assert.assertEquals(actualDepartStation, ticketInfo.getDepartStation(), "Depart Station is not displayed as expected");
+		Assert.assertEquals(actualArriveStation, ticketInfo.getArriveStattion(), "Arrive Station is not displayed as expected");
+		Assert.assertEquals(actualSeatType, ticketInfo.getSeatType(), "Seat Type is not displayed as expected");
+		Assert.assertEquals(actualTicketAmount, ticketInfo.getTicketAmount(), "Ticket Amount is not displayed as expected");
 		
 		return this;
 	}

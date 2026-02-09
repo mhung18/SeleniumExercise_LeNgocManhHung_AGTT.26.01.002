@@ -3,6 +3,7 @@ package Railway;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import Constant.City;
 import Constant.Constant;
 import Constant.MenuPage;
 import Constant.SeatType;
@@ -10,13 +11,15 @@ import Constant.SeatType;
 public class BookTicketTest extends BaseTest{
 	@Test
 	public void TC12() {
-		TicketInfo ticketInfo = new TicketInfo(
-				Constant.DEPARTDATE, 
-				Constant.DEPARTSTATION, 
-				Constant.ARRIVESTATION, 
-				Constant.SEATTYPE, 
-				Constant.TICKETAMOUNT);
+		String theNext2Days = getDatePlusDays(2);
 		
+		TicketInfo ticketInfo = new TicketInfo(
+				theNext2Days, 
+				City.NHATRANG.getCityName(), 
+				City.HUE.getCityName(), 
+				SeatType.SBC.getSeatType(), 
+				"1");
+
 		String expectedMsg = "Ticket booked successfully!";
 		
 		System.out.println("User can book 1 ticket at a time");
@@ -38,19 +41,9 @@ public class BookTicketTest extends BaseTest{
 		BookTicketPage bookTicketPage = homePage.goToPage(MenuPage.BOOKTICKET, BookTicketPage.class);
 		
 		System.out.println("4. Select the next 2 days from \"Depart date\"");
-		String theNext2Days = getDatePlusDays(2);
-		ticketInfo.setDepartDate(theNext2Days);
-		
 		System.out.println("5. Select Depart from \"Nha Trang\" and Arrive at \"Huế\"");
-		ticketInfo.setDepartStation("Nha Trang");
-		ticketInfo.setArriveStation("Huế");
-		
 		System.out.println("6. Select \"Soft bed with air conditioner\" for \"Seat type\"");
-		ticketInfo.setSeatType(SeatType.SBC);
-		
 		System.out.println("7. Select \"1\" for \"Ticket amount\"");
-		ticketInfo.setTicketAmount("1");
-		
 		System.out.println("8. Click on \"Book ticket\" button");
 		bookTicketPage.bookNewTicket(
 				ticketInfo.getDepartDate(), 
@@ -62,24 +55,18 @@ public class BookTicketTest extends BaseTest{
 		System.out.println("VP: Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)");
 		String actualMsg = bookTicketPage.getLblSuccessfulBookingMsg();
 		Assert.assertEquals(actualMsg, expectedMsg, "Successful Booking Message is not displayed as expected");
-		
-		String expectedDepartDate = ticketInfo.getDepartDate();
-		String expectedDepartStation = ticketInfo.getDepartStation();
-		String expectedArriveStation = ticketInfo.getArriveStattion();
-		String expectedSeatType = ticketInfo.getSeatType();
-		String expectedTicketAmount = ticketInfo.getTicketAmount();
-		
-		bookTicketPage.checkInformationOfCreatedTicket(expectedDepartDate, expectedDepartStation, expectedArriveStation, expectedSeatType, expectedTicketAmount);
+		bookTicketPage.checkInformationOfCreatedTicket(ticketInfo);
 	}
 	
 	@Test
 	public void TC13() {
+		String theNext25Days = getDatePlusDays(25);
 		TicketInfo ticketInfo = new TicketInfo(
-				Constant.DEPARTDATE, 
-				Constant.DEPARTSTATION, 
-				Constant.ARRIVESTATION, 
-				Constant.SEATTYPE, 
-				Constant.TICKETAMOUNT);
+				theNext25Days, 
+				City.NHATRANG.getCityName(), 
+				City.SAIGON.getCityName(), 
+				SeatType.SSC.getSeatType(), 
+				"5");
 		
 		String expectedMsg = "Ticket booked successfully!";
 		
@@ -102,19 +89,9 @@ public class BookTicketTest extends BaseTest{
 		BookTicketPage bookTicketPage = homePage.goToPage(MenuPage.BOOKTICKET, BookTicketPage.class);
 		
 		System.out.println("4. Select the next 25 days from \"Depart date\"");
-		String theNext25Days = getDatePlusDays(25);
-		ticketInfo.setDepartDate(theNext25Days);
-		
 		System.out.println("5. Select \"Nha Trang\" for \"Depart from\" and \"Sài Gòn\" for \"Arrive at\".");
-		ticketInfo.setDepartStation("Nha Trang");
-		ticketInfo.setArriveStation("Sài Gòn");
-		
 		System.out.println("6. Select \"Soft seat with air conditioner\" for \"Seat type\"");
-		ticketInfo.setSeatType(SeatType.SSC);
-		
 		System.out.println("7. Select \"5\" for \"Ticket amount\"");
-		ticketInfo.setTicketAmount("5");
-		
 		System.out.println("8. Click on \"Book ticket\" button");
 		bookTicketPage.bookNewTicket(
 				ticketInfo.getDepartDate(), 
@@ -126,14 +103,7 @@ public class BookTicketTest extends BaseTest{
 		System.out.println("VP: Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)");
 		String actualMsg = bookTicketPage.getLblSuccessfulBookingMsg();
 		Assert.assertEquals(actualMsg, expectedMsg, "Successful Booking Message is not displayed as expected");
-		
-		String expectedDepartDate = ticketInfo.getDepartDate();
-		String expectedDepartStation = ticketInfo.getDepartStation();
-		String expectedArriveStation = ticketInfo.getArriveStattion();
-		String expectedSeatType = ticketInfo.getSeatType();
-		String expectedTicketAmount = ticketInfo.getTicketAmount();
-		
-		bookTicketPage.checkInformationOfCreatedTicket(expectedDepartDate, expectedDepartStation, expectedArriveStation, expectedSeatType, expectedTicketAmount);
+		bookTicketPage.checkInformationOfCreatedTicket(ticketInfo);
 	}
 	
 	@Test
@@ -163,14 +133,8 @@ public class BookTicketTest extends BaseTest{
 				+ "VP: Ticket table shows \"Ticket price from Đà Nẵng to Sài Gòn\".\n"
 				+ "VP: Price for each seat displays correctly\n"
 				+ "HS = 310000, SS = 335000, SSC = 360000, HB = 410000, SB = 460000, SBC = 510000");
-		String expected_HS_Price = "310000";
-		String expected_SS_Price = "335000";
-		String expected_SSC_Price = "360000";
-		String expected_HB_Price = "410000";
-		String expected_SB_Price = "460000";
-		String expected_SBC_Price = "510000";
-		
-		ticketPricePage.checkPriceOfEachSeatType(expected_HS_Price, expected_SS_Price, expected_SSC_Price, expected_HB_Price, expected_SB_Price, expected_SBC_Price);
+		// parameters: HS price / SS price / SSC price / HB price / SB price / SBC price
+		ticketPricePage.checkPriceOfEachSeatType("310000", "335000", "360000", "410000", "460000", "510000");
 	}
 	
 	@Test
@@ -205,7 +169,9 @@ public class BookTicketTest extends BaseTest{
 		System.out.println("4. Click on book ticket of route \"Quảng Ngãi\" to \"Huế\"");
 		ticketInfo.setDepartStation("Quảng Ngãi");
 		ticketInfo.setArriveStation("Huế");
-		BookTicketPage bookTicketPage = timeTablePage.bookTicketWithRoute(ticketInfo.getDepartStation(), ticketInfo.getArriveStattion());
+		BookTicketPage bookTicketPage = timeTablePage.bookTicketWithRoute(
+				ticketInfo.getDepartStation(), 
+				ticketInfo.getArriveStattion());
 		
 		System.out.println("5. Select Depart date = tomorrow");
 		String tomorrowDate = getDatePlusDays(1);
@@ -223,13 +189,6 @@ public class BookTicketTest extends BaseTest{
 		System.out.println("VP: Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)");
 		String actualMsg = bookTicketPage.getLblSuccessfulBookingMsg();
 		Assert.assertEquals(actualMsg, expectedMsg, "Successful Booking Message is not displayed as expected");
-		
-		String expectedDepartDate = ticketInfo.getDepartDate();
-		String expectedDepartStation = ticketInfo.getDepartStation();
-		String expectedArriveStation = ticketInfo.getArriveStattion();
-		String expectedSeatType = ticketInfo.getSeatType();
-		String expectedTicketAmount = ticketInfo.getTicketAmount();
-		
-		bookTicketPage.checkInformationOfCreatedTicket(expectedDepartDate, expectedDepartStation, expectedArriveStation, expectedSeatType, expectedTicketAmount);
+		bookTicketPage.checkInformationOfCreatedTicket(ticketInfo);
 	}
 }

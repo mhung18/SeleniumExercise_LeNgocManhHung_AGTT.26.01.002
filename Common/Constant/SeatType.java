@@ -3,10 +3,10 @@ package Constant;
 public enum SeatType {
 	HS("Hard seat"),
 	SS("Soft seat"),
-	SSC("Soft seat with air condition"),
+	SSC("Soft seat with air conditioner"),
 	HB("Hard bed"),
 	SB("Soft bed"),
-	SBC("Soft bed with air condition");
+	SBC("Soft bed with air conditioner");
 	
 	private final String _seatType;
 	

@@ -45,7 +45,7 @@ public class ForgotPasswordPage extends GeneralPage{
 	
 	public ForgotPasswordPage enterEmailForgotPassword(String email) {
 		this.getTxtEmailForgotPassword().sendKeys(email);
-		this.getBtnSendInstruction().click();
+		Utilities.click(_btnSendInstruction);
 		return this;
 	}
 	
@@ -60,10 +60,9 @@ public class ForgotPasswordPage extends GeneralPage{
 	
 	public ForgotPasswordPage changePassword (String newPassword, String confirmNewPassword) {
 		Utilities.waitForElementVisible(_txtNewPassword, 10);
-		this.getTxtNewPassword().sendKeys(newPassword);
-		this.getTxtConfirmNewPassword().sendKeys(confirmNewPassword);
-		Utilities.scrollToElement(_btnResetPassword);
-		this.getBtnResetPassword().click();
+		Utilities.enter(_txtNewPassword, newPassword);
+		Utilities.enter(_txtConfirmNewPassword, confirmNewPassword);
+		Utilities.click(_btnResetPassword);
 		return this;
 	}
 	

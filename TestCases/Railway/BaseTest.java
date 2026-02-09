@@ -72,5 +72,4 @@ public abstract class BaseTest {
                 .plusDays(days)
                 .format(DateTimeFormatter.ofPattern(Constant.DATE_FORMAT));
     }
-
 }

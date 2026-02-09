@@ -47,28 +47,27 @@ public class MainPage {
 	
 	public MainPage setEmailName(String emailName) {
 		Utilities.waitForElementVisible(_emailName, 10);
-		this.getEmailName().click();
-		this.getEmailNameTextbox().sendKeys(emailName);
-		this.getBtnSetEmail().click();
+		Utilities.click(_emailName);
+		Utilities.enter(_emailNameTextbox, emailName);
+		Utilities.click(_btnSetEmail);
 		return this;
 	}
 	
 	public RegisterPage activeAccount() {
 		Utilities.waitForElementClickable(_emailConfirm,20);
-		this.getEmailConfirm().click();
+		Utilities.click(_emailConfirm);
 		Utilities.waitForElementClickable(_linkConfirm,20);
 		Utilities.scrollByPixel(200);
-		this.getLinkConfirm().click();
+		Utilities.click(_linkConfirm);
 		Utilities.switchToLatestTab();
 		return new RegisterPage();
 	}
 	
 	public MainPage resetPassword() {
 		Utilities.waitForElementClickable(_emailResetPassword, 20);
-		this.getEmailResetPassword().click();
-		Utilities.scrollByPixel(200);
+		Utilities.click(_emailResetPassword);
 		Utilities.waitForElementClickable(_linkConfirm, 10);
-		this.getLinkConfirm().click();
+		Utilities.click(_linkConfirm);
 		return this;
 	}
 	

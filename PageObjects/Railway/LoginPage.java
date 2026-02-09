@@ -2,6 +2,9 @@ package Railway;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import Common.Utilities;
+//import Common.Utilities;
 import Constant.Constant;
 
 public class LoginPage extends GeneralPage{
@@ -31,16 +34,22 @@ public class LoginPage extends GeneralPage{
 	
 	@SuppressWarnings("unchecked")
 	public <T extends GeneralPage> T login(String username, String password) {
-		this.getTxtUsername().sendKeys(username);
-		this.getTxtPassword().sendKeys(password);
-		this.getBtnLogin().click();
+		Utilities.enter(_txtUsername, username);
+		Utilities.enter(_txtPassword, password);
+		Utilities.click(_btnLogin);
+		Utilities.waitForPageFullyLoad();
+		
 		boolean isLoggedIn = isTabExist("Login");
 		if (!isLoggedIn) return (T) new HomePage();
 		return (T) this;
 	}
-	
+		
 	public ForgotPasswordPage gotoForgotPasswordPage() {
 		this.getLinkForgotPassword().click();
 		return new ForgotPasswordPage();
+	}
+	
+	public String getLoginErrorMsg () {
+		return Utilities.getTextOfElement(_lblLoginErrorMsg);
 	}
 }

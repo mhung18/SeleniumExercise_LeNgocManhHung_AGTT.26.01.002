@@ -21,7 +21,7 @@ public class MyTicketPage extends GeneralPage{
 				ticketInfo.getDepartDate(),
 				ticketInfo.getSeatType(), 
 				ticketInfo.getTicketAmount());
-		Constant.WEBDRIVER.findElement(By.xpath(ticketXpath)).click();
+		Utilities.click(By.xpath(ticketXpath));
 		Constant.WEBDRIVER.switchTo().alert().accept();
 		return this;
 	}

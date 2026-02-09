@@ -20,6 +20,7 @@ public class GeneralPage {
 	
 	// Method
 	public String getWelcomeMessage() {
+		Utilities.waitForElementVisible(_lblWelcomeMessage, 10);
 		return this.getLblWelcomeMessage().getText();
 	}
 	
@@ -32,15 +33,10 @@ public class GeneralPage {
 		return Utilities.isDisplayed(xpathString);
 	}
 	
-	public String getTextOfElement (WebElement webElement) {
-		return webElement.getText();
-	}
-	
-	
 	public <T extends GeneralPage> T goToPage(MenuPage page, Class<T> pageClass) {
 	    String xpath = String.format(_dymTabXpath, page.getPageName());
 	    Utilities.waitForElementVisible(By.xpath(xpath), 10);
-	    Constant.WEBDRIVER.findElement(By.xpath(xpath)).click();
+	    Utilities.click(By.xpath(xpath));
 
 	    try {
 	        return pageClass.getDeclaredConstructor().newInstance();

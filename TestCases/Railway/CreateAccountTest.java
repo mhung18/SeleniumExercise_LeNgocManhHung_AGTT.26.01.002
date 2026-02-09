@@ -36,7 +36,7 @@ public class CreateAccountTest extends BaseTest{
 				userInfo.getUserPassportId());
 		
 		System.out.println("VP: Error message \"This email address is already in use.\" displays above the form.");
-		String actualMsg = registerPage.getLblRegisterErrorMsg().getText();
+		String actualMsg = registerPage.getLblRegisterErrorMsg();
 		
 		Assert.assertEquals(actualMsg, expectedMsg, "Error message is not displayed as expected");		
 	}
@@ -70,15 +70,15 @@ public class CreateAccountTest extends BaseTest{
 		System.out.println("VP: Message \"There're errors in the form. Please correct the errors and try again.\" appears above the form.\n"
 				+ "VP: Next to password fields, error message \"Invalid password length\" displays\n"
 				+ "VP: Next to PID field, error message \"Invalid ID length\" displays");
-		String actualMsg = registerPage.getLblRegisterErrorMsg().getText();
+		String actualMsg = registerPage.getLblRegisterErrorMsg();
 		String expectedMsg = "There're errors in the form. Please correct the errors and try again.";
 		Assert.assertEquals(actualMsg, expectedMsg, "Error message is not displayed as expected");
 		
-		String actualPasswordErrorMsg = registerPage.getLblPasswordErrorMsg().getText();
+		String actualPasswordErrorMsg = registerPage.getLblPasswordErrorMsg();
 		String expectedPasswordErrorMsg = "Invalid password length";
 		Assert.assertEquals(actualPasswordErrorMsg, expectedPasswordErrorMsg, "Error message for password is not displayed as expected");
 		
-		String actualPassportIdErrorMsg = registerPage.getLblPassportIdErrorMsg().getText();
+		String actualPassportIdErrorMsg = registerPage.getLblPassportIdErrorMsg();
 		String expectedPassportIdErrorMsg = "Invalid ID length";
 		Assert.assertEquals(actualPassportIdErrorMsg, expectedPassportIdErrorMsg, "Error message for PID is not displayed as expected");
 	}
@@ -126,7 +126,7 @@ public class CreateAccountTest extends BaseTest{
 		);
 		
 		System.out.println("VP: \"Thank you for registering your account\" is shown");
-		String actualMsg = registerPage.getLblRegisterSuccessfully().getText();
+		String actualMsg = registerPage.getLblRegisterSuccessfully();
 		Assert.assertEquals(actualMsg, expectedMsg, "The registered successful message is not displayed as expected");
 		
 		System.out.println("5. Get email information (webmail address, mailbox and password) and navigate to that webmail");

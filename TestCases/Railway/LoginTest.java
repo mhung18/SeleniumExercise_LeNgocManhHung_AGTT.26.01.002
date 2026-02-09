@@ -60,7 +60,7 @@ public class LoginTest extends BaseTest{
 		loginPage.login(
 				userInfo.getUserEmail(),
 				userInfo.getUserPassword());
-		String actualErrorMsg = loginPage.getTextOfElement(loginPage.getLblLoginErrorMsg());
+		String actualErrorMsg = Utilities.getTextOfElement(loginPage.getLblLoginErrorMsg());
 		
 		System.out.println("VP: User can't login and message \"There was a problem with your login and/or errors exist in your form. \" appears.");
 		Assert.assertEquals(actualErrorMsg.trim(), expectedErrorMsg.trim(),"Error message is not displayed as expected");		
@@ -89,7 +89,7 @@ public class LoginTest extends BaseTest{
 		loginPage.login(
 				userInfo.getUserEmail(),
 				userInfo.getUserPassword());
-		String actualErrorMsg = loginPage.getTextOfElement(loginPage.getLblLoginErrorMsg());
+		String actualErrorMsg = Utilities.getTextOfElement(loginPage.getLblLoginErrorMsg());
 		
 		System.out.println("VP: Error message \"There was a problem with your login and/or errors exist in your form.\" is displayed");
 		Assert.assertEquals(actualErrorMsg.trim(), expectedErrorMsg.trim(),"Error message is not displayed as expected");
@@ -115,20 +115,20 @@ public class LoginTest extends BaseTest{
 		
 		System.out.println("3. Enter valid information into \"Username\" textbox except \"Password\" textbox.");
 		System.out.println("4. Click on \"Login\" button");
-		loginPage.login(
+		loginPage = loginPage.login(
 				userInfo.getUserEmail(),
 				userInfo.getUserPassword());
 		
 		System.out.println("5. Repeat step 3 and 4 three more times.");
 		int loginTimes = 3;
 		for (int i = 0;i < loginTimes;i++) {
-			loginPage.login(
+			loginPage = loginPage.login(
 					userInfo.getUserEmail(),
 					userInfo.getUserPassword());
 		}
-		String actualErrorMsg = loginPage.getTextOfElement(loginPage.getLblLoginErrorMsg());
 		
 		System.out.println("VP: User can't login and message \"You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.\" appears.");
+		String actualErrorMsg = loginPage.getLoginErrorMsg();
 		Assert.assertEquals(actualErrorMsg.trim(), expectedWarningMsg.trim(),"Error message is not displayed as expected");
 	}
 	
@@ -165,7 +165,7 @@ public class LoginTest extends BaseTest{
 				userInfo.getUserEmail(),
 				userInfo.getUserPassword());
 		
-		String actualErrorMsg = loginPage.getTextOfElement(loginPage.getLblLoginErrorMsg());
+		String actualErrorMsg = Utilities.getTextOfElement(loginPage.getLblLoginErrorMsg());
 		
 		System.out.println("VP: User can't login and message \"Invalid username or password. Please try again.\" appears.");
 		Assert.assertEquals(actualErrorMsg.trim(), expectedWarningMsg.trim(),"Error message is not displayed as expected");

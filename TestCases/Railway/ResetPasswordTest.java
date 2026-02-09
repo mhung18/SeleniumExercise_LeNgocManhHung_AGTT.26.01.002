@@ -42,7 +42,7 @@ public class ResetPasswordTest extends BaseTest {
 		
 		System.out.println("VP: Redirect to Railways page and Form \"Password Change Form\" is shown with the reset password token");
 		Utilities.switchToLatestTab();
-		String formName = forgotPasswordPage.getTextOfElement(forgotPasswordPage.getTxtForgotPasswordForm());
+		String formName = Utilities.getTextOfElement(forgotPasswordPage.getTxtForgotPasswordForm());
 		Assert.assertEquals(formName, expectedFormName, "Form name is not display as expected");
 		
 		boolean isTokenExist = forgotPasswordPage.checkTokenExist();
@@ -91,7 +91,7 @@ public class ResetPasswordTest extends BaseTest {
 		
 		System.out.println("VP: Redirect to Railways page and Form \"Password Change Form\" is shown with the reset password token");
 		Utilities.switchToLatestTab();
-		String formName = forgotPasswordPage.getTextOfElement(forgotPasswordPage.getTxtForgotPasswordForm());
+		String formName = Utilities.getTextOfElement(forgotPasswordPage.getTxtForgotPasswordForm());
 		Assert.assertEquals(formName, expectedFormName, "Form name is not display as expected");
 		
 		boolean isTokenExist = forgotPasswordPage.checkTokenExist();

@@ -37,6 +37,11 @@ public class Utilities {
 	    	return select.getOptions().stream().anyMatch(o -> o.getText().trim().equals(optionText));
 	    });
 	}
+	
+	public static void waitForPageFullyLoad() {
+		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT_WAIT_SECOND));
+		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete'"));
+	}
 
 	
 	public static void scrollToEndPage () {
@@ -62,7 +67,8 @@ public class Utilities {
 	
 	public static boolean isDisplayed(String element) {
 		try {
-			return Constant.WEBDRIVER.findElement(By.xpath(element)).isDisplayed();
+			Constant.WEBDRIVER.findElement(By.xpath(element));
+			return true;
 		} catch (Exception e) {
 			return false;
 		}
@@ -71,7 +77,7 @@ public class Utilities {
 	public static String generateRandomEmail() { 
 		String keys = "asdfghjkqwertyuiopzxcvbnmqwertyuioopASDFGHJKLQWERTYUIOPZXCVBNM1234567890";
 		Random randomIntRandom = new Random();
-		int length = 8;
+		int length = 10;
 		String randomString = "";
 		for(int i = 0;i < length;i++) {
 			int randomIndex = randomIntRandom.nextInt(keys.length());
@@ -87,6 +93,28 @@ public class Utilities {
 	public static void switchToLatestTab() {
 	    List<String> tabs = new ArrayList<>(Constant.WEBDRIVER.getWindowHandles());
 	    Constant.WEBDRIVER.switchTo().window(tabs.get(tabs.size() - 1));
+	}
+	
+	public static void click (By locator) {
+		WebElement element = Constant.WEBDRIVER.findElement(locator);
+        JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
+        js.executeScript("arguments[0].click();", element);
+	}
+	
+	public static void enter (By locator, String text) {
+		WebElement element = Constant.WEBDRIVER.findElement(locator);
+		element.clear();
+		element.sendKeys(text);
+	}
+	
+	public static String getTextOfElement (WebElement webElement) {
+		return webElement.getText();
+	}
+	
+	public static String getTextOfElement (By locator) {
+		Utilities.waitForElementVisible(locator, 10);
+		WebElement webElement = Constant.WEBDRIVER.findElement(locator);
+		return getTextOfElement(webElement);
 	}
 }
 
