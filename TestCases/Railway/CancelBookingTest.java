@@ -2,21 +2,26 @@ package Railway;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import Common.Utilities;
+import Constant.City;
 import Constant.Constant;
 import Constant.MenuPage;
+import Constant.SeatType;
 
 public class CancelBookingTest extends BaseTest{
 	@Test
 	public void TC16() {
+		// Create Data Object
+		String date = Utilities.getDatePlusDays(6);
 		TicketInfo ticketInfo = new TicketInfo(
-				Constant.DEPARTDATE, 
-				Constant.DEPARTSTATION, 
-				Constant.ARRIVESTATION, 
-				Constant.SEATTYPE, 
+				date, 
+				City.SAIGON, 
+				City.DANANG, 
+				SeatType.HB, 
 				Constant.TICKETAMOUNT);
 		
-		System.out.println("User can cancel a ticket");
+		// Main Test 
+		System.out.println("TC16: User can cancel a ticket");
 		
 		System.out.println("Pre-condition: an actived account is existing");
 		UserInfo userInfo = createAndActiveAccount();
@@ -27,9 +32,7 @@ public class CancelBookingTest extends BaseTest{
 		
 		System.out.println("2. Login with a valid account");
 		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
-		homePage = loginPage.login(
-				userInfo.getUserEmail(),
-				userInfo.getUserPassword());
+		homePage = loginPage.login(userInfo);
 
 		System.out.println("3. Book a ticket");
 		BookTicketPage bookTicketPage = bookTicket(ticketInfo);

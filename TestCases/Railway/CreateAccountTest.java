@@ -11,14 +11,16 @@ import Guerrillamail.MainPage;
 public class CreateAccountTest extends BaseTest{
 	@Test
 	public void TC07() {
+		// Create Data Object
 		UserInfo userInfo = new UserInfo(
 			Constant.USERNAME, 
 			Constant.PASSWORD, 
 			Constant.PASSPORTID);
 		
+		// Expected Messages
 		String expectedMsg = "This email address is already in use.";
-
-		System.out.println("User can't create account with an already in-use email");
+				
+		System.out.println("TC07: User can't create account with an already in-use email");
 		
 		System.out.println("1. Navigate to QA Railway Website");
 		HomePage homePage = new HomePage();
@@ -43,13 +45,19 @@ public class CreateAccountTest extends BaseTest{
 	
 	@Test
 	public void TC08() {
+		// Create Data Object
 		String emailString = Utilities.generateRandomEmail();
 		UserInfo userInfo = new UserInfo(
 				emailString, 
 				Constant.BLANKFIELD, 
 				Constant.BLANKFIELD);
 		
-		System.out.println("User can't create account while password and PID fields are empty");
+		// Expected Messages
+		String expectedMsg = "There're errors in the form. Please correct the errors and try again.";
+		String expectedPasswordErrorMsg = "Invalid password length";
+		String expectedPassportIdErrorMsg = "Invalid ID length";
+		
+		System.out.println("TC08: User can't create account while password and PID fields are empty");
 		
 		System.out.println("1. Navigate to QA Railway Website");
 		HomePage homePage = new HomePage();
@@ -71,31 +79,31 @@ public class CreateAccountTest extends BaseTest{
 				+ "VP: Next to password fields, error message \"Invalid password length\" displays\n"
 				+ "VP: Next to PID field, error message \"Invalid ID length\" displays");
 		String actualMsg = registerPage.getLblRegisterErrorMsg();
-		String expectedMsg = "There're errors in the form. Please correct the errors and try again.";
 		Assert.assertEquals(actualMsg, expectedMsg, "Error message is not displayed as expected");
 		
 		String actualPasswordErrorMsg = registerPage.getLblPasswordErrorMsg();
-		String expectedPasswordErrorMsg = "Invalid password length";
 		Assert.assertEquals(actualPasswordErrorMsg, expectedPasswordErrorMsg, "Error message for password is not displayed as expected");
 		
 		String actualPassportIdErrorMsg = registerPage.getLblPassportIdErrorMsg();
-		String expectedPassportIdErrorMsg = "Invalid ID length";
 		Assert.assertEquals(actualPassportIdErrorMsg, expectedPassportIdErrorMsg, "Error message for PID is not displayed as expected");
 	}
 	
 	@Test
 	public void TC09() {
+		// Create Data Object
 		String emailString = Utilities.generateRandomEmail();
 		UserInfo userInfo = new UserInfo(
 				emailString, 
 				Constant.PASSWORD, 
 				Constant.PASSPORTID);
 		
+		// Expected Messages
 		String expectedHref = "http://saferailway.somee.com/Account/Register.cshtml";
 		String expectedMsg = "Thank you for registering your account";
 		String expectedRegisterConfirmStringMsg = "Registration Confirmed! You can now log in to the site.";
-
-		System.out.println("User create and activate account");
+		
+		// Main Test 
+		System.out.println("TC09: User create and activate account");
 		
 		System.out.println("1. Navigate to QA Railway Website");
 		HomePage homePage = new HomePage();

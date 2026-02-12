@@ -58,10 +58,18 @@ public class RegisterPage extends GeneralPage {
 	}
 	
 	public RegisterPage regiter(String email, String pass, String confirmPass, String passportId) {
-		Utilities.enter(_txtEmail, email);
-		Utilities.enter(_txtPassword, pass);
-		Utilities.enter(_txtConfirmPassword, confirmPass);
-		Utilities.enter(_txtPassportId, passportId);
+		if (!email.isEmpty()) {
+			Utilities.enter(_txtEmail, email);
+		}
+		if (!pass.isEmpty()) {
+			Utilities.enter(_txtPassword, pass);
+		}
+		if (!confirmPass.isEmpty()) {
+			Utilities.enter(_txtConfirmPassword, confirmPass);
+		}
+		if (!passportId.isEmpty()) {
+			Utilities.enter(_txtPassportId, passportId);
+		}
 		Utilities.click(_btnRegister);
 		return this;
 	}

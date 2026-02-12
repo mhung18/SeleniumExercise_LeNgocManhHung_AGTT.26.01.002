@@ -16,7 +16,6 @@ public class MainPage {
 	private final By _emailResetPassword = By.xpath("//tbody[@id=\"email_list\"]//td[contains(text(),\"Please reset your password\")]");
 	private final By _emailContent = By.xpath("//div[@class=\"email_body\"]");
 	
-	
 	public WebElement getEmailName() {
 		return Constant.WEBDRIVER.findElement(_emailName);
 	}
@@ -39,14 +38,12 @@ public class MainPage {
 		return Constant.WEBDRIVER.findElement(_emailContent);
 	}
 	
-	
 	public MainPage open() {
 		Constant.WEBDRIVER.navigate().to(Constant.GURERRILLAMAIL_URL);
 		return this;
 	}
 	
 	public MainPage setEmailName(String emailName) {
-		Utilities.waitForElementVisible(_emailName, 10);
 		Utilities.click(_emailName);
 		Utilities.enter(_emailNameTextbox, emailName);
 		Utilities.click(_btnSetEmail);
@@ -54,19 +51,14 @@ public class MainPage {
 	}
 	
 	public RegisterPage activeAccount() {
-		Utilities.waitForElementClickable(_emailConfirm,20);
 		Utilities.click(_emailConfirm);
-		Utilities.waitForElementClickable(_linkConfirm,20);
-		Utilities.scrollByPixel(200);
 		Utilities.click(_linkConfirm);
 		Utilities.switchToLatestTab();
 		return new RegisterPage();
 	}
 	
 	public MainPage resetPassword() {
-		Utilities.waitForElementClickable(_emailResetPassword, 20);
 		Utilities.click(_emailResetPassword);
-		Utilities.waitForElementClickable(_linkConfirm, 10);
 		Utilities.click(_linkConfirm);
 		return this;
 	}

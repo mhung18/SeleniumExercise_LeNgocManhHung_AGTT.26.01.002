@@ -1,6 +1,8 @@
 package Common;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -42,8 +44,12 @@ public class Utilities {
 		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT_WAIT_SECOND));
 		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete'"));
 	}
-
 	
+	public static WebElement waitForElementLocated(By locator) {
+		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT_WAIT_SECOND));
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+
 	public static void scrollToEndPage () {
 		JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -65,9 +71,10 @@ public class Utilities {
 		js.executeScript("arguments[0].scrollIntoView(true)", w);
 	}
 	
-	public static boolean isDisplayed(String element) {
+	public static boolean isDisplayed(By locator) {
+		Utilities.waitForElementLocated(locator);
 		try {
-			Constant.WEBDRIVER.findElement(By.xpath(element));
+			Constant.WEBDRIVER.findElement(locator);
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -96,12 +103,14 @@ public class Utilities {
 	}
 	
 	public static void click (By locator) {
-		WebElement element = Constant.WEBDRIVER.findElement(locator);
+		Utilities.waitForElementLocated(locator);
+		WebElement element = waitForElementLocated(locator);
         JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
         js.executeScript("arguments[0].click();", element);
 	}
 	
 	public static void enter (By locator, String text) {
+		Utilities.waitForElementLocated(locator);
 		WebElement element = Constant.WEBDRIVER.findElement(locator);
 		element.clear();
 		element.sendKeys(text);
@@ -115,6 +124,17 @@ public class Utilities {
 		Utilities.waitForElementVisible(locator, 10);
 		WebElement webElement = Constant.WEBDRIVER.findElement(locator);
 		return getTextOfElement(webElement);
+	}
+	
+	public static String getToday() {
+	    return LocalDate.now()
+	            .format(DateTimeFormatter.ofPattern(Constant.DATE_FORMAT));
+	}
+	
+	public static String getDatePlusDays(int plusDays) {
+	    return LocalDate.now()
+	            .plusDays(plusDays)
+	            .format(DateTimeFormatter.ofPattern(Constant.DATE_FORMAT));
 	}
 }
 

@@ -1,10 +1,11 @@
 package Railway;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
 import Common.Utilities;
 import Constant.Constant;
 
@@ -17,6 +18,7 @@ public class BookTicketPage extends GeneralPage{
 	private final By _btnBookTicket = By.xpath("//input[@value=\"Book ticket\"]");
 	private final By _lblSuccessfulBooking = By.xpath("//div[@id=\"content\"]/h1[text()=\"Ticket booked successfully!\"]");
 	private final String _dymTicketBookedInfo = "(//tr/td)[count(//tr/th[text()=\"%s\"]/preceding-sibling::th)+1]";
+	private final By _currentDepartDate = By.xpath("//select[@name=\"Date\"]/option[1]");
 	
 	public WebElement getDepartDate () {
 		return Constant.WEBDRIVER.findElement(_departDate);
@@ -40,6 +42,23 @@ public class BookTicketPage extends GeneralPage{
 		return Constant.WEBDRIVER.findElement(_btnBookTicket);
 	}
 	
+	public String getSelectedDepartStation() {
+	    Utilities.waitForElementLocated(_departStation);
+	    Select select = new Select(this.getDepartStation());
+	    return select.getFirstSelectedOption().getText();
+	}
+
+	public String getSelectedArriveStation() {
+	    Utilities.waitForElementLocated(_arriveStation);
+	    Select select = new Select(this.getArriveStation());
+	    return select.getFirstSelectedOption().getText();
+	}
+
+	
+	public String getCurrentDepartDate () {
+	    Utilities.waitForElementVisible(_currentDepartDate, 10);
+	    return Utilities.getTextOfElement(_currentDepartDate).trim();
+	}
 	
 	public BookTicketPage selectDepartDate(String date) {
 		Select selectDate = new Select(this.getDepartDate());
@@ -71,47 +90,58 @@ public class BookTicketPage extends GeneralPage{
 		return this;
 	}
 	
-	public BookTicketPage bookNewTicket(String departDate, String departStation, String arriveStation, String seatType, String ticketAmount) {
-		this.selectDepartDate(departDate);
-		this.selectDepartStation(departStation);
-		Utilities.waitForOptionPresent(_arriveStation, arriveStation, 10);
-		this.selectArriveStation(arriveStation);
-		this.selectSeatType(seatType);
-		this.selectTicketAmount(ticketAmount);
+	public BookTicketPage bookNewTicket(TicketInfo ticketInfo) {
+		if (!ticketInfo.getDepartDate().isEmpty()) {
+			this.selectDepartDate(ticketInfo.getDepartDate());
+		}
+		if (!ticketInfo.getDepartStation().isEmpty()) {
+			this.selectDepartStation(ticketInfo.getDepartStation());
+		}
+		if (!ticketInfo.getArriveStattion().isEmpty()) {
+			Utilities.waitForOptionPresent(_arriveStation, ticketInfo.getArriveStattion(), 10);
+			this.selectArriveStation(ticketInfo.getArriveStattion());
+		}
+		if (!ticketInfo.getSeatType().isEmpty()) {
+			this.selectSeatType(ticketInfo.getSeatType());
+		}
+		if (!ticketInfo.getTicketAmount().isEmpty()) {
+			this.selectTicketAmount(ticketInfo.getTicketAmount());
+		}
 		Utilities.click(_btnBookTicket);
 		return this;
 	}
 	
-	public BookTicketPage bookNewTicketWithCurrentRoute (String departDate, String seatType, String ticketAmount) {
-		this.selectDepartDate(departDate);
-		this.selectSeatType(seatType);
-		this.selectTicketAmount(ticketAmount);
+	public BookTicketPage bookNewTicketWithCurrentRoute (TicketInfo ticketInfo) {
+		if (!ticketInfo.getDepartDate().isEmpty()) {
+			this.selectDepartDate(ticketInfo.getDepartDate());
+		}
+		if (!ticketInfo.getSeatType().isEmpty()) {
+			this.selectSeatType(ticketInfo.getSeatType());
+		}
+		if (!ticketInfo.getTicketAmount().isEmpty()) {
+			this.selectTicketAmount(ticketInfo.getTicketAmount());
+		}
 		Utilities.click(_btnBookTicket);
 		return this;
 	}
 	
 	public String getLblSuccessfulBookingMsg () {
 		Utilities.waitForElementVisible(_lblSuccessfulBooking, 10);
-		return this.getLblSuccessfulBooking().getText();
+		return Utilities.getTextOfElement(_lblSuccessfulBooking);
 	}
 	
 	public String getDataOfTableColumn (String thName) {
-		return Constant.WEBDRIVER.findElement(By.xpath(String.format(_dymTicketBookedInfo, thName))).getText();
+		return Utilities.getTextOfElement(By.xpath(String.format(_dymTicketBookedInfo, thName)));
 	}
-	
-	public BookTicketPage checkInformationOfCreatedTicket (TicketInfo ticketInfo) {
-		String actualDepartDate = this.getDataOfTableColumn("Depart Date");
-		String actualDepartStation = this.getDataOfTableColumn("Depart Station");
-		String actualArriveStation = this.getDataOfTableColumn("Arrive Station");
-		String actualSeatType = this.getDataOfTableColumn("Seat Type");
-		String actualTicketAmount = this.getDataOfTableColumn("Amount");
-		
-		Assert.assertEquals(actualDepartDate, ticketInfo.getDepartDate(), "Depart Date is not displayed as expected");
-		Assert.assertEquals(actualDepartStation, ticketInfo.getDepartStation(), "Depart Station is not displayed as expected");
-		Assert.assertEquals(actualArriveStation, ticketInfo.getArriveStattion(), "Arrive Station is not displayed as expected");
-		Assert.assertEquals(actualSeatType, ticketInfo.getSeatType(), "Seat Type is not displayed as expected");
-		Assert.assertEquals(actualTicketAmount, ticketInfo.getTicketAmount(), "Ticket Amount is not displayed as expected");
-		
-		return this;
+
+	public String getDatePlusDays(int days) {
+	    String currentDepartDate = getCurrentDepartDate();
+
+	    DateTimeFormatter formatter =
+	            DateTimeFormatter.ofPattern(Constant.DATE_FORMAT);
+
+	    return LocalDate.parse(currentDepartDate, formatter)
+	            .plusDays(days)
+	            .format(formatter);
 	}
 }

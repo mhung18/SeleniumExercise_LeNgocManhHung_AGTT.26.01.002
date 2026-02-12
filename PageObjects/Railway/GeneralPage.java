@@ -30,12 +30,12 @@ public class GeneralPage {
 	
 	public boolean isTabExist(String tabName) {
 		String xpathString = String.format(_dymTabXpath, tabName);
-		return Utilities.isDisplayed(xpathString);
+		return Utilities.isDisplayed(By.xpath(xpathString));
 	}
 	
 	public <T extends GeneralPage> T goToPage(MenuPage page, Class<T> pageClass) {
 	    String xpath = String.format(_dymTabXpath, page.getPageName());
-	    Utilities.waitForElementVisible(By.xpath(xpath), 10);
+	    Utilities.waitForElementLocated(By.xpath(xpath));
 	    Utilities.click(By.xpath(xpath));
 
 	    try {

@@ -1,8 +1,6 @@
 package Railway;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
 import Common.Utilities;
 import Constant.Constant;
 
@@ -16,42 +14,19 @@ public class ForgotPasswordPage extends GeneralPage{
 	private final By _btnResetPassword = By.xpath("//input[@value=\"Reset Password\"]");
 	private final By _txtStateResetPassword = By.xpath("//div[@id=\"content\"]/p");
 	
-	
-	public WebElement getTxtEmailForgotPassword() {
-		return Constant.WEBDRIVER.findElement(_txtEmailForgotPassword);
-	}
-	public WebElement getBtnSendInstruction() {
-		return Constant.WEBDRIVER.findElement(_btnSendInstruction);
-	}
-	public WebElement getTxtForgotPasswordForm() {
-		return Constant.WEBDRIVER.findElement(_txtForgotPasswordForm);
-	}
-	public WebElement getTxtToken() {
-		return Constant.WEBDRIVER.findElement(_txtToken);
-	}
-	public WebElement getTxtNewPassword () {
-		return Constant.WEBDRIVER.findElement(_txtNewPassword);
-	}
-	public WebElement getTxtConfirmNewPassword () {
-		return Constant.WEBDRIVER.findElement(_txtConfirmNewPassword);
-	}
-	public WebElement getBtnResetPassword () {
-		return Constant.WEBDRIVER.findElement(_btnResetPassword);
-	}
-	public WebElement getTxtStateResetPassword () {
-		return Constant.WEBDRIVER.findElement(_txtStateResetPassword);
+	public String getTextOfForgotPasswordForm() {
+		return Utilities.getTextOfElement(_txtForgotPasswordForm);
 	}
 	
 	
 	public ForgotPasswordPage enterEmailForgotPassword(String email) {
-		this.getTxtEmailForgotPassword().sendKeys(email);
+		Utilities.enter(_txtEmailForgotPassword, email);
 		Utilities.click(_btnSendInstruction);
 		return this;
 	}
 	
 	public boolean checkTokenExist() {
-		String token = this.getTxtToken().getAttribute("value");
-		System.out.println("Token: " + token);
+		String token = Constant.WEBDRIVER.findElement(_txtToken).getAttribute("value");
 		if (token != null & !token.isEmpty()) {
 			return true;
 		}
@@ -68,6 +43,6 @@ public class ForgotPasswordPage extends GeneralPage{
 	
 	public String getStateResetPassword() {
 		Utilities.waitForElementVisible(_txtStateResetPassword, 10);
-		return this.getTxtStateResetPassword().getText();
+		return Utilities.getTextOfElement(_txtStateResetPassword);
 	}
 }

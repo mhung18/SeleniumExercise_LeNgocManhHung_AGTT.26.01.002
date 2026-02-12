@@ -1,21 +1,30 @@
 package Railway;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
 import Common.Utilities;
 import Constant.Constant;
 import Constant.MenuPage;
 import Guerrillamail.MainPage;
 
 public abstract class BaseTest {
+	@Parameters({"browser"})
 	@BeforeMethod
-	public void beforeMethod() {
+	public void beforeMethod(@Optional("chrome") String browser) {
 		System.out.println("Pre-condition");
-		Constant.WEBDRIVER = new ChromeDriver();
+		if ("chrome".equalsIgnoreCase(browser)) {
+			Constant.WEBDRIVER = new ChromeDriver();
+		} else if ("firefox".equalsIgnoreCase(browser)) {
+			Constant.WEBDRIVER = new FirefoxDriver();
+		} else {
+			throw new RuntimeException("Unsupported browser: " + browser);
+		}
 		Constant.WEBDRIVER.manage().window().maximize();
 	}
 	
@@ -43,7 +52,7 @@ public abstract class BaseTest {
 		MainPage mainPageMailWeb = new MainPage();
 		mainPageMailWeb.setEmailName(Utilities.getEmailPartName(randomEmail));
 		mainPageMailWeb.activeAccount();
-		
+				
 		return new UserInfo(
 				randomEmail, 
 				Constant.PASSWORD, 
@@ -53,23 +62,7 @@ public abstract class BaseTest {
 	public BookTicketPage bookTicket (TicketInfo ticketInfo) {
 		HomePage homePage = new HomePage();
 		BookTicketPage bookTicketPage = homePage.goToPage(MenuPage.BOOKTICKET, BookTicketPage.class);
-		bookTicketPage.bookNewTicket(
-				ticketInfo.getDepartDate(), 
-				ticketInfo.getDepartStation(), 
-				ticketInfo.getArriveStattion(), 
-				ticketInfo.getSeatType(), 
-				ticketInfo.getTicketAmount());
+		bookTicketPage.bookNewTicket(ticketInfo);
 		return new BookTicketPage();
 	}
-	
-	public String getToday () {
-		String today = LocalDate.now().format(DateTimeFormatter.ofPattern(Constant.DATE_FORMAT));
-		return today;
-	}
-	
-	public static String getDatePlusDays(int days) {
-        return LocalDate.now()
-                .plusDays(days)
-                .format(DateTimeFormatter.ofPattern(Constant.DATE_FORMAT));
-    }
 }

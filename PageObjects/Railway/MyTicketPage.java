@@ -34,6 +34,6 @@ public class MyTicketPage extends GeneralPage{
 				ticketInfo.getDepartDate(),
 				ticketInfo.getSeatType(), 
 				ticketInfo.getTicketAmount());
-		return Utilities.isDisplayed(ticketXpath);
+		return Utilities.isDisplayed(By.xpath(ticketXpath));
 	}
 }

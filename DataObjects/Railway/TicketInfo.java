@@ -1,5 +1,6 @@
 package Railway;
 
+import Constant.City;
 import Constant.SeatType;
 
 public class TicketInfo {
@@ -9,11 +10,11 @@ public class TicketInfo {
 	private String _seatType;
 	private String _ticketAmount;
 	
-	public TicketInfo(String departDate, String departStation, String arriveStation, String seatType, String ticketAmount) {
+	public TicketInfo(String departDate, City departStation, City arriveStation, SeatType seatType, String ticketAmount) {
 		this._departDate = departDate;
-		this._departStation = departStation;
-		this._arriveStation = arriveStation;
-		this._seatType = seatType;
+		this._departStation = departStation.getCityName();
+		this._arriveStation = arriveStation.getCityName();
+		this._seatType = seatType.getSeatType();
 		this._ticketAmount = ticketAmount;
 	}
 	
