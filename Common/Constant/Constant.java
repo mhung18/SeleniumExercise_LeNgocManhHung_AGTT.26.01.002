@@ -27,5 +27,5 @@ public class Constant {
 	public static final String DATE_FORMAT = "M/d/yyyy";
 	
 	// Time out
-	public static final int TIMEOUT_WAIT_SECOND = 30;
+	public static final int TIMEOUT_WAIT_SECOND = 10;
 }

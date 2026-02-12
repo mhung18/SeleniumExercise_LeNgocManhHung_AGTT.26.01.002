@@ -49,6 +49,11 @@ public class Utilities {
 		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT_WAIT_SECOND));
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
+	
+	public static void waitForTitleExist(String title) {
+		 WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(5));
+		 wait.until(ExpectedConditions.titleIs(title));
+	}
 
 	public static void scrollToEndPage () {
 		JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
@@ -66,9 +71,9 @@ public class Utilities {
 		scrollToElement(webElement);
 	}
 	
-	public static void scrollToElement(WebElement w) {
+	public static void scrollToElement(WebElement webElement) {
 		JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
-		js.executeScript("arguments[0].scrollIntoView(true)", w);
+		js.executeScript("arguments[0].scrollIntoView(true)", webElement);
 	}
 	
 	public static boolean isDisplayed(By locator) {
@@ -135,6 +140,17 @@ public class Utilities {
 	    return LocalDate.now()
 	            .plusDays(plusDays)
 	            .format(DateTimeFormatter.ofPattern(Constant.DATE_FORMAT));
+	}
+	
+	public static void closeAllTabsExceptMain(String tabtitle) {
+		for (String handle : Constant.WEBDRIVER.getWindowHandles()) {
+			Constant.WEBDRIVER.switchTo().window(handle);
+			if(!Constant.WEBDRIVER.getTitle().contains(tabtitle)) {
+				Constant.WEBDRIVER.close();
+			}
+		}
+		String mainTab = Constant.WEBDRIVER.getWindowHandle();
+		Constant.WEBDRIVER.switchTo().window(mainTab);
 	}
 }
 

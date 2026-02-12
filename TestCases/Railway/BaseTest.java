@@ -52,7 +52,7 @@ public abstract class BaseTest {
 		MainPage mainPageMailWeb = new MainPage();
 		mainPageMailWeb.setEmailName(Utilities.getEmailPartName(randomEmail));
 		mainPageMailWeb.activeAccount();
-				
+					
 		return new UserInfo(
 				randomEmail, 
 				Constant.PASSWORD, 

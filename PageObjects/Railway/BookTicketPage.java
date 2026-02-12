@@ -61,30 +61,35 @@ public class BookTicketPage extends GeneralPage{
 	}
 	
 	public BookTicketPage selectDepartDate(String date) {
+		Utilities.scrollToElement(_departDate);
 		Select selectDate = new Select(this.getDepartDate());
         selectDate.selectByVisibleText(date);
         return this;
 	}
 	
 	public BookTicketPage selectDepartStation(String departStation) {
+		Utilities.scrollToElement(_departStation);
 		Select selectDepartStation = new Select(this.getDepartStation());
 		selectDepartStation.selectByVisibleText(departStation);
 		return this;
 	}
 	
 	public BookTicketPage selectArriveStation(String arriveStation) {
+		Utilities.scrollToElement(_arriveStation);
 		Select selectArriveStation = new Select(this.getArriveStation());
 		selectArriveStation.selectByVisibleText(arriveStation);
 		return this;
 	}
 	
 	public BookTicketPage selectSeatType(String seatType) {
+		Utilities.scrollToElement(_seatType);
 		Select selectSeatType = new Select(this.getSeatType());
 		selectSeatType.selectByVisibleText(seatType);
 		return this;
 	}
 	
 	public BookTicketPage selectTicketAmount(String ticketAmount) {
+		Utilities.scrollToElement(_ticketAmount);
 		Select selectTicketAmount = new Select(this.getTicketAmount());
 		selectTicketAmount.selectByVisibleText(ticketAmount);
 		return this;

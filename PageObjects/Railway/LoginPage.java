@@ -8,7 +8,6 @@ import Constant.Constant;
 public class LoginPage extends GeneralPage{
 	private final By _txtUsername = By.xpath("//input[@id='username']");
 	private final By _txtPassword = By.xpath("//input[@id='password']");
-	private final By _txtLoginPageTitle = By.xpath("//h1[text()=\"Login page\"]");
 	private final By _btnLogin = By.xpath("//input[@value='login']");
 	private final By _lblLoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
 	private final By _linkForgotPassword = By.xpath("//a[text()=\"Forgot Password page\"]");
@@ -30,18 +29,23 @@ public class LoginPage extends GeneralPage{
 	}
 	
 	@SuppressWarnings("unchecked")
-	public <T extends GeneralPage> T login (UserInfo userInfo) {
-		Utilities.enter(_txtUsername, userInfo.getUserEmail());
-		Utilities.enter(_txtPassword, userInfo.getUserPassword());
-		Utilities.click(_btnLogin);
-		
-		boolean isLoginTitleExist = Utilities.isDisplayed(_txtLoginPageTitle);
-		System.out.println("Boolean: " + isLoginTitleExist);
-		if (!isLoginTitleExist) {
-			return (T) new HomePage();
-		} else {
-			return (T) this;
+	public <T extends GeneralPage> T login(UserInfo userInfo) {
+	    Utilities.enter(_txtUsername, userInfo.getUserEmail());
+	    Utilities.enter(_txtPassword, userInfo.getUserPassword());
+	    Utilities.click(_btnLogin);
+
+	    try {
+	    	 Utilities.waitForTitleExist("Safe Railway");
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
+	    
+	    String titlePage = this.getPageTitle();
+	    if (titlePage.contains("Welcome to Safe Railway")) {
+	        return (T) new HomePage();
+	    } else {
+	        return (T) this;
+	    }
 	}
 	
 	public ForgotPasswordPage gotoForgotPasswordPage() {
