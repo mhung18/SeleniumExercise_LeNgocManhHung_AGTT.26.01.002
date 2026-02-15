@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import Common.Utilities;
 import Constant.Constant;
 import Constant.MenuPage;
+import Constant.PageIdentifier;
 import Guerrillamail.MainPage;
 
 public class CreateAccountTest extends BaseTest{
@@ -19,7 +20,8 @@ public class CreateAccountTest extends BaseTest{
 		
 		// Expected Messages
 		String expectedMsg = "This email address is already in use.";
-				
+		
+		// Main Test 	
 		System.out.println("TC07: User can't create account with an already in-use email");
 		
 		System.out.println("1. Navigate to QA Railway Website");
@@ -27,7 +29,7 @@ public class CreateAccountTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Click on \"Register\" tab");
-		RegisterPage registerPage = homePage.goToPage(MenuPage.REGISTER, RegisterPage.class);
+		RegisterPage registerPage = homePage.goToPage(MenuPage.REGISTER, PageIdentifier.REGISTER, RegisterPage.class);
 		
 		System.out.println("3. Enter information of the created account in Pre-condition");
 		System.out.println("4. Click on \"Register\" button");
@@ -46,9 +48,9 @@ public class CreateAccountTest extends BaseTest{
 	@Test
 	public void TC08() {
 		// Create Data Object
-		String emailString = Utilities.generateRandomEmail();
+		String randomEmail = Utilities.generateRandomEmail();
 		UserInfo userInfo = new UserInfo(
-				emailString, 
+				randomEmail, 
 				Constant.BLANKFIELD, 
 				Constant.BLANKFIELD);
 		
@@ -57,6 +59,7 @@ public class CreateAccountTest extends BaseTest{
 		String expectedPasswordErrorMsg = "Invalid password length";
 		String expectedPassportIdErrorMsg = "Invalid ID length";
 		
+		// Main Test 	
 		System.out.println("TC08: User can't create account while password and PID fields are empty");
 		
 		System.out.println("1. Navigate to QA Railway Website");
@@ -64,11 +67,12 @@ public class CreateAccountTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Click on \"Register\" tab");
-		RegisterPage registerPage = homePage.goToPage(MenuPage.REGISTER, RegisterPage.class);
+		RegisterPage registerPage = homePage.goToPage(MenuPage.REGISTER, PageIdentifier.REGISTER, RegisterPage.class);
+		String nameString = Utilities.getTitle();
+		System.out.println(nameString);
 		
 		System.out.println("3. Enter valid email address and leave other fields empty");
 		System.out.println("4. Click on \"Register\" button");
-		
 		registerPage.regiter(
 				userInfo.getUserEmail(), 
 				userInfo.getUserPassword(), 
@@ -89,11 +93,11 @@ public class CreateAccountTest extends BaseTest{
 	}
 	
 	@Test
-	public void TC09() {
+	public void TC09() throws InterruptedException {
 		// Create Data Object
-		String emailString = Utilities.generateRandomEmail();
+		String randomEmail = Utilities.generateRandomEmail();
 		UserInfo userInfo = new UserInfo(
-				emailString, 
+				randomEmail, 
 				Constant.PASSWORD, 
 				Constant.PASSPORTID);
 		
@@ -101,6 +105,8 @@ public class CreateAccountTest extends BaseTest{
 		String expectedHref = "http://saferailway.somee.com/Account/Register.cshtml";
 		String expectedMsg = "Thank you for registering your account";
 		String expectedRegisterConfirmStringMsg = "Registration Confirmed! You can now log in to the site.";
+		String expectedLinkText = "create an account";
+		String expectedTab = MenuPage.REGISTER.getPageName();
 		
 		// Main Test 
 		System.out.println("TC09: User create and activate account");
@@ -110,19 +116,22 @@ public class CreateAccountTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("VP: Home page is shown with guide containing href \"create an account\" to \"Register\" page");
-		Utilities.scrollToEndPage();
-		String actuallinkText = homePage.getLinkToCreateAccount().getText();
-		String expectedLinkText = "create an account";
-		Assert.assertEquals(actuallinkText, expectedLinkText, "Link text is not displayed as expected");
+		String actualLinkText = Utilities.getTextOfElement(homePage.getLinkToCreateAccount());
+		Assert.assertEquals(actualLinkText, expectedLinkText, "Link text is not displayed as expected");
 		
 		String actualHref = homePage.getLinkToCreateAccount().getDomProperty("href");
 		Assert.assertEquals(actualHref, expectedHref, "The link does not redirect to Register Page");
 		
 		System.out.println("2. Click on \"Create an account\"");
-		homePage.getLinkToCreateAccount().click();
 		RegisterPage registerPage = new RegisterPage();
+		registerPage = homePage.goToCreateAccount();
+		
+		System.out.println("VP: Register page is shown");
 		String actualCurrentPageString = registerPage.getSelectedTabName();
-		Assert.assertEquals(actualCurrentPageString, "Register", "The link does not redirect to Register Page");
+		System.out.println(actualCurrentPageString);
+		String nameString = Constant.WEBDRIVER.getTitle();
+		System.out.println(nameString);
+		Assert.assertEquals(actualCurrentPageString, expectedTab, "The link does not redirect to Register Page");
 		
 		System.out.println("3. Enter valid information into all fields");
 		System.out.println("4. Click on \"Register\" button");

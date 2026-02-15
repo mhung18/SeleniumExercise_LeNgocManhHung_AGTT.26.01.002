@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import Common.Utilities;
 import Constant.Constant;
 
-public class ForgotPasswordPage extends GeneralPage{
+public class ForgotPasswordPage {
 	private final By _txtEmailForgotPassword = By.xpath("//input[@id=\"email\"]");
 	private final By _btnSendInstruction = By.xpath("//input[@value=\"Send Instructions\"]");
 	private final By _txtForgotPasswordForm = By.xpath("//form//legend[text()=\"Password Change Form\"]");
@@ -34,7 +34,7 @@ public class ForgotPasswordPage extends GeneralPage{
 	}
 	
 	public ForgotPasswordPage changePassword (String newPassword, String confirmNewPassword) {
-		Utilities.waitForElementVisible(_txtNewPassword, 10);
+		Utilities.waitForElementVisible(_txtNewPassword);
 		Utilities.enter(_txtNewPassword, newPassword);
 		Utilities.enter(_txtConfirmNewPassword, confirmNewPassword);
 		Utilities.click(_btnResetPassword);
@@ -42,7 +42,7 @@ public class ForgotPasswordPage extends GeneralPage{
 	}
 	
 	public String getStateResetPassword() {
-		Utilities.waitForElementVisible(_txtStateResetPassword, 10);
+		Utilities.waitForElementVisible(_txtStateResetPassword);
 		return Utilities.getTextOfElement(_txtStateResetPassword);
 	}
 }

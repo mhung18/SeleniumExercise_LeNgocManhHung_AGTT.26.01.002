@@ -11,6 +11,7 @@ import org.testng.annotations.Parameters;
 import Common.Utilities;
 import Constant.Constant;
 import Constant.MenuPage;
+import Constant.PageIdentifier;
 import Guerrillamail.MainPage;
 
 public abstract class BaseTest {
@@ -38,7 +39,7 @@ public abstract class BaseTest {
 		HomePage homePage = new HomePage();
 		homePage.open();
 		
-		RegisterPage registerPage = homePage.goToPage(MenuPage.REGISTER, RegisterPage.class);
+		RegisterPage registerPage = homePage.goToPage(MenuPage.REGISTER, PageIdentifier.REGISTER, RegisterPage.class);
 		
 		String randomEmail = Utilities.generateRandomEmail();
 		registerPage.regiter(
@@ -61,7 +62,7 @@ public abstract class BaseTest {
 	
 	public BookTicketPage bookTicket (TicketInfo ticketInfo) {
 		HomePage homePage = new HomePage();
-		BookTicketPage bookTicketPage = homePage.goToPage(MenuPage.BOOKTICKET, BookTicketPage.class);
+		BookTicketPage bookTicketPage = homePage.goToPage(MenuPage.BOOKTICKET, PageIdentifier.BOOKTICKET, BookTicketPage.class);
 		bookTicketPage.bookNewTicket(ticketInfo);
 		return new BookTicketPage();
 	}

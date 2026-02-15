@@ -6,6 +6,7 @@ import Common.Utilities;
 import Constant.City;
 import Constant.Constant;
 import Constant.MenuPage;
+import Constant.PageIdentifier;
 import Constant.SeatType;
 
 public class BookTicketTest extends BaseTest{
@@ -33,11 +34,11 @@ public class BookTicketTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Login with a valid account ");
-		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 		homePage = loginPage.login(userInfo);
 		
 		System.out.println("3. Click on \"Book ticket\" tab");
-		BookTicketPage bookTicketPage = homePage.goToPage(MenuPage.BOOKTICKET, BookTicketPage.class);
+		BookTicketPage bookTicketPage = homePage.goToPage(MenuPage.BOOKTICKET, PageIdentifier.BOOKTICKET, BookTicketPage.class);
 		
 		System.out.println("4. Select the next 2 days from \"Depart date\"");
 		ticketInfo.setDepartDate(bookTicketPage.getDatePlusDays(2));
@@ -91,11 +92,11 @@ public class BookTicketTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Login with a valid account ");
-		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 		homePage = loginPage.login(userInfo);
 		
 		System.out.println("3. Click on \"Book ticket\" tab");
-		BookTicketPage bookTicketPage = homePage.goToPage(MenuPage.BOOKTICKET, BookTicketPage.class);
+		BookTicketPage bookTicketPage = homePage.goToPage(MenuPage.BOOKTICKET, PageIdentifier.BOOKTICKET, BookTicketPage.class);
 		
 		System.out.println("4. Select the next 25 days from \"Depart date\"");
 		ticketInfo.setDepartDate(bookTicketPage.getDatePlusDays(25));
@@ -147,11 +148,11 @@ public class BookTicketTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Login with a valid account");
-		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 		homePage = loginPage.login(userInfo);
 		
 		System.out.println("3. Click on \"Timetable\" tab");
-		TimeTablePage timeTablePage = homePage.goToPage(MenuPage.TIMETABLE, TimeTablePage.class);
+		TimeTablePage timeTablePage = homePage.goToPage(MenuPage.TIMETABLE, PageIdentifier.TIMETABLE, TimeTablePage.class);
 		
 		System.out.println("4. Click on \"check price\" link of the route from \"Đà Nẵng\" to \"Sài Gòn\"");
 		TicketPricePage ticketPricePage = timeTablePage.checkPriceRoute("Đà Nẵng", "Sài Gòn");
@@ -207,11 +208,11 @@ public class BookTicketTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Login with a valid account");
-		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 		homePage = loginPage.login(userInfo);
 		
 		System.out.println("3. Click on \"Timetable\" tab");
-		TimeTablePage timeTablePage = homePage.goToPage(MenuPage.TIMETABLE, TimeTablePage.class);
+		TimeTablePage timeTablePage = homePage.goToPage(MenuPage.TIMETABLE, PageIdentifier.TIMETABLE, TimeTablePage.class);
 		
 		System.out.println("4. Click on book ticket of route \"Quảng Ngãi\" to \"Huế\"");
 		BookTicketPage bookTicketPage = timeTablePage.bookTicketWithRoute(

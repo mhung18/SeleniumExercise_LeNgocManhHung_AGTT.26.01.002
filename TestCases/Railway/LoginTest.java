@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import Common.Utilities;
 import Constant.Constant;
 import Constant.MenuPage;
+import Constant.PageIdentifier;
 
 public class LoginTest extends BaseTest{
 	@Test
@@ -25,10 +26,9 @@ public class LoginTest extends BaseTest{
 		System.out.println("1. Navigate to QA Railway Website");
 		HomePage homePage = new HomePage();
 		homePage.open();
-		Utilities.waitForPageFullyLoad();
 		
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 		System.out.println(Constant.WEBDRIVER.getTitle());
 		
 		System.out.println("3. Enter valid Email and Password");
@@ -58,12 +58,12 @@ public class LoginTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 		
 		System.out.println("3. User doesn't type any words into \"Username\" textbox but enter valid information into \"Password\" textbox ");
 		System.out.println("4. Click on \"Login\" button");
 		loginPage = loginPage.login(userInfo);
-		String actualErrorMsg = Utilities.getTextOfElement(loginPage.getLblLoginErrorMsg());
+		String actualErrorMsg = loginPage.getLoginErrorMsg();
 		
 		System.out.println("VP: User can't login and message \"There was a problem with your login and/or errors exist in your form. \" appears.");
 		Assert.assertEquals(actualErrorMsg.trim(), expectedErrorMsg.trim(),"Error message is not displayed as expected");		
@@ -88,12 +88,12 @@ public class LoginTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 		
 		System.out.println("3. Enter valid Email and invalid Password");
 		System.out.println("4. Click on \"Login\" button");
 		loginPage = loginPage.login(userInfo);
-		String actualErrorMsg = Utilities.getTextOfElement(loginPage.getLblLoginErrorMsg());
+		String actualErrorMsg = loginPage.getLoginErrorMsg();
 		
 		System.out.println("VP: Error message \"There was a problem with your login and/or errors exist in your form.\" is displayed");
 		Assert.assertEquals(actualErrorMsg.trim(), expectedErrorMsg.trim(),"Error message is not displayed as expected");
@@ -118,7 +118,7 @@ public class LoginTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 		
 		System.out.println("3. Enter valid information into \"Username\" textbox except \"Password\" textbox.");
 		System.out.println("4. Click on \"Login\" button");
@@ -154,7 +154,7 @@ public class LoginTest extends BaseTest{
 		HomePage homePage = new HomePage();
 		homePage.open();
 		
-		RegisterPage registerPage = homePage.goToPage(MenuPage.REGISTER, RegisterPage.class);
+		RegisterPage registerPage = homePage.goToPage(MenuPage.REGISTER, PageIdentifier.REGISTER, RegisterPage.class);
 		registerPage.regiter(
 				userInfo.getUserEmail(), 
 				userInfo.getUserPassword(), 
@@ -163,15 +163,14 @@ public class LoginTest extends BaseTest{
 		
 		System.out.println("1. Navigate to QA Railway Website");
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = registerPage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 		
 		System.out.println("3. Enter username and password of account hasn't been activated.");
 		System.out.println("4. Click on \"Login\" button");
 		loginPage = loginPage.login(userInfo);
 		
-		String actualErrorMsg = Utilities.getTextOfElement(loginPage.getLblLoginErrorMsg());
-		
 		System.out.println("VP: User can't login and message \"Invalid username or password. Please try again.\" appears.");
+		String actualErrorMsg = loginPage.getLoginErrorMsg();
 		Assert.assertEquals(actualErrorMsg.trim(), expectedWarningMsg.trim(),"Error message is not displayed as expected");
 	}
 }

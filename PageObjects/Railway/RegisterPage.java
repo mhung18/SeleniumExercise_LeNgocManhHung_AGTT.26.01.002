@@ -1,10 +1,7 @@
 package Railway;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
 import Common.Utilities;
-import Constant.Constant;
 
 public class RegisterPage extends GeneralPage {
 	private final By _txtEmail = By.id("email");
@@ -15,46 +12,28 @@ public class RegisterPage extends GeneralPage {
 	private final By _lblRegisterErrorMsg = By.xpath("//p[@class=\"message error\"]");
 	private final By _lblPasswordErrorMsg = By.xpath("//label[@for=\"password\" and @class=\"validation-error\"]");
 	private final By _lblPassportIdErrorMsg = By.xpath("//label[@for=\"pid\" and @class=\"validation-error\"]");
-	private final By _lblRegisterSuccessfully = By.xpath("//h1[text()=\"Thank you for registering your account\"]");
+	private final By _lblRegisterSuccessfullyMsg = By.xpath("//h1[text()=\"Thank you for registering your account\"]");
 	private final By _lblRegisterConfirmMsg = By.xpath("//div[@id=\"content\"]/p");
-
-	
-	public WebElement getTxtEmai() {
-		return Constant.WEBDRIVER.findElement(_txtEmail);
-	}
-	public WebElement getTxtPassword() {
-		return Constant.WEBDRIVER.findElement(_txtPassword);
-	}
-	public WebElement getTxtConfirmPassword() {
-		return Constant.WEBDRIVER.findElement(_txtConfirmPassword);
-	}
-	public WebElement getTxtPassportId() {
-		return Constant.WEBDRIVER.findElement(_txtPassportId);
-	}
-	public WebElement getBtnRegister() {
-		return Constant.WEBDRIVER.findElement(_btnRegister);
-	}
-	
 	
 	public String getLblRegisterErrorMsg() {
-		Utilities.waitForElementVisible(_lblRegisterErrorMsg, 10);
-		return Constant.WEBDRIVER.findElement(_lblRegisterErrorMsg).getText();
+		Utilities.waitForElementVisible(_lblRegisterErrorMsg);
+		return Utilities.getTextOfElement(_lblRegisterErrorMsg);
 	}
 	public String getLblPasswordErrorMsg() {
-		Utilities.waitForElementVisible(_lblPasswordErrorMsg, 10);
-		return Constant.WEBDRIVER.findElement(_lblPasswordErrorMsg).getText();
+		Utilities.waitForElementVisible(_lblPasswordErrorMsg);
+		return Utilities.getTextOfElement(_lblPasswordErrorMsg);
 	}
 	public String getLblPassportIdErrorMsg() {
-		Utilities.waitForElementVisible(_lblPassportIdErrorMsg, 10);
-		return Constant.WEBDRIVER.findElement(_lblPassportIdErrorMsg).getText();
+		Utilities.waitForElementVisible(_lblPassportIdErrorMsg);
+		return Utilities.getTextOfElement(_lblPassportIdErrorMsg);
 	}
 	public String getLblRegisterSuccessfully() {
-		Utilities.waitForElementVisible(_lblRegisterSuccessfully, 10);
-		return Constant.WEBDRIVER.findElement(_lblRegisterSuccessfully).getText();
+		Utilities.waitForElementVisible(_lblRegisterSuccessfullyMsg);
+		return Utilities.getTextOfElement(_lblRegisterSuccessfullyMsg);
 	}
 	public String getRegisterConfirmMsg() {
-		Utilities.waitForElementVisible(_lblRegisterConfirmMsg, 10);
-		return Constant.WEBDRIVER.findElement(_lblRegisterConfirmMsg).getText();
+		Utilities.waitForElementVisible(_lblRegisterConfirmMsg);
+		return Utilities.getTextOfElement(_lblRegisterConfirmMsg);
 	}
 	
 	public RegisterPage regiter(String email, String pass, String confirmPass, String passportId) {

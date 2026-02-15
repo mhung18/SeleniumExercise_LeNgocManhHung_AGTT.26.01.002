@@ -1,7 +1,6 @@
 package Railway;
 
 import org.openqa.selenium.By;
-
 import Common.Utilities;
 import Constant.Constant;
 
@@ -12,7 +11,7 @@ public class MyTicketPage extends GeneralPage{
 			+ "and td[normalize-space()='%s'] "
 			+ "and td[normalize-space()='%s'] ]"
 			+ "//input[@value='Cancel']";
-	
+
 	public MyTicketPage cancelTicket (TicketInfo ticketInfo) {
 		String ticketXpath = String.format(
 				_dymTicketInfo, 

@@ -6,6 +6,7 @@ import Common.Utilities;
 import Constant.City;
 import Constant.Constant;
 import Constant.MenuPage;
+import Constant.PageIdentifier;
 import Constant.SeatType;
 
 public class CancelBookingTest extends BaseTest{
@@ -31,14 +32,14 @@ public class CancelBookingTest extends BaseTest{
 		homePage.open();
 		
 		System.out.println("2. Login with a valid account");
-		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 		homePage = loginPage.login(userInfo);
 
 		System.out.println("3. Book a ticket");
 		BookTicketPage bookTicketPage = bookTicket(ticketInfo);
 		
 		System.out.println("4. Click on \"My ticket\" tab");
-		MyTicketPage myTicketPage = bookTicketPage.goToPage(MenuPage.MYTICKET, MyTicketPage.class);
+		MyTicketPage myTicketPage = bookTicketPage.goToPage(MenuPage.MYTICKET, PageIdentifier.MYTICKET, MyTicketPage.class);
 		
 		System.out.println("5. Click on \"Cancel\" button of ticket which user want to cancel.");
 		System.out.println("6. Click on \"OK\" button on Confirmation message \"Are you sure?\"");

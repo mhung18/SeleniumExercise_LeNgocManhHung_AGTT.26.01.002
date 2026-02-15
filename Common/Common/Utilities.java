@@ -16,16 +16,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import Constant.Constant;
 
 public class Utilities {
-	public static By waitForElementClickable (By locator, int timeout) {
-		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(timeout));
+	public static By waitForElementClickable (By locator) {
+		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT_WAIT_SECOND));
 		wait.until(
 				ExpectedConditions.elementToBeClickable(locator)
 		);
 		return locator;
 	}
 	
-	public static By waitForElementVisible (By locator, int timeout) {
-		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(timeout));
+	public static By waitForElementVisible (By locator) {
+		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT_WAIT_SECOND));
 		wait.until(
 				ExpectedConditions.visibilityOfElementLocated(locator)
 		);
@@ -66,7 +66,7 @@ public class Utilities {
 	}
 	
 	public static void scrollToElement(By locator) {
-		waitForElementVisible(locator, 10);
+		waitForElementVisible(locator);
 		WebElement webElement = Constant.WEBDRIVER.findElement(locator);
 		scrollToElement(webElement);
 	}
@@ -77,8 +77,8 @@ public class Utilities {
 	}
 	
 	public static boolean isDisplayed(By locator) {
-		Utilities.waitForElementLocated(locator);
 		try {
+			Utilities.waitForElementLocated(locator);
 			Constant.WEBDRIVER.findElement(locator);
 			return true;
 		} catch (Exception e) {
@@ -126,7 +126,7 @@ public class Utilities {
 	}
 	
 	public static String getTextOfElement (By locator) {
-		Utilities.waitForElementVisible(locator, 10);
+		Utilities.waitForElementVisible(locator);
 		WebElement webElement = Constant.WEBDRIVER.findElement(locator);
 		return getTextOfElement(webElement);
 	}
@@ -151,6 +151,11 @@ public class Utilities {
 		}
 		String mainTab = Constant.WEBDRIVER.getWindowHandle();
 		Constant.WEBDRIVER.switchTo().window(mainTab);
+	}
+	
+	public static String getTitle () {
+		Utilities.waitForPageFullyLoad();
+		return Constant.WEBDRIVER.getTitle();
 	}
 }
 

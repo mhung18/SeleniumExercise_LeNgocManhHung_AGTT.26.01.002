@@ -1,32 +1,14 @@
 package Railway;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import Common.Utilities;
-import Constant.Constant;
 
 public class LoginPage extends GeneralPage{
 	private final By _txtUsername = By.xpath("//input[@id='username']");
 	private final By _txtPassword = By.xpath("//input[@id='password']");
 	private final By _btnLogin = By.xpath("//input[@value='login']");
 	private final By _lblLoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
-	private final By _linkForgotPassword = By.xpath("//a[text()=\"Forgot Password page\"]");
-	
-	public WebElement getTxtUsername() {
-		return Constant.WEBDRIVER.findElement(_txtUsername);
-	}
-	public WebElement getTxtPassword() {
-		return Constant.WEBDRIVER.findElement(_txtPassword);
-	}
-	public WebElement getBtnLogin() {
-		return Constant.WEBDRIVER.findElement(_btnLogin);
-	}
-	public WebElement getLblLoginErrorMsg() {
-		return Constant.WEBDRIVER.findElement(_lblLoginErrorMsg);
-	}
-	public WebElement getLinkForgotPassword() {
-		return Constant.WEBDRIVER.findElement(_linkForgotPassword);
-	}
+	private final By _lnkForgotPassword = By.xpath("//a[text()=\"Forgot Password page\"]");
 	
 	@SuppressWarnings("unchecked")
 	public <T extends GeneralPage> T login(UserInfo userInfo) {
@@ -35,21 +17,15 @@ public class LoginPage extends GeneralPage{
 	    Utilities.click(_btnLogin);
 
 	    try {
-	    	 Utilities.waitForTitleExist("Safe Railway");
+	    	Utilities.waitForTitleExist("Safe Railway");
+	    	return (T) new HomePage();
 		} catch (Exception e) {
-			// TODO: handle exception
+			return (T) this;
 		}
-	    
-	    String titlePage = this.getPageTitle();
-	    if (titlePage.contains("Welcome to Safe Railway")) {
-	        return (T) new HomePage();
-	    } else {
-	        return (T) this;
-	    }
 	}
 	
 	public ForgotPasswordPage gotoForgotPasswordPage() {
-		this.getLinkForgotPassword().click();
+		Utilities.click(_lnkForgotPassword);
 		return new ForgotPasswordPage();
 	}
 	

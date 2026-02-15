@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import Common.Utilities;
 import Constant.MenuPage;
+import Constant.PageIdentifier;
 import Guerrillamail.MainPage;
 
 public class ResetPasswordTest extends BaseTest {
@@ -23,7 +24,7 @@ public class ResetPasswordTest extends BaseTest {
 		System.out.println("1. Navigate to QA Railway Login page");
 		HomePage homePage = new HomePage();
 		homePage.open();
-		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 
 		System.out.println("2. Click on \"Forgot Password page\" link");
 		ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
@@ -73,7 +74,7 @@ public class ResetPasswordTest extends BaseTest {
 		System.out.println("1. Navigate to QA Railway Login page");
 		HomePage homePage = new HomePage();
 		homePage.open();
-		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 
 		System.out.println("2. Click on \"Forgot Password page\" link");
 		ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();

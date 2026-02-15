@@ -2,7 +2,6 @@ package Railway;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -10,30 +9,31 @@ import Common.Utilities;
 import Constant.Constant;
 
 public class BookTicketPage extends GeneralPage{
-	private final By _departDate = By.name("Date");
-	private final By _departStation = By.name("DepartStation");
-	private final By _arriveStation = By.name("ArriveStation");
-	private final By _seatType = By.name("SeatType");
-	private final By _ticketAmount = By.name("TicketAmount");
+	private final By _dropdownDepartDate = By.name("Date");
+	private final By _dropdowndDepartStation = By.name("DepartStation");
+	private final By _dropdownArriveStation = By.name("ArriveStation");
+	private final By _dropdownSeatType = By.name("SeatType");
+	private final By _dropdownTicketAmount = By.name("TicketAmount");
 	private final By _btnBookTicket = By.xpath("//input[@value=\"Book ticket\"]");
 	private final By _lblSuccessfulBooking = By.xpath("//div[@id=\"content\"]/h1[text()=\"Ticket booked successfully!\"]");
-	private final String _dymTicketBookedInfo = "(//tr/td)[count(//tr/th[text()=\"%s\"]/preceding-sibling::th)+1]";
 	private final By _currentDepartDate = By.xpath("//select[@name=\"Date\"]/option[1]");
+	private final String _dymTicketBookedInfo = "(//tr/td)[count(//tr/th[text()=\"%s\"]/preceding-sibling::th)+1]";
+
 	
 	public WebElement getDepartDate () {
-		return Constant.WEBDRIVER.findElement(_departDate);
+		return Constant.WEBDRIVER.findElement(_dropdownDepartDate);
 	}
 	public WebElement getDepartStation () {
-		return Constant.WEBDRIVER.findElement(_departStation);
+		return Constant.WEBDRIVER.findElement(_dropdowndDepartStation);
 	}
 	public WebElement getArriveStation () {
-		return Constant.WEBDRIVER.findElement(_arriveStation);
+		return Constant.WEBDRIVER.findElement(_dropdownArriveStation);
 	}
 	public WebElement getSeatType () {
-		return Constant.WEBDRIVER.findElement(_seatType);
+		return Constant.WEBDRIVER.findElement(_dropdownSeatType);
 	}
 	public WebElement getTicketAmount () {
-		return Constant.WEBDRIVER.findElement(_ticketAmount);
+		return Constant.WEBDRIVER.findElement(_dropdownTicketAmount);
 	}
 	public WebElement getLblSuccessfulBooking () {
 		return Constant.WEBDRIVER.findElement(_lblSuccessfulBooking);
@@ -43,53 +43,52 @@ public class BookTicketPage extends GeneralPage{
 	}
 	
 	public String getSelectedDepartStation() {
-	    Utilities.waitForElementLocated(_departStation);
+	    Utilities.waitForElementLocated(_dropdowndDepartStation);
 	    Select select = new Select(this.getDepartStation());
 	    return select.getFirstSelectedOption().getText();
 	}
 
 	public String getSelectedArriveStation() {
-	    Utilities.waitForElementLocated(_arriveStation);
+	    Utilities.waitForElementLocated(_dropdownArriveStation);
 	    Select select = new Select(this.getArriveStation());
 	    return select.getFirstSelectedOption().getText();
 	}
 
-	
 	public String getCurrentDepartDate () {
-	    Utilities.waitForElementVisible(_currentDepartDate, 10);
+	    Utilities.waitForElementVisible(_currentDepartDate);
 	    return Utilities.getTextOfElement(_currentDepartDate).trim();
 	}
 	
 	public BookTicketPage selectDepartDate(String date) {
-		Utilities.scrollToElement(_departDate);
+		Utilities.scrollToElement(_dropdownDepartDate);
 		Select selectDate = new Select(this.getDepartDate());
         selectDate.selectByVisibleText(date);
         return this;
 	}
 	
 	public BookTicketPage selectDepartStation(String departStation) {
-		Utilities.scrollToElement(_departStation);
+		Utilities.scrollToElement(_dropdowndDepartStation);
 		Select selectDepartStation = new Select(this.getDepartStation());
 		selectDepartStation.selectByVisibleText(departStation);
 		return this;
 	}
 	
 	public BookTicketPage selectArriveStation(String arriveStation) {
-		Utilities.scrollToElement(_arriveStation);
+		Utilities.scrollToElement(_dropdownArriveStation);
 		Select selectArriveStation = new Select(this.getArriveStation());
 		selectArriveStation.selectByVisibleText(arriveStation);
 		return this;
 	}
 	
 	public BookTicketPage selectSeatType(String seatType) {
-		Utilities.scrollToElement(_seatType);
+		Utilities.scrollToElement(_dropdownSeatType);
 		Select selectSeatType = new Select(this.getSeatType());
 		selectSeatType.selectByVisibleText(seatType);
 		return this;
 	}
 	
 	public BookTicketPage selectTicketAmount(String ticketAmount) {
-		Utilities.scrollToElement(_ticketAmount);
+		Utilities.scrollToElement(_dropdownTicketAmount);
 		Select selectTicketAmount = new Select(this.getTicketAmount());
 		selectTicketAmount.selectByVisibleText(ticketAmount);
 		return this;
@@ -103,7 +102,7 @@ public class BookTicketPage extends GeneralPage{
 			this.selectDepartStation(ticketInfo.getDepartStation());
 		}
 		if (!ticketInfo.getArriveStattion().isEmpty()) {
-			Utilities.waitForOptionPresent(_arriveStation, ticketInfo.getArriveStattion(), 10);
+			Utilities.waitForOptionPresent(_dropdownArriveStation, ticketInfo.getArriveStattion(), 10);
 			this.selectArriveStation(ticketInfo.getArriveStattion());
 		}
 		if (!ticketInfo.getSeatType().isEmpty()) {
@@ -131,7 +130,7 @@ public class BookTicketPage extends GeneralPage{
 	}
 	
 	public String getLblSuccessfulBookingMsg () {
-		Utilities.waitForElementVisible(_lblSuccessfulBooking, 10);
+		Utilities.waitForElementVisible(_lblSuccessfulBooking);
 		return Utilities.getTextOfElement(_lblSuccessfulBooking);
 	}
 	

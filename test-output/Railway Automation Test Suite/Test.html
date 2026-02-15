@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/12/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>11/5/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Feb 12 12:33:01 GMT+07:00 2026</td>
+<td>Started on:</td><td>Sun Feb 15 23:21:07 GMT+07:00 2026</td>
 </tr>
-<tr><td>Total time:</td><td>447 seconds (447042 ms)</td>
+<tr><td>Total time:</td><td>391 seconds (391693 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,37 +76,33 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Railway.LoginTest.TC03()'><b>TC03</b><br>Test class: Railway.LoginTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;Safe Railway&quot;. Current title: &quot;Safe Railway - Login&quot;.
-(tried for 10 seconds with 500 milliseconds interval)
+<td title='Railway.BookTicketTest.TC15()'><b>TC15</b><br>Test class: Railway.BookTicketTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with text: 2/16/2026
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3528, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: f8523b79-0091-4113-bfff-4bc009520c5c
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForTitleExist(Utilities.java:55)
-	at Railway.LoginPage.login(LoginPage.java:37)
-	at Railway.LoginTest.TC03(LoginTest.java:95)
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:400)
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:128)
+	at Railway.BookTicketPage.selectDepartDate(BookTicketPage.java:65)
+	at Railway.BookTicketPage.bookNewTicketWithCurrentRoute(BookTicketPage.java:120)
+	at Railway.BookTicketTest.TC15(BookTicketTest.java:232)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1715409469", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1715409469'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;Safe Railway&quot;. Current title: &quot;Safe Railway - Login&quot;.
-(tried for 10 seconds with 500 milliseconds interval)
+... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace367512359", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace367512359'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with text: 2/16/2026
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3528, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: f8523b79-0091-4113-bfff-4bc009520c5c
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForTitleExist(Utilities.java:55)
-	at Railway.LoginPage.login(LoginPage.java:37)
-	at Railway.LoginTest.TC03(LoginTest.java:95)
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:400)
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:128)
+	at Railway.BookTicketPage.selectDepartDate(BookTicketPage.java:65)
+	at Railway.BookTicketPage.bookNewTicketWithCurrentRoute(BookTicketPage.java:120)
+	at Railway.BookTicketTest.TC15(BookTicketTest.java:232)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -124,213 +120,23 @@ Session ID: f8523b79-0091-4113-bfff-4bc009520c5c
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
 </pre></div></td>
-<td>13</td>
-<td>Railway.LoginTest@3d51f06e</td></tr>
-<tr>
-<td title='Railway.LogoutTest.TC06()'><b>TC06</b><br>Test class: Railway.LogoutTest</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//saferailway.somee.com/Page/HomePage.cshtml&amp;c=UTF-8&amp;d=Ch%C3%BAng%20t%C3%B4i%20kh%C3%B4ng%20th%E1%BB%83%20k%E1%BA%BFt%20n%E1%BB%91i%20%C4%91%E1%BA%BFn%20m%C3%A1y%20ch%E1%BB%A7%20t%E1%BA%A1i%20saferailway.somee.com.&amp;a=
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [203a450b-23e6-4b9f-9f78-4835dbae2e5a, get {url=http://saferailway.somee.com/Page/HomePage.cshtml}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3613, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 203a450b-23e6-4b9f-9f78-4835dbae2e5a
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:369)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:1179)
-	at Railway.HomePage.open(HomePage.java:14)
-	at Railway.LogoutTest.TC06(LogoutTest.java:26)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1926427354", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1926427354'><pre>org.openqa.selenium.WebDriverException: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//saferailway.somee.com/Page/HomePage.cshtml&amp;c=UTF-8&amp;d=Ch%C3%BAng%20t%C3%B4i%20kh%C3%B4ng%20th%E1%BB%83%20k%E1%BA%BFt%20n%E1%BB%91i%20%C4%91%E1%BA%BFn%20m%C3%A1y%20ch%E1%BB%A7%20t%E1%BA%A1i%20saferailway.somee.com.&amp;a=
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [203a450b-23e6-4b9f-9f78-4835dbae2e5a, get {url=http://saferailway.somee.com/Page/HomePage.cshtml}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3613, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 203a450b-23e6-4b9f-9f78-4835dbae2e5a
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:369)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:1179)
-	at Railway.HomePage.open(HomePage.java:14)
-	at Railway.LogoutTest.TC06(LogoutTest.java:26)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-</pre></div></td>
-<td>0</td>
-<td>Railway.LogoutTest@1d9b7cce</td></tr>
-<tr>
-<td title='Railway.LoginTest.TC02()'><b>TC02</b><br>Test class: Railway.LoginTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;Safe Railway&quot;. Current title: &quot;Safe Railway - Login&quot;.
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3500, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: ed8601a5-be78-42f6-a287-081aca260363
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForTitleExist(Utilities.java:55)
-	at Railway.LoginPage.login(LoginPage.java:37)
-	at Railway.LoginTest.TC02(LoginTest.java:65)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace340283110", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace340283110'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;Safe Railway&quot;. Current title: &quot;Safe Railway - Login&quot;.
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3500, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: ed8601a5-be78-42f6-a287-081aca260363
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForTitleExist(Utilities.java:55)
-	at Railway.LoginPage.login(LoginPage.java:37)
-	at Railway.LoginTest.TC02(LoginTest.java:65)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-</pre></div></td>
-<td>38</td>
-<td>Railway.LoginTest@3d51f06e</td></tr>
-<tr>
-<td title='Railway.BookTicketTest.TC12()'><b>TC12</b><br>Test class: Railway.BookTicketTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3885, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 0ea96a31-c245-4b81-a5be-93f2f44a4a7c
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.click(Utilities.java:111)
-	at Guerrillamail.MainPage.activeAccount(MainPage.java:54)
-	at Railway.BaseTest.createAndActiveAccount(BaseTest.java:54)
-	at Railway.BookTicketTest.TC12(BookTicketTest.java:29)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace178267087", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace178267087'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3885, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 0ea96a31-c245-4b81-a5be-93f2f44a4a7c
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.click(Utilities.java:111)
-	at Guerrillamail.MainPage.activeAccount(MainPage.java:54)
-	at Railway.BaseTest.createAndActiveAccount(BaseTest.java:54)
-	at Railway.BookTicketTest.TC12(BookTicketTest.java:29)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-</pre></div></td>
-<td>18</td>
-<td>Railway.BookTicketTest@14dd9eb7</td></tr>
+<td>27</td>
+<td>Railway.BookTicketTest@52e6fdee</td></tr>
 <tr>
 <td title='Railway.CancelBookingTest.TC16()'><b>TC16</b><br>Test class: Railway.CancelBookingTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 4044, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 6cd032bc-130e-494f-b0fc-4f30c41dae0b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.click(Utilities.java:111)
-	at Guerrillamail.MainPage.activeAccount(MainPage.java:54)
-	at Railway.BaseTest.createAndActiveAccount(BaseTest.java:54)
-	at Railway.CancelBookingTest.TC16(CancelBookingTest.java:27)
+<td><div><pre>java.lang.AssertionError: Ticket is not disappeared as expected expected [false] but found [true]
+	at Railway.CancelBookingTest.TC16(CancelBookingTest.java:50)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1254266774", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1254266774'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 4044, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 6cd032bc-130e-494f-b0fc-4f30c41dae0b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.click(Utilities.java:111)
-	at Guerrillamail.MainPage.activeAccount(MainPage.java:54)
-	at Railway.BaseTest.createAndActiveAccount(BaseTest.java:54)
-	at Railway.CancelBookingTest.TC16(CancelBookingTest.java:27)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace555473342", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace555473342'><pre>java.lang.AssertionError: Ticket is not disappeared as expected expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertFalse(Assert.java:79)
+	at Railway.CancelBookingTest.TC16(CancelBookingTest.java:50)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -348,207 +154,25 @@ Session ID: 6cd032bc-130e-494f-b0fc-4f30c41dae0b
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
 </pre></div></td>
-<td>26</td>
-<td>Railway.CancelBookingTest@52e6fdee</td></tr>
-<tr>
-<td title='Railway.BookTicketTest.TC15()'><b>TC15</b><br>Test class: Railway.BookTicketTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 4005, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 6a61d31a-e695-43d8-af37-18ec060019ea
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.click(Utilities.java:111)
-	at Guerrillamail.MainPage.activeAccount(MainPage.java:54)
-	at Railway.BaseTest.createAndActiveAccount(BaseTest.java:54)
-	at Railway.BookTicketTest.TC15(BookTicketTest.java:203)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1507974324", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1507974324'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 4005, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 6a61d31a-e695-43d8-af37-18ec060019ea
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.click(Utilities.java:111)
-	at Guerrillamail.MainPage.activeAccount(MainPage.java:54)
-	at Railway.BaseTest.createAndActiveAccount(BaseTest.java:54)
-	at Railway.BookTicketTest.TC15(BookTicketTest.java:203)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-</pre></div></td>
-<td>48</td>
-<td>Railway.BookTicketTest@14dd9eb7</td></tr>
-<tr>
-<td title='Railway.BookTicketTest.TC14()'><b>TC14</b><br>Test class: Railway.BookTicketTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3963, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: aa65f167-c80f-4c67-8931-7358ef8423b4
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.click(Utilities.java:111)
-	at Guerrillamail.MainPage.activeAccount(MainPage.java:54)
-	at Railway.BaseTest.createAndActiveAccount(BaseTest.java:54)
-	at Railway.BookTicketTest.TC14(BookTicketTest.java:143)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace303520044", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace303520044'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3963, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: aa65f167-c80f-4c67-8931-7358ef8423b4
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.click(Utilities.java:111)
-	at Guerrillamail.MainPage.activeAccount(MainPage.java:54)
-	at Railway.BaseTest.createAndActiveAccount(BaseTest.java:54)
-	at Railway.BookTicketTest.TC14(BookTicketTest.java:143)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-</pre></div></td>
-<td>23</td>
-<td>Railway.BookTicketTest@14dd9eb7</td></tr>
-<tr>
-<td title='Railway.LoginTest.TC05()'><b>TC05</b><br>Test class: Railway.LoginTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //input[@id=&apos;username&apos;], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //input[@id=&apos;username&apos;].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3582, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 329c4190-bd24-4eab-ab3c-76876ef42196
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.enter(Utilities.java:118)
-	at Railway.LoginPage.login(LoginPage.java:33)
-	at Railway.LoginTest.TC05(LoginTest.java:170)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1544721391", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1544721391'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //input[@id=&apos;username&apos;], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //input[@id=&apos;username&apos;].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3582, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 329c4190-bd24-4eab-ab3c-76876ef42196
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.enter(Utilities.java:118)
-	at Railway.LoginPage.login(LoginPage.java:33)
-	at Railway.LoginTest.TC05(LoginTest.java:170)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-</pre></div></td>
-<td>24</td>
-<td>Railway.LoginTest@3d51f06e</td></tr>
+<td>27</td>
+<td>Railway.CancelBookingTest@6c80d78a</td></tr>
 <tr>
 <td title='Railway.ResetPasswordTest.TC10()'><b>TC10</b><br>Test class: Railway.ResetPasswordTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3789, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: dd271150-55e5-471b-bc9a-d8617e2d82be
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.click(Utilities.java:111)
-	at Guerrillamail.MainPage.activeAccount(MainPage.java:54)
-	at Railway.BaseTest.createAndActiveAccount(BaseTest.java:54)
-	at Railway.ResetPasswordTest.TC10(ResetPasswordTest.java:21)
+<td><div><pre>java.lang.AssertionError: Error message when reset password is not displayed as expected expected [The new password cannot be the same with the current password] but found [Password changed! Click here to login.]
+	at Railway.ResetPasswordTest.TC10(ResetPasswordTest.java:59)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1394749311", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1394749311'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3789, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: dd271150-55e5-471b-bc9a-d8617e2d82be
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.click(Utilities.java:111)
-	at Guerrillamail.MainPage.activeAccount(MainPage.java:54)
-	at Railway.BaseTest.createAndActiveAccount(BaseTest.java:54)
-	at Railway.ResetPasswordTest.TC10(ResetPasswordTest.java:21)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1024733838", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1024733838'><pre>java.lang.AssertionError: Error message when reset password is not displayed as expected expected [The new password cannot be the same with the current password] but found [Password changed! Click here to login.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at Railway.ResetPasswordTest.TC10(ResetPasswordTest.java:59)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -566,95 +190,25 @@ Session ID: dd271150-55e5-471b-bc9a-d8617e2d82be
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
 </pre></div></td>
-<td>63</td>
-<td>Railway.ResetPasswordTest@42e99e4a</td></tr>
-<tr>
-<td title='Railway.BookTicketTest.TC13()'><b>TC13</b><br>Test class: Railway.BookTicketTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3924, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 20c9c0b2-94b2-4736-aed6-d78371994ea3
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.click(Utilities.java:111)
-	at Guerrillamail.MainPage.activeAccount(MainPage.java:54)
-	at Railway.BaseTest.createAndActiveAccount(BaseTest.java:54)
-	at Railway.BookTicketTest.TC13(BookTicketTest.java:87)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace340768370", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace340768370'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)], but... org.openqa.selenium.NoSuchElementException: Unable to locate element: //tbody[@id=&quot;email_list&quot;]//td[contains(text(),&quot;Please confirm your account&quot;)].
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3924, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 20c9c0b2-94b2-4736-aed6-d78371994ea3
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForElementLocated(Utilities.java:50)
-	at Common.Utilities.click(Utilities.java:111)
-	at Guerrillamail.MainPage.activeAccount(MainPage.java:54)
-	at Railway.BaseTest.createAndActiveAccount(BaseTest.java:54)
-	at Railway.BookTicketTest.TC13(BookTicketTest.java:87)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-</pre></div></td>
-<td>46</td>
-<td>Railway.BookTicketTest@14dd9eb7</td></tr>
+<td>54</td>
+<td>Railway.ResetPasswordTest@14dd9eb7</td></tr>
 <tr>
 <td title='Railway.LoginTest.TC04()'><b>TC04</b><br>Test class: Railway.LoginTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;Safe Railway&quot;. Current title: &quot;Safe Railway - Login&quot;.
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3555, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: ee611d69-d617-4726-9270-0f07842a8425
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForTitleExist(Utilities.java:55)
-	at Railway.LoginPage.login(LoginPage.java:37)
-	at Railway.LoginTest.TC04(LoginTest.java:125)
+<td><div><pre>java.lang.AssertionError: Error message is not displayed as expected expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+	at Railway.LoginTest.TC04(LoginTest.java:135)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1632631569", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1632631569'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;Safe Railway&quot;. Current title: &quot;Safe Railway - Login&quot;.
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3555, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: ee611d69-d617-4726-9270-0f07842a8425
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForTitleExist(Utilities.java:55)
-	at Railway.LoginPage.login(LoginPage.java:37)
-	at Railway.LoginTest.TC04(LoginTest.java:125)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1219681870", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1219681870'><pre>java.lang.AssertionError: Error message is not displayed as expected expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at Railway.LoginTest.TC04(LoginTest.java:135)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -672,60 +226,25 @@ Session ID: ee611d69-d617-4726-9270-0f07842a8425
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
 </pre></div></td>
-<td>19</td>
-<td>Railway.LoginTest@3d51f06e</td></tr>
+<td>27</td>
+<td>Railway.LoginTest@7ed7259e</td></tr>
 <tr>
-<td title='Railway.ResetPasswordTest.TC11()'><b>TC11</b><br>Test class: Railway.ResetPasswordTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: //a[text()=&quot;Forgot Password page&quot;]
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [6a4068c3-c1fa-4483-b939-84c07d26b9c9, findElement {value=//a[text()=&quot;Forgot Password page&quot;], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3843, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 6a4068c3-c1fa-4483-b939-84c07d26b9c9
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
-	at Railway.LoginPage.getLinkForgotPassword(LoginPage.java:28)
-	at Railway.LoginPage.gotoForgotPasswordPage(LoginPage.java:48)
-	at Railway.ResetPasswordTest.TC11(ResetPasswordTest.java:80)
+<td title='Railway.LoginTest.TC03()'><b>TC03</b><br>Test class: Railway.LoginTest</td>
+<td><div><pre>java.lang.AssertionError: Error message is not displayed as expected expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
+	at Railway.LoginTest.TC03(LoginTest.java:99)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1912223012", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1912223012'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: //a[text()=&quot;Forgot Password page&quot;]
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.7.3&apos;, java.version: &apos;25.0.2&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [6a4068c3-c1fa-4483-b939-84c07d26b9c9, findElement {value=//a[text()=&quot;Forgot Password page&quot;], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 24.6.0, moz:processID: 3843, moz:profile: /var/folders/r9/s13_yzg55g7..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: 6a4068c3-c1fa-4483-b939-84c07d26b9c9
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
-	at Railway.LoginPage.getLinkForgotPassword(LoginPage.java:28)
-	at Railway.LoginPage.gotoForgotPasswordPage(LoginPage.java:48)
-	at Railway.ResetPasswordTest.TC11(ResetPasswordTest.java:80)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2005035661", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2005035661'><pre>java.lang.AssertionError: Error message is not displayed as expected expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at Railway.LoginTest.TC03(LoginTest.java:99)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -743,8 +262,8 @@ Session ID: 6a4068c3-c1fa-4483-b939-84c07d26b9c9
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
 </pre></div></td>
-<td>25</td>
-<td>Railway.ResetPasswordTest@42e99e4a</td></tr>
+<td>9</td>
+<td>Railway.LoginTest@7ed7259e</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -755,25 +274,60 @@ Session ID: 6a4068c3-c1fa-4483-b939-84c07d26b9c9
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='Railway.LoginTest.TC05()'><b>TC05</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>12</td>
+<td>Railway.LoginTest@7ed7259e</td></tr>
+<tr>
+<td title='Railway.LogoutTest.TC06()'><b>TC06</b><br>Test class: Railway.LogoutTest</td>
+<td></td>
+<td>26</td>
+<td>Railway.LogoutTest@4d9e68d0</td></tr>
+<tr>
 <td title='Railway.CreateAccountTest.TC09()'><b>TC09</b><br>Test class: Railway.CreateAccountTest</td>
 <td></td>
-<td>27</td>
-<td>Railway.CreateAccountTest@4d9e68d0</td></tr>
+<td>24</td>
+<td>Railway.CreateAccountTest@42e99e4a</td></tr>
+<tr>
+<td title='Railway.BookTicketTest.TC12()'><b>TC12</b><br>Test class: Railway.BookTicketTest</td>
+<td></td>
+<td>29</td>
+<td>Railway.BookTicketTest@52e6fdee</td></tr>
 <tr>
 <td title='Railway.CreateAccountTest.TC08()'><b>TC08</b><br>Test class: Railway.CreateAccountTest</td>
 <td></td>
-<td>11</td>
-<td>Railway.CreateAccountTest@4d9e68d0</td></tr>
+<td>3</td>
+<td>Railway.CreateAccountTest@42e99e4a</td></tr>
 <tr>
-<td title='Railway.LoginTest.TC01()'><b>TC01</b><br>Test class: Railway.LoginTest</td>
+<td title='Railway.BookTicketTest.TC13()'><b>TC13</b><br>Test class: Railway.BookTicketTest</td>
 <td></td>
-<td>11</td>
-<td>Railway.LoginTest@3d51f06e</td></tr>
+<td>26</td>
+<td>Railway.BookTicketTest@52e6fdee</td></tr>
+<tr>
+<td title='Railway.LoginTest.TC02()'><b>TC02</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>10</td>
+<td>Railway.LoginTest@7ed7259e</td></tr>
 <tr>
 <td title='Railway.CreateAccountTest.TC07()'><b>TC07</b><br>Test class: Railway.CreateAccountTest</td>
 <td></td>
-<td>13</td>
-<td>Railway.CreateAccountTest@4d9e68d0</td></tr>
+<td>3</td>
+<td>Railway.CreateAccountTest@42e99e4a</td></tr>
+<tr>
+<td title='Railway.BookTicketTest.TC14()'><b>TC14</b><br>Test class: Railway.BookTicketTest</td>
+<td></td>
+<td>28</td>
+<td>Railway.BookTicketTest@52e6fdee</td></tr>
+<tr>
+<td title='Railway.ResetPasswordTest.TC11()'><b>TC11</b><br>Test class: Railway.ResetPasswordTest</td>
+<td></td>
+<td>54</td>
+<td>Railway.ResetPasswordTest@14dd9eb7</td></tr>
+<tr>
+<td title='Railway.LoginTest.TC01()'><b>TC01</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>5</td>
+<td>Railway.LoginTest@7ed7259e</td></tr>
 </table><p>
 </body>
 </html>

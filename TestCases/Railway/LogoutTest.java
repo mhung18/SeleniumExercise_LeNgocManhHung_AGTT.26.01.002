@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import Constant.Constant;
 import Constant.MenuPage;
+import Constant.PageIdentifier;
 
 public class LogoutTest extends BaseTest{
 	@Test
@@ -26,14 +27,14 @@ public class LogoutTest extends BaseTest{
 	    homePage.open();
 	    
 	    System.out.println("2. Login with valid Email and Password");
-	    LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.goToPage(MenuPage.LOGIN, PageIdentifier.LOGIN, LoginPage.class);
 	    loginPage.login(userInfo);
 
 	    System.out.println("3. Enter username and password of account hasn't been activated.");
-	    FAQPage faqPage = loginPage.goToPage(MenuPage.FAQ, FAQPage.class);
+	    FAQPage faqPage = loginPage.goToPage(MenuPage.FAQ, PageIdentifier.FAQ, FAQPage.class);
 
 	    System.out.println("4. Click on \"Log out\" tab");
-	    homePage = faqPage.goToPage(MenuPage.LOGOUT, HomePage.class);
+	    homePage = faqPage.logout();
 
 	    String currentSelectedTab = homePage.getSelectedTabName();
 	    
@@ -46,6 +47,7 @@ public class LogoutTest extends BaseTest{
 	    );
 	    
 	    boolean isLogoutTabExist = homePage.isTabExist("Log out");
+	    System.out.println(isLogoutTabExist);
 	    Assert.assertFalse(isLogoutTabExist, "Logout tab should not be displayed after logout");
 	}
 }
