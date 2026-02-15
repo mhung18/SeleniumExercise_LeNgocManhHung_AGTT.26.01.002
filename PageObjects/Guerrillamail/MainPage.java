@@ -6,13 +6,14 @@ import Constant.Constant;
 import Railway.RegisterPage;
 
 public class MainPage {
-	private final By _emailName = By.id("inbox-id");
-	private final By _emailNameTextbox = By.xpath("//span[@id=\"inbox-id\"]/input[@type=\"text\"]");
+	private final By _lblEmailName = By.id("inbox-id");
+	private final By _lblEmailContent = By.xpath("//div[@class=\"email_body\"]");
+	private final By _lblEmailConfirm = By.xpath("//tbody[@id=\"email_list\"]//td[contains(text(),\"Please confirm your account\")]");
+	private final By _lblEmailResetPassword = By.xpath("//tbody[@id=\"email_list\"]//a[contains(text(),\"Please reset your password\")]");
+	private final By _lnkConfirm = By.xpath("//div[contains(@class,'email_body')]//a");
+	private final By _txtEmailName = By.xpath("//span[@id=\"inbox-id\"]/input[@type=\"text\"]");
 	private final By _btnSetEmail = By.xpath("//span[@id=\"inbox-id\"]/button[text()=\"Set\"]");
-	private final By _emailConfirm = By.xpath("//tbody[@id=\"email_list\"]//td[contains(text(),\"Please confirm your account\")]");
-	private final By _linkConfirm = By.xpath("//div[contains(@class,'email_body')]//a");
-	private final By _emailResetPassword = By.xpath("//tbody[@id=\"email_list\"]//a[contains(text(),\"Please reset your password\")]");
-	private final By _emailContent = By.xpath("//div[@class=\"email_body\"]");
+
 	
 	public MainPage open() {
 		Constant.WEBDRIVER.navigate().to(Constant.GURERRILLAMAIL_URL);
@@ -20,32 +21,32 @@ public class MainPage {
 	}
 	
 	public MainPage setEmailName(String emailName) {
-		Utilities.click(_emailName);
-		Utilities.enter(_emailNameTextbox, emailName);
+		Utilities.click(_lblEmailName);
+		Utilities.enter(_txtEmailName, emailName);
 		Utilities.click(_btnSetEmail);
 		return this;
 	}
 	
 	public RegisterPage activeAccount() {
-		Utilities.click(_emailConfirm);
-		Utilities.click(_linkConfirm);
+		Utilities.click(_lblEmailConfirm);
+		Utilities.click(_lnkConfirm);
 		Utilities.switchToLatestTab();
 		return new RegisterPage();
 	}
 	
 	public MainPage resetPassword() {
 		try {
-			Utilities.waitForElementClickable(_emailResetPassword);
+			Utilities.waitForElementClickable(_lblEmailResetPassword);
 		} catch (Exception e) {
 			Constant.WEBDRIVER.navigate().refresh();
 		}
-		Utilities.click(_emailResetPassword);
-		Utilities.click(_linkConfirm);
+		Utilities.click(_lblEmailResetPassword);
+		Utilities.click(_lnkConfirm);
 		return this;
 	}
 	
 	public String getRegisterToken() {
-	    String content = Utilities.getTextOfElement(_emailContent);
+	    String content = Utilities.getTextOfElement(_lblEmailContent);
 	    String[] parts = content.split("The token is:");
 	    String tokenPart = parts[1].trim();
 	    String token = tokenPart.split("\\.")[0].trim();

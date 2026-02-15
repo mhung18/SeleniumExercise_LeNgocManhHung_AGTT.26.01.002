@@ -5,7 +5,7 @@ import Common.Utilities;
 import Constant.Constant;
 
 public class MyTicketPage extends GeneralPage{
-	private final String _dymTicketInfo = "//div[@class='DivTable']//tr[td[normalize-space()='%s'] "
+	private final String _infoTicket = "//div[@class='DivTable']//tr[td[normalize-space()='%s'] "
 			+ "and td[normalize-space()='%s'] "
 			+ "and td[normalize-space()='%s'] "
 			+ "and td[normalize-space()='%s'] "
@@ -14,7 +14,7 @@ public class MyTicketPage extends GeneralPage{
 
 	public MyTicketPage cancelTicket (TicketInfo ticketInfo) {
 		String ticketXpath = String.format(
-				_dymTicketInfo, 
+				_infoTicket, 
 				ticketInfo.getDepartStation(), 
 				ticketInfo.getArriveStattion(), 
 				ticketInfo.getDepartDate(),
@@ -27,7 +27,7 @@ public class MyTicketPage extends GeneralPage{
 	
 	public boolean checkIsTicketExist (TicketInfo ticketInfo) {
 		String ticketXpath = String.format(
-				_dymTicketInfo, 
+				_infoTicket, 
 				ticketInfo.getDepartStation(), 
 				ticketInfo.getArriveStattion(), 
 				ticketInfo.getDepartDate(),

@@ -6,18 +6,17 @@ import Constant.Constant;
 
 public class ForgotPasswordPage {
 	private final By _txtEmailForgotPassword = By.xpath("//input[@id=\"email\"]");
-	private final By _btnSendInstruction = By.xpath("//input[@value=\"Send Instructions\"]");
 	private final By _txtForgotPasswordForm = By.xpath("//form//legend[text()=\"Password Change Form\"]");
+	private final By _txtStateResetPassword = By.xpath("//div[@id=\"content\"]/p");
 	private final By _txtToken = By.xpath("//input[@id=\"resetToken\"]");
 	private final By _txtNewPassword = By.id("newPassword");
 	private final By _txtConfirmNewPassword = By.id("confirmPassword");
 	private final By _btnResetPassword = By.xpath("//input[@value=\"Reset Password\"]");
-	private final By _txtStateResetPassword = By.xpath("//div[@id=\"content\"]/p");
+	private final By _btnSendInstruction = By.xpath("//input[@value=\"Send Instructions\"]");
 	
 	public String getTextOfForgotPasswordForm() {
 		return Utilities.getTextOfElement(_txtForgotPasswordForm);
 	}
-	
 	
 	public ForgotPasswordPage enterEmailForgotPassword(String email) {
 		Utilities.enter(_txtEmailForgotPassword, email);
