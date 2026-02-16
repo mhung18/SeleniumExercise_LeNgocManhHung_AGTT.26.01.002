@@ -17,7 +17,7 @@ import Guerrillamail.MainPage;
 public abstract class BaseTest {
 	@Parameters({"browser"})
 	@BeforeMethod
-	public void beforeMethod(@Optional("chrome") String browser) {
+	public void beforeMethod(@Optional("firefox") String browser) {
 		System.out.println("Pre-condition");
 		if ("chrome".equalsIgnoreCase(browser)) {
 			Constant.WEBDRIVER = new ChromeDriver();
@@ -32,7 +32,7 @@ public abstract class BaseTest {
 	@AfterMethod
 	public void afterMethod() {
 		System.out.println("Post-condition");
-//		Constant.WEBDRIVER.quit();
+		Constant.WEBDRIVER.quit();
 	}
 	
 	public UserInfo createAndActiveAccount() {		

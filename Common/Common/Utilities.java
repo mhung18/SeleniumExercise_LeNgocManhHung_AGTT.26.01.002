@@ -78,7 +78,6 @@ public class Utilities {
 	
 	public static boolean isDisplayed(By locator) {
 		try {
-			Utilities.waitForElementLocated(locator);
 			Constant.WEBDRIVER.findElement(locator);
 			return true;
 		} catch (Exception e) {
@@ -116,6 +115,7 @@ public class Utilities {
 	
 	public static void enter (By locator, String text) {
 		Utilities.waitForElementLocated(locator);
+		Utilities.scrollToElement(locator);
 		WebElement element = Constant.WEBDRIVER.findElement(locator);
 		element.clear();
 		element.sendKeys(text);

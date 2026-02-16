@@ -2,6 +2,7 @@ package Railway;
 
 import org.openqa.selenium.By;
 import Common.Utilities;
+import Constant.PageIdentifier;
 
 public class LoginPage extends GeneralPage{
 	private final By _txtUsername = By.xpath("//input[@id='username']");
@@ -17,7 +18,7 @@ public class LoginPage extends GeneralPage{
 	    Utilities.click(_btnLogin);
 
 	    try {
-	    	Utilities.waitForTitleExist("Safe Railway");
+	    	Utilities.waitForTitleExist(PageIdentifier.HOME.getPageIdentifier());
 	    	return (T) new HomePage();
 		} catch (Exception e) {
 			return (T) this;
