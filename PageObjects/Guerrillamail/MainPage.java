@@ -3,13 +3,14 @@ package Guerrillamail;
 import org.openqa.selenium.By;
 import Common.Utilities;
 import Constant.Constant;
+import Railway.ForgotPasswordPage;
 import Railway.RegisterPage;
 
 public class MainPage {
 	private final By _lblEmailName = By.id("inbox-id");
 	private final By _lblEmailContent = By.xpath("//div[@class=\"email_body\"]");
 	private final By _lblEmailConfirm = By.xpath("//tbody[@id=\"email_list\"]//td[contains(text(),\"Please confirm your account\")]");
-	private final By _lblEmailResetPassword = By.xpath("//tbody[@id=\"email_list\"]//a[contains(text(),\"Please reset your password\")]");
+	private final By _lblEmailResetPassword = By.xpath("//tbody[@id=\"email_list\"]//td[contains(text(),\"Please reset your password\")]");
 	private final By _lnkConfirm = By.xpath("//div[contains(@class,'email_body')]//a");
 	private final By _txtEmailName = By.xpath("//span[@id=\"inbox-id\"]/input[@type=\"text\"]");
 	private final By _btnSetEmail = By.xpath("//span[@id=\"inbox-id\"]/button[text()=\"Set\"]");
@@ -34,15 +35,11 @@ public class MainPage {
 		return new RegisterPage();
 	}
 	
-	public MainPage resetPassword() {
-		try {
-			Utilities.waitForElementClickable(_lblEmailResetPassword);
-		} catch (Exception e) {
-			Constant.WEBDRIVER.navigate().refresh();
-		}
+	public ForgotPasswordPage resetPassword() {		
 		Utilities.click(_lblEmailResetPassword);
 		Utilities.click(_lnkConfirm);
-		return this;
+		Utilities.switchToLatestTab();
+		return new ForgotPasswordPage();
 	}
 	
 	public String getRegisterToken() {

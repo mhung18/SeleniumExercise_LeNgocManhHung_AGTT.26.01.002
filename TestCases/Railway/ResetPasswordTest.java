@@ -2,7 +2,6 @@ package Railway;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import Common.Utilities;
 import Constant.MenuPage;
 import Constant.PageIdentifier;
@@ -40,10 +39,9 @@ public class ResetPasswordTest extends BaseTest {
 
 		System.out.println("6. Open email with subject contaning \"Please reset your password\" and the email of the account at step 3");
 		System.out.println("7. Click on reset link");
-		mainEmailPage.resetPassword();
+		forgotPasswordPage = mainEmailPage.resetPassword();
 		
 		System.out.println("VP: Redirect to Railways page and Form \"Password Change Form\" is shown with the reset password token");
-		Utilities.switchToLatestTab();
 		String formName = forgotPasswordPage.getTextOfForgotPasswordForm();
 		Assert.assertEquals(formName, expectedFormName, "Form name is not display as expected");
 		
