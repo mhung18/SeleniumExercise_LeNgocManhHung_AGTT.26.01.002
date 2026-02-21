@@ -3,6 +3,7 @@ package Railway;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import Common.Utilities;
+import Common.WaitUtils;
 import Constant.Constant;
 import Constant.PageIdentifier;
 
@@ -16,7 +17,7 @@ public class HomePage extends GeneralPage{
 	
 	public RegisterPage goToCreateAccount() {
 		Utilities.click(_lnkCreateAccount);
-		Utilities.waitForTitleExist(PageIdentifier.REGISTER.getPageIdentifier());
+		WaitUtils.waitForTitleExist(PageIdentifier.REGISTER.getPageIdentifier());
 		return new RegisterPage();
 	}
 	

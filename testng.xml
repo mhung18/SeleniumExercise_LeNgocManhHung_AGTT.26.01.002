@@ -3,7 +3,7 @@
 <suite name="Railway Automation Test Suite" verbose="1"
 	parallel="methods" thread-count="1">
 	<test name="Test">
-		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="browser" value=""></parameter>
 		<classes>
 			<class name="Railway.LoginTest"/>
 			<class name="Railway.LogoutTest"/>

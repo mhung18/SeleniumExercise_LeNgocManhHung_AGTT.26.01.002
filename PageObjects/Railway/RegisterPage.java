@@ -16,23 +16,18 @@ public class RegisterPage extends GeneralPage {
 	private final By _lblRegisterConfirmMsg = By.xpath("//div[@id=\"content\"]/p");
 	
 	public String getLblRegisterErrorMsg() {
-		Utilities.waitForElementVisible(_lblRegisterErrorMsg);
 		return Utilities.getTextOfElement(_lblRegisterErrorMsg);
 	}
 	public String getLblPasswordErrorMsg() {
-		Utilities.waitForElementVisible(_lblPasswordErrorMsg);
 		return Utilities.getTextOfElement(_lblPasswordErrorMsg);
 	}
 	public String getLblPassportIdErrorMsg() {
-		Utilities.waitForElementVisible(_lblPassportIdErrorMsg);
 		return Utilities.getTextOfElement(_lblPassportIdErrorMsg);
 	}
 	public String getLblRegisterSuccessfully() {
-		Utilities.waitForElementVisible(_lblRegisterSuccessfullyMsg);
 		return Utilities.getTextOfElement(_lblRegisterSuccessfullyMsg);
 	}
 	public String getRegisterConfirmMsg() {
-		Utilities.waitForElementVisible(_lblRegisterConfirmMsg);
 		return Utilities.getTextOfElement(_lblRegisterConfirmMsg);
 	}
 	

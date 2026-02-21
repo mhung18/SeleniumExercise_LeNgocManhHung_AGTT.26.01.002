@@ -2,6 +2,7 @@ package Railway;
 
 import org.openqa.selenium.By;
 import Common.Utilities;
+import Common.WaitUtils;
 import Constant.PageIdentifier;
 
 public class LoginPage extends GeneralPage{
@@ -18,7 +19,7 @@ public class LoginPage extends GeneralPage{
 	    Utilities.click(_btnLogin);
 
 	    try {
-	    	Utilities.waitForTitleExist(PageIdentifier.HOME.getPageIdentifier());
+	    	WaitUtils.waitForTitleExist(PageIdentifier.HOME.getPageIdentifier());
 	    	return (T) new HomePage();
 		} catch (Exception e) {
 			return (T) this;

@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import Common.Utilities;
+import Common.WaitUtils;
 import Constant.Constant;
 
 public class BookTicketPage extends GeneralPage{
@@ -43,19 +44,19 @@ public class BookTicketPage extends GeneralPage{
 	}
 	
 	public String getSelectedDepartStation() {
-	    Utilities.waitForElementLocated(_ddlDepartStation);
+		WaitUtils.waitForElementLocated(_ddlDepartStation);
 	    Select select = new Select(this.getDepartStation());
 	    return select.getFirstSelectedOption().getText();
 	}
 
 	public String getSelectedArriveStation() {
-	    Utilities.waitForElementLocated(_ddlArriveStation);
+		WaitUtils.waitForElementLocated(_ddlArriveStation);
 	    Select select = new Select(this.getArriveStation());
 	    return select.getFirstSelectedOption().getText();
 	}
 
 	public String getCurrentDepartDate () {
-	    Utilities.waitForElementVisible(_currentDepartDate);
+		WaitUtils.waitForElementVisible(_currentDepartDate);
 	    return Utilities.getTextOfElement(_currentDepartDate).trim();
 	}
 	
@@ -102,7 +103,7 @@ public class BookTicketPage extends GeneralPage{
 			this.selectDepartStation(ticketInfo.getDepartStation());
 		}
 		if (!ticketInfo.getArriveStattion().isEmpty()) {
-			Utilities.waitForOptionPresent(_ddlArriveStation, ticketInfo.getArriveStattion(), 10);
+			WaitUtils.waitForOptionPresent(_ddlArriveStation, ticketInfo.getArriveStattion(), 10);
 			this.selectArriveStation(ticketInfo.getArriveStattion());
 		}
 		if (!ticketInfo.getSeatType().isEmpty()) {
@@ -130,7 +131,7 @@ public class BookTicketPage extends GeneralPage{
 	}
 	
 	public String getLblSuccessfulBookingMsg () {
-		Utilities.waitForElementVisible(_lblSuccessfulBooking);
+		WaitUtils.waitForElementVisible(_lblSuccessfulBooking);
 		return Utilities.getTextOfElement(_lblSuccessfulBooking);
 	}
 	

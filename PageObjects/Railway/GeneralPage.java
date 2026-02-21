@@ -2,6 +2,7 @@ package Railway;
 
 import org.openqa.selenium.*;
 import Common.Utilities;
+import Common.WaitUtils;
 import Constant.MenuPage;
 import Constant.PageIdentifier;
 
@@ -11,7 +12,7 @@ public class GeneralPage {
 	private final String _tabLink = "//div[@id='menu']//a[span[text()='%s']]";
 	
 	public String getWelcomeMessage() {
-		Utilities.waitForElementVisible(_lblWelcomeMessage);
+		WaitUtils.waitForElementVisible(_lblWelcomeMessage);
 		return Utilities.getTextOfElement(_lblWelcomeMessage);
 	}
 	
@@ -26,9 +27,9 @@ public class GeneralPage {
 	
 	public <T extends GeneralPage> T goToPage(MenuPage page, PageIdentifier pageId, Class<T> pageClass) {
 	    String xpath = String.format(_tabLink, page.getPageName());
-	    Utilities.waitForElementLocated(By.xpath(xpath));
+	    WaitUtils.waitForElementLocated(By.xpath(xpath));
 	    Utilities.click(By.xpath(xpath));
-	    Utilities.waitForTitleExist(pageId.getPageIdentifier());
+	    WaitUtils.waitForTitleExist(pageId.getPageIdentifier());
 
 	    try {
 	        return pageClass.getDeclaredConstructor().newInstance();

@@ -2,6 +2,7 @@ package Railway;
 
 import org.openqa.selenium.By;
 import Common.Utilities;
+import Common.WaitUtils;
 import Constant.Constant;
 
 public class ForgotPasswordPage {
@@ -33,7 +34,7 @@ public class ForgotPasswordPage {
 	}
 	
 	public ForgotPasswordPage changePassword (String newPassword, String confirmNewPassword) {
-		Utilities.waitForElementVisible(_txtNewPassword);
+		WaitUtils.waitForElementVisible(_txtNewPassword);
 		Utilities.enter(_txtNewPassword, newPassword);
 		Utilities.enter(_txtConfirmNewPassword, confirmNewPassword);
 		Utilities.click(_btnResetPassword);
@@ -41,7 +42,7 @@ public class ForgotPasswordPage {
 	}
 	
 	public String getStateResetPassword() {
-		Utilities.waitForElementVisible(_txtStateResetPassword);
+		WaitUtils.waitForElementVisible(_txtStateResetPassword);
 		return Utilities.getTextOfElement(_txtStateResetPassword);
 	}
 }
