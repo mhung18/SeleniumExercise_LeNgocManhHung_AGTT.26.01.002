@@ -47,7 +47,6 @@ public class LogoutTest extends BaseTest{
 	    );
 	    
 	    boolean isLogoutTabExist = homePage.isTabExist("Log out");
-	    System.out.println(isLogoutTabExist);
 	    Assert.assertFalse(isLogoutTabExist, "Logout tab should not be displayed after logout");
 	}
 }

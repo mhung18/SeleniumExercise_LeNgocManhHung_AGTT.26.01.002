@@ -3,11 +3,11 @@ package Common;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Constant.Constant;
 
 public class WaitUtils {
@@ -27,11 +27,15 @@ public class WaitUtils {
 		return locator;
 	}
 	
-	public static void waitForOptionPresent(By selectLocator, String optionText, int timeout) {
+	public static void waitAndSelectByVisibleText(By locator, String visibleText, int timeout) {
 	    WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(timeout));
 	    wait.until(driver -> {
-	    	Select select = new Select(driver.findElement(selectLocator));
-	    	return select.getOptions().stream().anyMatch(o -> o.getText().trim().equals(optionText));
+	        try {
+	            new Select(driver.findElement(locator)).selectByVisibleText(visibleText);
+	            return true;
+	        } catch (StaleElementReferenceException e) {
+	            return false;
+	        }
 	    });
 	}
 	

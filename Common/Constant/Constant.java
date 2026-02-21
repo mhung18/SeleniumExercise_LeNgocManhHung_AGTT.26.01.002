@@ -8,7 +8,7 @@ public class Constant {
 	public static final String RAILWAY_URL = "http://saferailway.somee.com/Page/HomePage.cshtml";
 	public static final String GURERRILLAMAIL_URL = "https://www.guerrillamail.com/inbox";
 	
-	// User Info
+	// Default User Info
 	public static final String USERNAME = "lengocmanhhung0108@gmail.com";
 	public static final String PASSWORD = "12345678";
 	public static final String INVALID_PASSWORD ="invalid-password";
@@ -16,10 +16,10 @@ public class Constant {
 	public static final String PASSPORTID = "H00002412";
 	public static final String BLANKFIELD = "";
 	
-	// Ticket Booking Info
-	public static final String DEPARTDATE = "2/12/2026";
-	public static final String DEPARTSTATION = "Sài Gòn";
-	public static final String ARRIVESTATION = "Nha Trang";
+	// Default Ticket Booking Info
+	public static final String DEPARTDATE = "3/8/2026";
+	public static final City DEPARTSTATION = City.SAIGON;
+	public static final City ARRIVESTATION = City.NHATRANG;
 	public static final SeatType SEATTYPE = SeatType.HS;
 	public static final String TICKETAMOUNT = "1";
 	

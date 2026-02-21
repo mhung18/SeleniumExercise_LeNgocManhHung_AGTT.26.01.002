@@ -68,24 +68,18 @@ public class BookTicketPage extends GeneralPage{
 	}
 	
 	public BookTicketPage selectDepartStation(String departStation) {
-		Utilities.scrollToElement(_ddlDepartStation);
-		Select selectDepartStation = new Select(this.getDepartStation());
-		selectDepartStation.selectByVisibleText(departStation);
-		return this;
+	    WaitUtils.waitAndSelectByVisibleText(_ddlDepartStation, departStation, 10);
+	    return this;
 	}
 	
 	public BookTicketPage selectArriveStation(String arriveStation) {
-		Utilities.scrollToElement(_ddlArriveStation);
-		Select selectArriveStation = new Select(this.getArriveStation());
-		selectArriveStation.selectByVisibleText(arriveStation);
-		return this;
+	    WaitUtils.waitAndSelectByVisibleText(_ddlArriveStation, arriveStation, 10);
+	    return this;
 	}
 	
 	public BookTicketPage selectSeatType(String seatType) {
-		Utilities.scrollToElement(_ddlSeatType);
-		Select selectSeatType = new Select(this.getSeatType());
-		selectSeatType.selectByVisibleText(seatType);
-		return this;
+	    WaitUtils.waitAndSelectByVisibleText(_ddlSeatType, seatType, 10);
+	    return this;
 	}
 	
 	public BookTicketPage selectTicketAmount(String ticketAmount) {
@@ -103,7 +97,6 @@ public class BookTicketPage extends GeneralPage{
 			this.selectDepartStation(ticketInfo.getDepartStation());
 		}
 		if (!ticketInfo.getArriveStattion().isEmpty()) {
-			WaitUtils.waitForOptionPresent(_ddlArriveStation, ticketInfo.getArriveStattion(), 10);
 			this.selectArriveStation(ticketInfo.getArriveStattion());
 		}
 		if (!ticketInfo.getSeatType().isEmpty()) {
@@ -139,7 +132,7 @@ public class BookTicketPage extends GeneralPage{
 		return Utilities.getTextOfElement(By.xpath(String.format(_infoTicketBooked, thName)));
 	}
 
-	public String getDatePlusDays(int days) {
+	public String getCurrentDepartDatePlusDays(int days) {
 	    String currentDepartDate = getCurrentDepartDate();
 
 	    DateTimeFormatter formatter =

@@ -41,7 +41,8 @@ public class BookTicketTest extends BaseTest{
 		BookTicketPage bookTicketPage = homePage.goToPage(MenuPage.BOOKTICKET, PageIdentifier.BOOKTICKET, BookTicketPage.class);
 		
 		System.out.println("4. Select the next 2 days from \"Depart date\"");
-		ticketInfo.setDepartDate(bookTicketPage.getDatePlusDays(2));
+		ticketInfo.setDepartDate(bookTicketPage.getCurrentDepartDatePlusDays(2));
+		
 		System.out.println("5. Select Depart from \"Nha Trang\" and Arrive at \"Huế\"");
 		System.out.println("6. Select \"Soft bed with air conditioner\" for \"Seat type\"");
 		System.out.println("7. Select \"1\" for \"Ticket amount\"");
@@ -99,7 +100,7 @@ public class BookTicketTest extends BaseTest{
 		BookTicketPage bookTicketPage = homePage.goToPage(MenuPage.BOOKTICKET, PageIdentifier.BOOKTICKET, BookTicketPage.class);
 		
 		System.out.println("4. Select the next 25 days from \"Depart date\"");
-		ticketInfo.setDepartDate(bookTicketPage.getDatePlusDays(25));
+		ticketInfo.setDepartDate(bookTicketPage.getCurrentDepartDatePlusDays(25));
 		
 		System.out.println("5. Select \"Nha Trang\" for \"Depart from\" and \"Sài Gòn\" for \"Arrive at\".");
 		System.out.println("6. Select \"Soft seat with air conditioner\" for \"Seat type\"");
@@ -161,7 +162,6 @@ public class BookTicketTest extends BaseTest{
 				+ "VP: Ticket table shows \"Ticket price from Đà Nẵng to Sài Gòn\".\n"
 				+ "VP: Price for each seat displays correctly\n"
 				+ "HS = 310000, SS = 335000, SSC = 360000, HB = 410000, SB = 460000, SBC = 510000");
-		// parameters: HS price / SS price / SSC price / HB price / SB price / SBC price		
 		String actual_HS_Price = ticketPricePage.getPriceOfSeatType(SeatType.HS);
 		Assert.assertEquals(actual_HS_Price, expected_HS_Price, "HS Price is not displayed as expected");
 
